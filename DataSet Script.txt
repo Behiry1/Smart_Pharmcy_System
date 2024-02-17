@@ -1,0 +1,132 @@
+import csv
+import random
+import shutil
+import os
+import math
+from itertools import count
+
+# Define file paths and desired column
+csv_file = "C:\\Windows.old\\Users\\zeyad\\Zezo\\Fourth Year\\GP\\Medcine_Data.csv"
+column_to_randomize = 11  # Index of the column to modify (starts at 0)
+min_value = 1
+max_value = 30
+
+# Define error handling strategy
+def handle_encoding_error(char):
+    # Replace problematic character with a placeholder (e.g., '?')
+    return '?'
+
+# Read CSV function with error handling and encoding
+def read_csv(file_path, encoding, errors):
+    try:
+        with open(file_path, "r", encoding=encoding, errors=errors) as file:
+            reader = csv.reader(file)
+            data = list(reader)
+
+        return data
+    except (FileNotFoundError, PermissionError) as e:
+        print(f"Error reading file: {e}")
+        return None
+
+# Write CSV function with error handling and encoding
+def write_csv(data, file_path, encoding, newline='\n'):
+    try:
+        with open(file_path, "w", newline=newline, encoding=encoding) as file:
+            writer = csv.writer(file)
+            writer.writerows(data)
+        print(f"Wrote modified data to: {file_path}")
+    except PermissionError as e:
+        print(f"Error writing to file: {e}")
+        print("Check file permissions and try again.")
+
+
+# Main function
+def main():
+
+    # Read CSV data
+    data = read_csv(csv_file, "utf-8", "replace")
+    if not data:
+        exit(1)
+
+
+    c =-1
+    for row in data:
+        c +=1
+        try:
+            if row[11] == "Medicine_Consumption":
+                continue
+            else:
+
+                if row[15] == '1':
+
+                    # For column number 10 (count)
+                    row[10] = str(random.randint(min_value, max_value))
+
+                    # For column number 11 (demand)
+                    r = int(row[10])
+                    row[11] = str(random.randint(0, math.ceil(r + r * 0.1)))
+
+                    # For column number 12 (shortage)
+                    x = int(row[11]) - int(row[10])
+                    if x < 0:
+                        x = 0
+                    row[12] = str((x))
+
+                    # For column number 13 (remaining)
+                    x = int(row[10]) - int(row[11])
+                    if x < 0:
+                        x = 0
+                    row[13] = str(x)
+
+                    # For column number 16 (next month)
+                    x = float(float(int(row[11])) / float(int(row[10]))) * 100
+                    y = 0
+                    if x > 40:
+                        if int(row[12]) > 0:
+                            y = int(row[11]) + int(math.ceil(int(float(int(row[12]) * 0.25))))
+                        else:
+                            y = row[11]
+                    row[15] = str(y)
+
+                else:
+                    
+                    # For column number 10 (count)
+                    row[10] = str(int(data[c - 18156][15]) + int(data[c - 18156][13]))
+
+                    # For column number 11 (demand)
+                    r = int(row[10])
+                    row[11] = str(random.randint(0, math.ceil(r + r * 0.1)))
+
+                    # For column number 12 (shortage)
+                    x = int(row[11]) - int(row[10])
+                    if x < 0:
+                        x = 0
+                    row[12] = str((x))
+
+                    # For column number 13 (remaining)
+                    x = int(row[10]) - int(row[11])
+                    if x < 0:
+                        x = 0
+                    row[13] = str(x)
+
+                    # For column number 16 (next month)
+                    x = float(float(int(row[11])) / float(int(row[10]))) * 100
+                    y = 0
+                    if x > 40:
+                        if int(row[12]) > 0:
+                            y = int(row[11]) + int(math.ceil(int(float(int(row[12]) * 0.25))))
+                        else:
+                            y = row[11]
+                    row[15] = str(y)
+
+        except ValueError as e:
+            print(c)
+            print(f"Warning: Error processing row: {e}")
+
+
+    # Write modified data to a new file
+    write_csv(data, f"{csv_file}_randomized.csv", "utf-8", newline='\n')
+
+# Run the main function
+if __name__ == "__main__":
+    main()
