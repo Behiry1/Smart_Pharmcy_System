@@ -17,15 +17,16 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QFrame,
     QGridLayout, QLabel, QLineEdit, QMainWindow,
-    QMenuBar, QPushButton, QSizePolicy, QSpacerItem,
-    QStackedWidget, QStatusBar, QVBoxLayout, QWidget)
+    QMenuBar, QPushButton, QRadioButton, QSizePolicy,
+    QSpacerItem, QStackedWidget, QStatusBar, QVBoxLayout,
+    QWidget)
 import resFile_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(885, 741)
+        MainWindow.resize(884, 741)
         MainWindow.setMinimumSize(QSize(720, 500))
         MainWindow.setStyleSheet(u"*{\n"
 "border:none;\n"
@@ -55,13 +56,19 @@ class Ui_MainWindow(object):
 "#lineEdit , #lineEdit_2 , #lineEdit_3 , #lineEdit_4 , #lineEdit_5 , #lineEdit_6 , #dateEdit , #comboBox , #lineEdit_7 , #lineEdit_8\n"
 "{\n"
 "   background-color :rgb(200, 200, 200); \n"
-"	padding : 5px 3px;\n"
+"	padding : 4px 2px;\n"
 "    border-radius :5px;\n"
 "\n"
 "}\n"
 "#pushButton , #pushButton_4 {\n"
 "background-color : rgb(20, 180, 196);\n"
 "    border-radius: 7px;\n"
+"}\n"
+"#ErrorMessage , #ErrorMessage_2 {\n"
+"	color:"
+                        " red;\n"
+"    display: inline-block;\n"
+"    text-align: center;\n"
 "}")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -75,14 +82,14 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.Login = QWidget(self.widget_2)
         self.Login.setObjectName(u"Login")
-        self.Login.setMinimumSize(QSize(400, 580))
-        self.Login.setMaximumSize(QSize(400, 580))
+        self.Login.setMinimumSize(QSize(420, 620))
+        self.Login.setMaximumSize(QSize(420, 620))
         self.verticalLayout_4 = QVBoxLayout(self.Login)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.stackedWidget = QStackedWidget(self.Login)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setMinimumSize(QSize(390, 0))
-        self.stackedWidget.setMaximumSize(QSize(400, 16777215))
+        self.stackedWidget.setMaximumSize(QSize(420, 16777215))
         self.LoginPage = QWidget()
         self.LoginPage.setObjectName(u"LoginPage")
         self.gridLayout_2 = QGridLayout(self.LoginPage)
@@ -157,7 +164,7 @@ class Ui_MainWindow(object):
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.pushButton_3 = QPushButton(self.frame_3)
         self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setGeometry(QRect(19, 109, 170, 25))
+        self.pushButton_3.setGeometry(QRect(103, 131, 170, 25))
         self.pushButton_3.setMinimumSize(QSize(170, 25))
         self.pushButton_3.setMaximumSize(QSize(160, 25))
         font2 = QFont()
@@ -166,8 +173,8 @@ class Ui_MainWindow(object):
         self.pushButton_3.setFont(font2)
         self.pushButton_4 = QPushButton(self.frame_3)
         self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setGeometry(QRect(40, 40, 125, 28))
-        self.pushButton_4.setMinimumSize(QSize(125, 28))
+        self.pushButton_4.setGeometry(QRect(120, 70, 135, 30))
+        self.pushButton_4.setMinimumSize(QSize(135, 30))
         self.pushButton_4.setMaximumSize(QSize(125, 28))
         font3 = QFont()
         font3.setPointSize(13)
@@ -177,8 +184,12 @@ class Ui_MainWindow(object):
         font3.setKerning(True)
         font3.setStyleStrategy(QFont.PreferAntialias)
         self.pushButton_4.setFont(font3)
+        self.ErrorMessage_2 = QLabel(self.frame_3)
+        self.ErrorMessage_2.setObjectName(u"ErrorMessage_2")
+        self.ErrorMessage_2.setGeometry(QRect(50, 22, 271, 20))
+        self.ErrorMessage_2.setWordWrap(True)
 
-        self.gridLayout_2.addWidget(self.frame_3, 2, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.frame_3, 2, 0, 1, 3)
 
         self.stackedWidget.addWidget(self.LoginPage)
         self.RegisterPage = QWidget()
@@ -202,7 +213,7 @@ class Ui_MainWindow(object):
         self.label_3.setFont(font)
         self.frame = QFrame(self.RegisterPage)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(10, 160, 371, 311))
+        self.frame.setGeometry(QRect(10, 150, 391, 351))
         self.frame.setStyleSheet(u"*{\n"
 "\n"
 "}")
@@ -237,14 +248,14 @@ class Ui_MainWindow(object):
         self.lineEdit_6.setEchoMode(QLineEdit.Normal)
         self.lineEdit = QLineEdit(self.frame)
         self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(9, 17, 130, 27))
-        self.lineEdit.setMinimumSize(QSize(130, 27))
+        self.lineEdit.setGeometry(QRect(9, 17, 170, 27))
+        self.lineEdit.setMinimumSize(QSize(170, 27))
         self.lineEdit.setMaximumSize(QSize(130, 27))
         self.lineEdit.setFont(font)
         self.lineEdit_4 = QLineEdit(self.frame)
         self.lineEdit_4.setObjectName(u"lineEdit_4")
-        self.lineEdit_4.setGeometry(QRect(210, 17, 130, 27))
-        self.lineEdit_4.setMinimumSize(QSize(130, 27))
+        self.lineEdit_4.setGeometry(QRect(210, 17, 170, 27))
+        self.lineEdit_4.setMinimumSize(QSize(170, 27))
         self.lineEdit_4.setMaximumSize(QSize(130, 27))
         self.lineEdit_4.setFont(font)
         self.label_4 = QLabel(self.frame)
@@ -253,28 +264,49 @@ class Ui_MainWindow(object):
         self.label_4.setFont(font)
         self.dateEdit = QDateEdit(self.frame)
         self.dateEdit.setObjectName(u"dateEdit")
-        self.dateEdit.setGeometry(QRect(228, 222, 121, 26))
+        self.dateEdit.setGeometry(QRect(248, 222, 121, 26))
         self.label_5 = QLabel(self.frame)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(10, 272, 195, 16))
+        self.label_5.setGeometry(QRect(10, 270, 195, 16))
         self.label_5.setFont(font)
+        self.radioButton_Dr = QRadioButton(self.frame)
+        self.radioButton_Dr.setObjectName(u"radioButton_Dr")
+        self.radioButton_Dr.setGeometry(QRect(20, 292, 82, 17))
+        self.radioButton_pharm = QRadioButton(self.frame)
+        self.radioButton_pharm.setObjectName(u"radioButton_pharm")
+        self.radioButton_pharm.setGeometry(QRect(110, 292, 82, 17))
         self.comboBox = QComboBox(self.frame)
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setGeometry(QRect(227, 270, 121, 26))
+        self.comboBox.setGeometry(QRect(240, 290, 121, 21))
+        font4 = QFont()
+        font4.setPointSize(8)
+        self.comboBox.setFont(font4)
         self.pushButton = QPushButton(self.RegisterPage)
         self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(130, 476, 125, 28))
+        self.pushButton.setGeometry(QRect(130, 523, 125, 28))
         self.pushButton.setMinimumSize(QSize(125, 28))
         self.pushButton.setMaximumSize(QSize(125, 28))
         self.pushButton.setFont(font3)
         self.pushButton_2 = QPushButton(self.RegisterPage)
         self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(110, 520, 160, 25))
+        self.pushButton_2.setGeometry(QRect(110, 566, 160, 25))
         self.pushButton_2.setMinimumSize(QSize(160, 25))
         self.pushButton_2.setMaximumSize(QSize(160, 25))
         self.pushButton_2.setFont(font2)
+        self.ErrorMessage = QLabel(self.RegisterPage)
+        self.ErrorMessage.setObjectName(u"ErrorMessage")
+        self.ErrorMessage.setGeometry(QRect(60, 490, 271, 20))
+        self.ErrorMessage.setWordWrap(True)
         self.stackedWidget.addWidget(self.RegisterPage)
 
         self.verticalLayout_4.addWidget(self.stackedWidget, 0, Qt.AlignHCenter)
@@ -288,7 +320,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 885, 22))
+        self.menubar.setGeometry(QRect(0, 0, 884, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -296,7 +328,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -311,6 +343,7 @@ class Ui_MainWindow(object):
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Enter you Informatoin below", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Not Registarard ? Register ", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Login", None))
+        self.ErrorMessage_2.setText("")
         self.label.setText("")
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Sign Up", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Enter you Informatoin below", None))
@@ -322,10 +355,27 @@ class Ui_MainWindow(object):
         self.lineEdit_4.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Last name", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Date of birth : mm/dd/yyyy", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Are you a doctor or a pharmacist?", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Doctor", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Pharmacist", None))
+        self.radioButton_Dr.setText(QCoreApplication.translate("MainWindow", u"Doctor", None))
+        self.radioButton_pharm.setText(QCoreApplication.translate("MainWindow", u"Pharmacist", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Hepatology\n"
+"", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Neurology\n"
+"", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Obstetrics and Gynecology", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"Internal Medicine\n"
+"", None))
+        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"Orthopedics\n"
+"", None))
+        self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"Pediatrics\n"
+"", None))
+        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"Urology", None))
+        self.comboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"Gastroenterology\n"
+"", None))
+        self.comboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"Ophthalmology", None))
+        self.comboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"ENT (Ear, Nose, and Throat)", None))
 
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Register", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Already Registarard ? Login", None))
+        self.ErrorMessage.setText("")
     # retranslateUi
 

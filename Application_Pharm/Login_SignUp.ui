@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>885</width>
+    <width>884</width>
     <height>741</height>
    </rect>
   </property>
@@ -48,13 +48,18 @@ color:#ffff;
 #lineEdit , #lineEdit_2 , #lineEdit_3 , #lineEdit_4 , #lineEdit_5 , #lineEdit_6 , #dateEdit , #comboBox , #lineEdit_7 , #lineEdit_8
 {
    background-color :rgb(200, 200, 200); 
-	padding : 5px 3px;
+	padding : 4px 2px;
     border-radius :5px;
 
 }
 #pushButton , #pushButton_4 {
 background-color : rgb(20, 180, 196);
     border-radius: 7px;
+}
+#ErrorMessage , #ErrorMessage_2 {
+	color: red;
+    display: inline-block;
+    text-align: center;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -78,14 +83,14 @@ background-color : rgb(20, 180, 196);
         <widget class="QWidget" name="Login" native="true">
          <property name="minimumSize">
           <size>
-           <width>400</width>
-           <height>580</height>
+           <width>420</width>
+           <height>620</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>400</width>
-           <height>580</height>
+           <width>420</width>
+           <height>620</height>
           </size>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -99,12 +104,12 @@ background-color : rgb(20, 180, 196);
             </property>
             <property name="maximumSize">
              <size>
-              <width>400</width>
+              <width>420</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="LoginPage">
              <layout class="QGridLayout" name="gridLayout_2">
@@ -290,7 +295,7 @@ background-color : rgb(20, 180, 196);
                 </property>
                </spacer>
               </item>
-              <item row="2" column="1">
+              <item row="2" column="0" colspan="3">
                <widget class="QFrame" name="frame_3">
                 <property name="minimumSize">
                  <size>
@@ -307,8 +312,8 @@ background-color : rgb(20, 180, 196);
                 <widget class="QPushButton" name="pushButton_3">
                  <property name="geometry">
                   <rect>
-                   <x>19</x>
-                   <y>109</y>
+                   <x>103</x>
+                   <y>131</y>
                    <width>170</width>
                    <height>25</height>
                   </rect>
@@ -338,16 +343,16 @@ background-color : rgb(20, 180, 196);
                 <widget class="QPushButton" name="pushButton_4">
                  <property name="geometry">
                   <rect>
-                   <x>40</x>
-                   <y>40</y>
-                   <width>125</width>
-                   <height>28</height>
+                   <x>120</x>
+                   <y>70</y>
+                   <width>135</width>
+                   <height>30</height>
                   </rect>
                  </property>
                  <property name="minimumSize">
                   <size>
-                   <width>125</width>
-                   <height>28</height>
+                   <width>135</width>
+                   <height>30</height>
                   </size>
                  </property>
                  <property name="maximumSize">
@@ -368,6 +373,22 @@ background-color : rgb(20, 180, 196);
                  </property>
                  <property name="text">
                   <string>Login</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="ErrorMessage_2">
+                 <property name="geometry">
+                  <rect>
+                   <x>50</x>
+                   <y>22</y>
+                   <width>271</width>
+                   <height>20</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
                  </property>
                 </widget>
                </widget>
@@ -454,9 +475,9 @@ background-color : rgb(20, 180, 196);
               <property name="geometry">
                <rect>
                 <x>10</x>
-                <y>160</y>
-                <width>371</width>
-                <height>311</height>
+                <y>150</y>
+                <width>391</width>
+                <height>351</height>
                </rect>
               </property>
               <property name="styleSheet">
@@ -604,13 +625,13 @@ background-color : rgb(20, 180, 196);
                 <rect>
                  <x>9</x>
                  <y>17</y>
-                 <width>130</width>
+                 <width>170</width>
                  <height>27</height>
                 </rect>
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>130</width>
+                 <width>170</width>
                  <height>27</height>
                 </size>
                </property>
@@ -634,13 +655,13 @@ background-color : rgb(20, 180, 196);
                 <rect>
                  <x>210</x>
                  <y>17</y>
-                 <width>130</width>
+                 <width>170</width>
                  <height>27</height>
                 </rect>
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>130</width>
+                 <width>170</width>
                  <height>27</height>
                 </size>
                </property>
@@ -680,7 +701,7 @@ background-color : rgb(20, 180, 196);
               <widget class="QDateEdit" name="dateEdit">
                <property name="geometry">
                 <rect>
-                 <x>228</x>
+                 <x>248</x>
                  <y>222</y>
                  <width>121</width>
                  <height>26</height>
@@ -691,7 +712,7 @@ background-color : rgb(20, 180, 196);
                <property name="geometry">
                 <rect>
                  <x>10</x>
-                 <y>272</y>
+                 <y>270</y>
                  <width>195</width>
                  <height>16</height>
                 </rect>
@@ -705,23 +726,100 @@ background-color : rgb(20, 180, 196);
                 <string>Are you a doctor or a pharmacist?</string>
                </property>
               </widget>
+              <widget class="QRadioButton" name="radioButton_Dr">
+               <property name="geometry">
+                <rect>
+                 <x>20</x>
+                 <y>292</y>
+                 <width>82</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Doctor</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="radioButton_pharm">
+               <property name="geometry">
+                <rect>
+                 <x>110</x>
+                 <y>292</y>
+                 <width>82</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Pharmacist</string>
+               </property>
+              </widget>
               <widget class="QComboBox" name="comboBox">
                <property name="geometry">
                 <rect>
-                 <x>227</x>
-                 <y>270</y>
+                 <x>240</x>
+                 <y>290</y>
                  <width>121</width>
-                 <height>26</height>
+                 <height>21</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
                </property>
                <item>
                 <property name="text">
-                 <string>Doctor</string>
+                 <string>Hepatology
+</string>
                 </property>
                </item>
                <item>
                 <property name="text">
-                 <string>Pharmacist</string>
+                 <string>Neurology
+</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Obstetrics and Gynecology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Internal Medicine
+</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Orthopedics
+</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Pediatrics
+</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Urology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Gastroenterology
+</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Ophthalmology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>ENT (Ear, Nose, and Throat)</string>
                 </property>
                </item>
               </widget>
@@ -730,7 +828,7 @@ background-color : rgb(20, 180, 196);
               <property name="geometry">
                <rect>
                 <x>130</x>
-                <y>476</y>
+                <y>523</y>
                 <width>125</width>
                 <height>28</height>
                </rect>
@@ -765,7 +863,7 @@ background-color : rgb(20, 180, 196);
               <property name="geometry">
                <rect>
                 <x>110</x>
-                <y>520</y>
+                <y>566</y>
                 <width>160</width>
                 <height>25</height>
                </rect>
@@ -792,6 +890,22 @@ background-color : rgb(20, 180, 196);
                <string>Already Registarard ? Login</string>
               </property>
              </widget>
+             <widget class="QLabel" name="ErrorMessage">
+              <property name="geometry">
+               <rect>
+                <x>60</x>
+                <y>490</y>
+                <width>271</width>
+                <height>20</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
             </widget>
            </widget>
           </item>
@@ -808,7 +922,7 @@ background-color : rgb(20, 180, 196);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>885</width>
+     <width>884</width>
      <height>22</height>
     </rect>
    </property>
