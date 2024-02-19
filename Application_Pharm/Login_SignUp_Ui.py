@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QFrame,
     QWidget)
 import resFile_rc
 
-class Ui_MainWindow(object):
+class Signup_Login(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")

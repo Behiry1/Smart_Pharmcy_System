@@ -1,12 +1,14 @@
 import sys
+import re
 from PySide6.QtWidgets import QApplication, QMainWindow
-from Login_SignUp_Ui import Ui_MainWindow
+from Login_SignUp_Ui import Signup_Login
+from MainWindow import Ui_MainWindow
 from Datbase_Setting import *
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
-        self.ui = Ui_MainWindow()
+        self.ui = Signup_Login()
         self.ui.setupUi(self)
         self.show()
         self.ui.comboBox.hide()
@@ -29,6 +31,7 @@ class MainWindow(QMainWindow):
     def Register(self):
         email = self.ui.lineEdit_5.text().strip()
         password = self.ui.lineEdit_2.text().strip()
+        confirm_password = self.ui.lineEdit_3.text().strip()
         first_name = self.ui.lineEdit.text().strip()
         last_name = self.ui.lineEdit_4.text().strip()
         phone_number = self.ui.lineEdit_6.text().strip()
@@ -38,10 +41,29 @@ class MainWindow(QMainWindow):
             show_registration_error(self.ui, "Please fill in all fields.")
             return
 
+        if not self.validate_password(password):
+            show_registration_error(self.ui, "Password must be at least 8 characters.")
+            return
+
+        if not self.validate_phoneNumber(phone_number):
+            show_registration_error(self.ui, "Please enter a valid number.")
+            return
+
+        if not self.validate_email(email):
+            show_registration_error(self.ui, "Invalid email address.")
+            return
+
+        if not self.validate_passwords(password,confirm_password):
+            show_registration_error(self.ui, "Passwords do not match")
+            return
+
         if self.ui.radioButton_Dr.isChecked():
             doctor_register(self.ui, email, password, first_name, last_name, phone_number, department)
         elif self.ui.radioButton_pharm.isChecked():
             pharmacist_register(self.ui, email, password, first_name, last_name, phone_number)
+        else:
+            show_registration_error(self.ui,"Please select your identity.")
+
 
     def Login(self):
         email = self.ui.lineEdit_7.text().strip()
@@ -58,6 +80,26 @@ class MainWindow(QMainWindow):
 
     def HideDepartement(self):
         self.ui.comboBox.hide()
+
+    def validate_email(self,email):
+        email_regex = r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+        return re.match(email_regex, email) is not None
+
+    def validate_password(self,password):
+       return len(password) >= 8
+
+    def validate_passwords(self,password, confirm_password):
+        if password != confirm_password:
+            return False
+        else:
+            return True
+
+    def validate_phoneNumber(self, phoneNumber):
+        if len(phoneNumber) != 11:
+            return False
+        if not phoneNumber.isdigit():
+            return False
+        return True
 
 def StartApplication():
     app = QApplication(sys.argv)

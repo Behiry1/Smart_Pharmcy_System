@@ -26,8 +26,8 @@ def clear_errors(ui):
     ui.ErrorMessage_2.setText("")
 
 def doctor_register(ui, email, password, first_name, last_name, phone_number, department):
+
     table_name = "Doctor_Info"
-    table_d = "Dr"
 
     try:
         connection = mysql.connector.connect(
@@ -37,37 +37,39 @@ def doctor_register(ui, email, password, first_name, last_name, phone_number, de
             database="smart_pharmacy",
             password="Ahlynumber1#"
         )
+
         if connection.is_connected():
             print("Connected to MySQL database")
 
-            cursor = connection.cursor()
-
-            cursor.execute("SELECT * FROM {} WHERE {}_Email = %s".format(table_name, table_d), (email,))
+            cursor = connection.cursor(prepared=True)
+            check_query = "SELECT * FROM {} WHERE {}_Email = %s".format(table_name, "Dr")
+            cursor.execute(check_query, (email,))
             existing_user = cursor.fetchone()
+
             if existing_user:
                 show_registration_error(ui, "Email already exists. Please use a different email.")
             else:
-                cursor.execute("SELECT COUNT(*) AS total_count FROM doctor_info;")
-                reslut = cursor.fetchone()
-                count = reslut[0]
-                id =  int(count)+1
-                cursor.execute(
-                    "INSERT INTO {} ({}_ID,{}_FirstName, {}_LastName, {}_Email, {}_Password, {}_phoneNumber, {}_Department) VALUES (%s,%s,%s,%s, %s, %s, %s, %s)".format(
-                        table_name, table_d ,table_d, table_d, table_d, table_d,table_d,table_d),
-                    (id,first_name, last_name, email, password, phone_number, department))
+                # Insert doctor information using prepared statement
+                insert_query = ("INSERT INTO Doctor_Info (Dr_FirstName, Dr_LastName, Dr_Email, Dr_Password, Dr_phoneNumber, Dr_Department) "
+                                "VALUES (%s, %s, %s, %s, %s, %s)")
+                insert_values = (first_name, last_name, email, password, int(phone_number), department)
+                cursor.execute(insert_query, insert_values)
                 connection.commit()
+
                 show_registration_success(ui, "Registration successful.")
+
     except mysql.connector.Error as e:
         print("Error connecting to MySQL database:", e)
         show_registration_error(ui, "Failed to connect to the database.")
+
     finally:
-        if 'connection' in locals() and connection.is_connected():
+        if connection:
             connection.close()
             print("MySQL connection closed")
 
 def pharmacist_register(ui, email, password, first_name, last_name, phone_number):
+
     table_name = "Pharmacist_Info"
-    table_d = "Pharm"
 
     try:
         connection = mysql.connector.connect(
@@ -77,33 +79,36 @@ def pharmacist_register(ui, email, password, first_name, last_name, phone_number
             database="smart_pharmacy",
             password="Ahlynumber1#"
         )
+
         if connection.is_connected():
             print("Connected to MySQL database")
 
-            cursor = connection.cursor()
+            cursor = connection.cursor(prepared=True)  # Use prepared statements
 
-            cursor.execute("SELECT * FROM {} WHERE {}_Email = %s".format(table_name, table_d), (email,))
+            # Check for existing email (using prepared statement)
+            check_query = "SELECT * FROM {} WHERE {}_Email = %s".format(table_name, "Pharm")
+            cursor.execute(check_query, (email,))
             existing_user = cursor.fetchone()
+
             if existing_user:
                 show_registration_error(ui, "Email already exists. Please use a different email.")
             else:
-                cursor.execute("SELECT COUNT(*) FROM pharmacist_info;")
-                count = cursor.fetchone()[0]
-                id = count + 1
-                insert_query = "INSERT INTO {} ({}_ID, {}_FirstName, {}_LastName, {}_Email, {}_Password, {}_phoneNumber) VALUES (NULL, %s, %s, %s, %s, %s, %s)".format(
-                    table_name, table_d, table_d, table_d, table_d, table_d, table_d)
-                insert_values = (first_name, last_name, email, password, phone_number)
+                insert_query = ("INSERT INTO Pharmacist_Info (Pharm_FirstName, Pharm_LastName,Pharm_Email, Pharm_Password, Pharm_phoneNumber) "
+                                "VALUES (%s, %s, %s, %s, %s)")
+                insert_values = (first_name, last_name, email, password, int(phone_number))
                 cursor.execute(insert_query, insert_values)
                 connection.commit()
+
                 show_registration_success(ui, "Registration successful.")
+
     except mysql.connector.Error as e:
         print("Error connecting to MySQL database:", e)
         show_registration_error(ui, "Failed to connect to the database.")
+
     finally:
-        if 'connection' in locals() and connection.is_connected():
+        if connection:
             connection.close()
             print("MySQL connection closed")
-
 
 def login_user(ui, email, password):
     # Connect to the database
