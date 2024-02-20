@@ -1,14 +1,13 @@
 import sys
 import re
 from PySide6.QtWidgets import QApplication, QMainWindow
-from Login_SignUp_Ui import Signup_Login
-from MainWindow import Ui_MainWindow
+from Final_Main_ui import Ui_MainWindow
 from Datbase_Setting import *
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
-        self.ui = Signup_Login()
+        self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.show()
         self.ui.comboBox.hide()
@@ -22,12 +21,15 @@ class MainWindow(QMainWindow):
 
     def GoReg(self):
         clear_errors(self.ui)
-        self.ui.stackedWidget.setCurrentWidget(self.ui.RegisterPage)
+        self.ui.stackedWidget_2.setCurrentWidget(self.ui.RegisterPage)
 
     def GoLog(self):
         clear_errors(self.ui)
-        self.ui.stackedWidget.setCurrentWidget(self.ui.LoginPage)
+        self.ui.stackedWidget_2.setCurrentWidget(self.ui.LoginPage)
 
+    def GoMain(self):
+        clear_errors(self.ui)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.Main_page)
     def Register(self):
         email = self.ui.lineEdit_5.text().strip()
         password = self.ui.lineEdit_2.text().strip()
@@ -63,6 +65,8 @@ class MainWindow(QMainWindow):
             pharmacist_register(self.ui, email, password, first_name, last_name, phone_number)
         else:
             show_registration_error(self.ui,"Please select your identity.")
+        self.GoLog()
+
 
 
     def Login(self):
@@ -74,6 +78,8 @@ class MainWindow(QMainWindow):
             return
 
         login_user(self.ui, email, password)
+        self.GoMain()
+
 
     def ShowDepartement(self):
         self.ui.comboBox.show()
