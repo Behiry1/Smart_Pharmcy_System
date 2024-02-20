@@ -1,25 +1,26 @@
 from PySide6.QtCore import QTimer
 import mysql.connector
+import time
+from Application_Setting import *
 
 def show_registration_error(ui, message):
     ui.ErrorMessage.setText(message)
     ui.ErrorMessage.setStyleSheet("color: red;")
     QTimer.singleShot(5000, lambda: clear_errors(ui))
-
 def show_registration_success(ui, message):
     ui.ErrorMessage.setText(message)
     ui.ErrorMessage.setStyleSheet("color: green;")
     QTimer.singleShot(5000, lambda: clear_errors(ui))
-
 def show_login_error(ui, message):
     ui.ErrorMessage_2.setText(message)
     ui.ErrorMessage_2.setStyleSheet("color: red;")
     QTimer.singleShot(5000, lambda: clear_errors(ui))
-
 def show_login_success(ui, message):
     ui.ErrorMessage_2.setText(message)
     ui.ErrorMessage_2.setStyleSheet("color: green;")
-    QTimer.singleShot(5000, lambda: clear_errors(ui))
+    QTimer.singleShot(5000,lambda: clear_errors(ui))
+
+
 
 def clear_errors(ui):
     ui.ErrorMessage.setText("")
@@ -57,6 +58,7 @@ def doctor_register(ui, email, password, first_name, last_name, phone_number, de
                 connection.commit()
 
                 show_registration_success(ui, "Registration successful.")
+                return True
 
     except mysql.connector.Error as e:
         print("Error connecting to MySQL database:", e)
@@ -99,7 +101,11 @@ def pharmacist_register(ui, email, password, first_name, last_name, phone_number
                 cursor.execute(insert_query, insert_values)
                 connection.commit()
 
+
                 show_registration_success(ui, "Registration successful.")
+                return True
+
+
 
     except mysql.connector.Error as e:
         print("Error connecting to MySQL database:", e)
@@ -111,6 +117,7 @@ def pharmacist_register(ui, email, password, first_name, last_name, phone_number
             print("MySQL connection closed")
 
 def login_user(ui, email, password):
+    succeeded_Fl = False
     # Connect to the database
     try:
         connection = mysql.connector.connect(
@@ -136,7 +143,10 @@ def login_user(ui, email, password):
             pharmacist_user = cursor.fetchone()
 
             if doctor_user or pharmacist_user:
-                show_login_success(ui, "Login successful.")
+                show_login_success(ui, "login successful.")
+                #time.sleep(1)
+                return True
+
             else:
                 show_login_error(ui, "Invalid email or password. Please try again.")
     except mysql.connector.Error as e:

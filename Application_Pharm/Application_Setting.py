@@ -1,8 +1,20 @@
 import sys
 import re
+import json
+
+from PySide6.QtCore import QPropertyAnimation, QFile, QEasingCurve
 from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtCore import Qt
+
+# Import QTimer
+from PySide6.QtCore import QTimer
+
+import time
+
+
 from Final_Main_ui import Ui_MainWindow
 from Datbase_Setting import *
+
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -11,6 +23,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.show()
         self.ui.comboBox.hide()
+        self.HideCenterMenuPages()
         self.ui.stackedWidget.setCurrentWidget(self.ui.LoginPage)
         self.ui.pushButton_3.clicked.connect(self.GoReg)
         self.ui.pushButton_2.clicked.connect(self.GoLog)
@@ -18,6 +31,14 @@ class MainWindow(QMainWindow):
         self.ui.pushButton.clicked.connect(self.Register)
         self.ui.radioButton_Dr.clicked.connect(self.ShowDepartement)
         self.ui.radioButton_pharm.clicked.connect(self.HideDepartement)
+        self.ui.menuBtn.clicked.connect(self.ShowCenterMenuPages)
+        self.ui.closeCenterMenuBtn.clicked.connect(self.HideCenterMenuPages)
+
+
+    def ShowCenterMenuPages(self):
+        self.ui.centerMenuSubContainer.show()
+    def HideCenterMenuPages(self):
+        self.ui.centerMenuSubContainer.hide()
 
     def GoReg(self):
         clear_errors(self.ui)
@@ -26,7 +47,6 @@ class MainWindow(QMainWindow):
     def GoLog(self):
         clear_errors(self.ui)
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.LoginPage)
-
     def GoMain(self):
         clear_errors(self.ui)
         self.ui.stackedWidget.setCurrentWidget(self.ui.Main_page)
@@ -60,13 +80,21 @@ class MainWindow(QMainWindow):
             return
 
         if self.ui.radioButton_Dr.isChecked():
-            doctor_register(self.ui, email, password, first_name, last_name, phone_number, department)
-        elif self.ui.radioButton_pharm.isChecked():
-            pharmacist_register(self.ui, email, password, first_name, last_name, phone_number)
-        else:
-            show_registration_error(self.ui,"Please select your identity.")
-        self.GoLog()
+           fl =  doctor_register(self.ui, email, password, first_name, last_name, phone_number, department)
+           if(fl == True):
 
+               QTimer.singleShot(500, self.GoLog)
+
+        elif self.ui.radioButton_pharm.isChecked():
+           fl =  pharmacist_register(self.ui, email, password, first_name, last_name, phone_number)
+
+           if(fl == True):
+
+               QTimer.singleShot(500, self.GoLog)
+
+        elif not self.ui.radioButton_Dr.isChecked() and not self.ui.radioButton_pharm.isChecked():
+
+            show_registration_error(self.ui,"Please select your identity.")
 
 
     def Login(self):
@@ -77,8 +105,16 @@ class MainWindow(QMainWindow):
             show_login_error(self.ui, "Please enter email and password.")
             return
 
-        login_user(self.ui, email, password)
-        self.GoMain()
+        fl = login_user(self.ui, email, password)
+
+        if(fl == True):
+
+
+            QTimer.singleShot(500, self.GoMain)
+
+
+
+
 
 
     def ShowDepartement(self):
@@ -111,4 +147,5 @@ def StartApplication():
     app = QApplication(sys.argv)
     mainWindow = MainWindow()
     sys.exit(app.exec())
+
 
