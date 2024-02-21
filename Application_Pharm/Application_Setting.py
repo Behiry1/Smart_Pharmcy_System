@@ -17,28 +17,53 @@ from Datbase_Setting import *
 
 
 class MainWindow(QMainWindow):
+
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
+        #show Ui pages
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.show()
-        self.ui.comboBox.hide()
-        self.HideCenterMenuPages()
-        self.ui.stackedWidget.setCurrentWidget(self.ui.LoginPage)
-        self.ui.pushButton_3.clicked.connect(self.GoReg)
+
+        #Sihnup_btns,funs
+        self.HideDepartement()
         self.ui.pushButton_2.clicked.connect(self.GoLog)
-        self.ui.pushButton_4.clicked.connect(self.Login)
-        self.ui.pushButton.clicked.connect(self.Register)
         self.ui.radioButton_Dr.clicked.connect(self.ShowDepartement)
         self.ui.radioButton_pharm.clicked.connect(self.HideDepartement)
-        self.ui.menuBtn.clicked.connect(self.ShowCenterMenuPages)
-        self.ui.closeCenterMenuBtn.clicked.connect(self.HideCenterMenuPages)
+        self.ui.pushButton.clicked.connect(self.Register)
+
+        #Login_btns,funs
+        self.ui.stackedWidget.setCurrentWidget(self.ui.LoginPage)
+        self.ui.pushButton_3.clicked.connect(self.GoReg)
+        self.ui.pushButton_4.clicked.connect(self.Login)
+
+        #dr_MainPage_btns,funs
+        self.ui.centerMenuContatiner.hide()
+        self.ui.menuBtn.clicked.connect(self.CenterMenuPages)
+        self.menuBtn_Flag = True
+
+        self.ui.popupNotificationSubContainer.hide()
+        self.ui.notificationBtn.clicked.connect(self.Notification)
+        self.notificationBtn_Flag = True
 
 
-    def ShowCenterMenuPages(self):
-        self.ui.centerMenuSubContainer.show()
-    def HideCenterMenuPages(self):
-        self.ui.centerMenuSubContainer.hide()
+
+
+
+
+    def CenterMenuPages(self):
+        if self.menuBtn_Flag:
+            self.ui.centerMenuContatiner.show()
+        else:
+            self.ui.centerMenuContatiner.hide()
+        self.menuBtn_Flag = not self.menuBtn_Flag
+
+    def Notification(self):
+        if self.notificationBtn_Flag:
+            self.ui.popupNotificationSubContainer.show()
+        else:
+            self.ui.popupNotificationSubContainer.hide()
+        self.notificationBtn_Flag = not self.notificationBtn_Flag
 
     def GoReg(self):
         clear_errors(self.ui)
