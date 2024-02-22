@@ -16,6 +16,10 @@ from Final_Main_ui import Ui_MainWindow
 from Datbase_Setting import *
 
 
+#toggle
+# background-color:transparent
+# background-color: rgb(18, 163, 176)
+
 class MainWindow(QMainWindow):
 
     def __init__(self, parent=None):
