@@ -35,8 +35,12 @@ def doctor_register(ui, email, password, first_name, last_name, phone_number, de
             host="127.0.1.1",
             port="3306",
             user="root",
-            database="smart_pharmacy",
-            password="Ahlynumber1#"
+            #zakaria
+            database="pharmacy_system",
+            password="RootPass24@"
+            #behiry
+            # database="smart_pharmacy",
+            # password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -78,8 +82,12 @@ def pharmacist_register(ui, email, password, first_name, last_name, phone_number
             host="127.0.1.1",
             port="3306",
             user="root",
-            database="smart_pharmacy",
-            password="Ahlynumber1#"
+            #zakaria
+            database="pharmacy_system",
+            password="RootPass24@"
+            #behiry
+            # database="smart_pharmacy",
+            # password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -124,8 +132,12 @@ def login_user(ui, email, password):
             host="127.0.1.1",
             port="3306",
             user="root",
-            database="smart_pharmacy",
-            password="Ahlynumber1#"
+            #zakaria
+            database="pharmacy_system",
+            password="RootPass24@"
+            #behiry
+            # database="smart_pharmacy",
+            # password="Ahlynumber1#"
         )
         if connection.is_connected():
             print("Connected to MySQL database")

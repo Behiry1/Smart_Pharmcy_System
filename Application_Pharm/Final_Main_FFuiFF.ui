@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1341</width>
-    <height>720</height>
+    <width>895</width>
+    <height>698</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -57,7 +57,7 @@
           <number>0</number>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="Login_SignUp_Page">
           <property name="styleSheet">
@@ -214,7 +214,7 @@ background-color:rgb(18, 163, 200);
                               </font>
                              </property>
                              <property name="placeholderText">
-                              <string>Email@exampl.com</string>
+                              <string>Email@example.com</string>
                              </property>
                             </widget>
                            </item>
@@ -302,6 +302,7 @@ background-color:rgb(18, 163, 200);
                            <property name="font">
                             <font>
                              <pointsize>18</pointsize>
+                             <weight>75</weight>
                              <bold>true</bold>
                             </font>
                            </property>
@@ -318,9 +319,9 @@ background-color:rgb(18, 163, 200);
                           <widget class="QLabel" name="label_11">
                            <property name="geometry">
                             <rect>
-                             <x>35</x>
+                             <x>15</x>
                              <y>170</y>
-                             <width>171</width>
+                             <width>201</width>
                              <height>20</height>
                             </rect>
                            </property>
@@ -330,7 +331,7 @@ background-color:rgb(18, 163, 200);
                             </font>
                            </property>
                            <property name="text">
-                            <string>Enter you Informatoin below</string>
+                            <string>Welcome To Smart Pharmacy App</string>
                            </property>
                           </widget>
                          </widget>
@@ -390,7 +391,7 @@ background-color:rgb(18, 163, 200);
                             </font>
                            </property>
                            <property name="text">
-                            <string>Not Registarard ? Register </string>
+                            <string>Not Registerd ? Register </string>
                            </property>
                           </widget>
                           <widget class="QPushButton" name="pushButton_4">
@@ -417,6 +418,7 @@ background-color:rgb(18, 163, 200);
                            <property name="font">
                             <font>
                              <pointsize>13</pointsize>
+                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                              <strikeout>false</strikeout>
@@ -498,6 +500,7 @@ background-color:rgb(18, 163, 200);
                          <property name="font">
                           <font>
                            <pointsize>18</pointsize>
+                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -520,7 +523,7 @@ background-color:rgb(18, 163, 200);
                           </font>
                          </property>
                          <property name="text">
-                          <string>Enter you Informatoin below</string>
+                          <string>Enter you Information below</string>
                          </property>
                         </widget>
                        </widget>
@@ -637,7 +640,7 @@ background-color:rgb(18, 163, 200);
                           </font>
                          </property>
                          <property name="placeholderText">
-                          <string>Email@exampl.com</string>
+                          <string>Email@example.com</string>
                          </property>
                         </widget>
                         <widget class="QLineEdit" name="lineEdit_6">
@@ -901,6 +904,7 @@ background-color:rgb(18, 163, 200);
                         <property name="font">
                          <font>
                           <pointsize>13</pointsize>
+                          <weight>50</weight>
                           <italic>false</italic>
                           <bold>false</bold>
                           <strikeout>false</strikeout>
@@ -975,9 +979,44 @@ background-color:rgb(18, 163, 200);
          </widget>
          <widget class="QWidget" name="Main_page">
           <property name="styleSheet">
-           <string notr="true">#frame_4 
-{
-background-color : rgb(255, 255, 255) ;
+           <string notr="true">*{
+border: none;
+background-color: transparent;
+background: transparent;
+padding: 0;
+margin: 0;
+color: #fff;
+}
+#centralwidget {
+background-color: #064666;
+}
+#leftMenuSubContainer{
+background-color: #064666;
+}
+#leftMenuSubContainer QPushButton{
+text-align: left;
+padding : 5px 10px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+#centerMenuSubContainer,#rightMenuSubContainer{
+background-color: #064666;
+}
+#popupNotificationSubContainer {
+background-color: #064666;
+border-radius:10px ;
+}
+#headerContainer,#footerContainer{
+background-color: #064666;
+}
+
+#frame_4 , #frame_8 {
+background-color: #ffff;
+border-radius:10px ;
+}
+
+#leftMenuContainer {
+padding-top: 20px;
 }</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1017,6 +1056,9 @@ background-color : rgb(255, 255, 255) ;
               <property name="bottomMargin">
                <number>0</number>
               </property>
+              <property name="spacing">
+               <number>0</number>
+              </property>
               <item row="0" column="2">
                <widget class="QWidget" name="mainbodyContainer" native="true">
                 <property name="sizePolicy">
@@ -1051,7 +1093,7 @@ background-color : rgb(255, 255, 255) ;
 QPushButton {
     background-color:transparent; /* Default background color */
     color: black; /* Text color */
- 	border: 1px solid black ;
+ 	border: 1px solid transparent ;
     padding: 1px 2px; /* Padding */
     border-radius: 5px; /* Border radius */
 }
@@ -1068,7 +1110,9 @@ QFrame {
      /* No border */
 	padding : 2px;
 }
-</string>
+*{
+background-color : #02202f;
+}</string>
                    </property>
                    <layout class="QGridLayout" name="gridLayout_6">
                     <property name="leftMargin">
@@ -1083,15 +1127,15 @@ QFrame {
                     <property name="bottomMargin">
                      <number>5</number>
                     </property>
-                    <item row="0" column="0">
-                     <widget class="QFrame" name="frame_9">
+                    <item row="0" column="4">
+                     <widget class="QFrame" name="frame_11">
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_7">
+                      <layout class="QHBoxLayout" name="horizontalLayout_4">
                        <property name="spacing">
                         <number>6</number>
                        </property>
@@ -1107,42 +1151,10 @@ QFrame {
                        <property name="bottomMargin">
                         <number>0</number>
                        </property>
-                       <item>
-                        <widget class="QLabel" name="label_13">
-                         <property name="maximumSize">
-                          <size>
-                           <width>40</width>
-                           <height>40</height>
-                          </size>
-                         </property>
-                         <property name="text">
-                          <string/>
-                         </property>
-                         <property name="pixmap">
-                          <pixmap>:/icon/Image/icons/pharmacy.png</pixmap>
-                         </property>
-                         <property name="scaledContents">
-                          <bool>true</bool>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_14">
-                         <property name="font">
-                          <font>
-                           <pointsize>11</pointsize>
-                           <bold>true</bold>
-                          </font>
-                         </property>
-                         <property name="text">
-                          <string>Smart Pharmacy</string>
-                         </property>
-                        </widget>
-                       </item>
                       </layout>
                      </widget>
                     </item>
-                    <item row="0" column="1">
+                    <item row="0" column="2">
                      <widget class="QFrame" name="frame_10">
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
@@ -1226,15 +1238,18 @@ QFrame {
                       </layout>
                      </widget>
                     </item>
-                    <item row="0" column="3">
-                     <widget class="QFrame" name="frame_11">
+                    <item row="0" column="0">
+                     <widget class="QFrame" name="frame_9">
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_4">
+                      <layout class="QHBoxLayout" name="horizontalLayout_7">
                        <property name="spacing">
                         <number>6</number>
                        </property>
@@ -1250,10 +1265,43 @@ QFrame {
                        <property name="bottomMargin">
                         <number>0</number>
                        </property>
+                       <item>
+                        <widget class="QLabel" name="label_13">
+                         <property name="maximumSize">
+                          <size>
+                           <width>40</width>
+                           <height>40</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="pixmap">
+                          <pixmap resource="Final_Main_ph.qrc">:/Icon_custom/Image_for_main/icon_custom/pharmacy.png</pixmap>
+                         </property>
+                         <property name="scaledContents">
+                          <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_14">
+                         <property name="font">
+                          <font>
+                           <pointsize>11</pointsize>
+                           <weight>75</weight>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Smart Pharmacy</string>
+                         </property>
+                        </widget>
+                       </item>
                       </layout>
                      </widget>
                     </item>
-                    <item row="0" column="2">
+                    <item row="0" column="1">
                      <spacer name="horizontalSpacer_3">
                       <property name="orientation">
                        <enum>Qt::Horizontal</enum>
@@ -1292,7 +1340,7 @@ QFrame {
                          <property name="styleSheet">
                           <string notr="true">QWidget#Search_Par {
     background-color: white;
-    border: 1px solid rgb(18, 163, 176);
+    border: 1px solid rgb(28, 171, 213);;
     border-radius: 10px;
 }
 
@@ -1309,7 +1357,7 @@ QLineEdit#lineEdit_9 {
 }
 
 QPushButton#pushButton_23 {
-    background-color: rgb(18, 163, 176);
+    background-color: rgb(28, 171, 213);;
     color: white;
     border: none;
     border-top-right-radius: 5px;
@@ -1434,7 +1482,7 @@ QPushButton#pushButton_23:hover {
                                  <string notr="true">/* Styling for QScrollArea */
 QScrollArea {
     background-color: #f0f0f0; /* Background color */
-    border: 1px solid rgb(17, 180, 180); /* Border color */
+    border: 1px solid rgb(28, 171, 213); /* Border color */
     border-radius: 10px; /* Border radius */
     padding: 2px;
 }
@@ -1448,7 +1496,7 @@ QScrollBar:vertical {
 }
 
 QScrollBar::handle:vertical {
-    background: rgb(17, 180, 180); /* Color of the scrollbar handle */
+    background: rgb(28, 171, 213); /* Color of the scrollbar handle */
     border-radius: 5px; /* Handle border radius */
 }
 
@@ -1456,21 +1504,6 @@ QScrollBar::handle:vertical:hover {
     background: #bbb; /* Color of the scrollbar handle on hover */
 }
 
-QScrollBar::add-line:vertical {
-    border: none;
-    background: transparent;
-    height: 0px;
-    subcontrol-position: bottom;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::sub-line:vertical {
-    border: 2px;
-    background: transparent;
-    height: 0px;
-    subcontrol-position: top;
-    subcontrol-origin: margin;
-}
 
 /* Styling for QScrollBar arrows */
 QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
@@ -1487,8 +1520,8 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
 
 /* Styling for QFrame inside QScrollArea (cards) */
 QScrollArea QFrame {
-    background-color: #ffffff; /* Card background color */
-    border: 0px solid rgb(17, 180, 180); /* Card border color */
+    background-color: rgb(28, 171, 213); /* Updated card background color */
+    border: 1px solid rgb(28, 171, 213); /* Card border color */
     border-radius: 10px; /* Card border radius */
 }
 
@@ -1498,26 +1531,23 @@ QScrollArea QFrame QCheckBox {
 }
 
 QScrollArea QFrame QPushButton {
-    background-color:transparent ; /* Button background color */
-    color: #000000; /* Button text color */
-    border: 0.5px solid black ; /* No border */
+    background-color: transparent; /* Button background color */
+    color: #fff; /* Button text color */
+    border: 0.5px solid #064666; /* No border */
     border-radius: 5px; /* Button border radius */
 }
 
 /* Hover effect for QPushButton */
 QScrollArea QFrame QPushButton:hover {
-    background-color: rgb(255, 255, 255); /* Button background color on hover */
-    color: black; /* Button text color on hover */
+    background-color: #064666; /* Button background color on hover */
+    color: #ffff; /* Button text color on hover */
 }
 
 /* Styling for QLabel inside the Card */
 QScrollArea QFrame QLabel {
-    color: #000000; /* Label text color */
+    color: #ffff; /* Label text color */
     font-size: 12px; /* Font size */
 }
-
-
-
 </string>
                                 </property>
                                 <property name="widgetResizable">
@@ -1528,316 +1558,11 @@ QScrollArea QFrame QLabel {
                                   <rect>
                                    <x>0</x>
                                    <y>0</y>
-                                   <width>751</width>
-                                   <height>492</height>
+                                   <width>437</width>
+                                   <height>588</height>
                                   </rect>
                                  </property>
                                  <layout class="QGridLayout" name="gridLayout_8">
-                                  <item row="5" column="1">
-                                   <widget class="QFrame" name="Cared_13">
-                                    <property name="minimumSize">
-                                     <size>
-                                      <width>50</width>
-                                      <height>90</height>
-                                     </size>
-                                    </property>
-                                    <property name="autoFillBackground">
-                                     <bool>false</bool>
-                                    </property>
-                                    <property name="styleSheet">
-                                     <string notr="true">*{
-Background-color : rgb(17, 180, 180);
-}</string>
-                                    </property>
-                                    <property name="frameShape">
-                                     <enum>QFrame::StyledPanel</enum>
-                                    </property>
-                                    <property name="frameShadow">
-                                     <enum>QFrame::Raised</enum>
-                                    </property>
-                                    <layout class="QGridLayout" name="gridLayout_14">
-                                     <item row="0" column="2">
-                                      <widget class="QCheckBox" name="checkBox_13">
-                                       <property name="text">
-                                        <string>Add to Favoret</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="0" column="0">
-                                      <widget class="QCheckBox" name="checkBox_14">
-                                       <property name="text">
-                                        <string>Select </string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="3" column="2">
-                                      <widget class="QPushButton" name="pushButton_11">
-                                       <property name="minimumSize">
-                                        <size>
-                                         <width>20</width>
-                                         <height>20</height>
-                                        </size>
-                                       </property>
-                                       <property name="styleSheet">
-                                        <string notr="true"/>
-                                       </property>
-                                       <property name="text">
-                                        <string>ADD</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="2" column="1">
-                                      <widget class="QLabel" name="label_40">
-                                       <property name="text">
-                                        <string>TextLabel</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="3" column="1">
-                                      <widget class="QLabel" name="label_41">
-                                       <property name="text">
-                                        <string>TextLabel</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="1" column="1">
-                                      <widget class="QLabel" name="label_42">
-                                       <property name="text">
-                                        <string>TextLabel</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                    </layout>
-                                   </widget>
-                                  </item>
-                                  <item row="2" column="1">
-                                   <widget class="QFrame" name="Cared_11">
-                                    <property name="minimumSize">
-                                     <size>
-                                      <width>50</width>
-                                      <height>90</height>
-                                     </size>
-                                    </property>
-                                    <property name="autoFillBackground">
-                                     <bool>false</bool>
-                                    </property>
-                                    <property name="styleSheet">
-                                     <string notr="true">*{
-Background-color : rgb(17, 180, 180);
-}</string>
-                                    </property>
-                                    <property name="frameShape">
-                                     <enum>QFrame::StyledPanel</enum>
-                                    </property>
-                                    <property name="frameShadow">
-                                     <enum>QFrame::Raised</enum>
-                                    </property>
-                                    <layout class="QGridLayout" name="gridLayout_13">
-                                     <item row="0" column="2">
-                                      <widget class="QCheckBox" name="checkBox_9">
-                                       <property name="text">
-                                        <string>Add to Favoret</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="0" column="0">
-                                      <widget class="QCheckBox" name="checkBox_10">
-                                       <property name="text">
-                                        <string>Select </string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="3" column="2">
-                                      <widget class="QPushButton" name="pushButton_9">
-                                       <property name="minimumSize">
-                                        <size>
-                                         <width>20</width>
-                                         <height>20</height>
-                                        </size>
-                                       </property>
-                                       <property name="text">
-                                        <string>ADD</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="2" column="1">
-                                      <widget class="QLabel" name="label_34">
-                                       <property name="text">
-                                        <string>TextLabel</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="3" column="1">
-                                      <widget class="QLabel" name="label_35">
-                                       <property name="text">
-                                        <string>TextLabel</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="1" column="1">
-                                      <widget class="QLabel" name="label_36">
-                                       <property name="text">
-                                        <string>TextLabel</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                    </layout>
-                                   </widget>
-                                  </item>
-                                  <item row="1" column="2">
-                                   <widget class="QFrame" name="Cared_10">
-                                    <property name="minimumSize">
-                                     <size>
-                                      <width>50</width>
-                                      <height>90</height>
-                                     </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                     <size>
-                                      <width>16777215</width>
-                                      <height>16777215</height>
-                                     </size>
-                                    </property>
-                                    <property name="autoFillBackground">
-                                     <bool>false</bool>
-                                    </property>
-                                    <property name="styleSheet">
-                                     <string notr="true">*{
-Background-color : rgb(17, 180, 180);
-}</string>
-                                    </property>
-                                    <property name="frameShape">
-                                     <enum>QFrame::StyledPanel</enum>
-                                    </property>
-                                    <property name="frameShadow">
-                                     <enum>QFrame::Raised</enum>
-                                    </property>
-                                    <layout class="QGridLayout" name="gridLayout_12">
-                                     <item row="0" column="2">
-                                      <widget class="QCheckBox" name="checkBox_7">
-                                       <property name="text">
-                                        <string>Add to Favoret</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="0" column="0">
-                                      <widget class="QCheckBox" name="checkBox_8">
-                                       <property name="text">
-                                        <string>Select </string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="3" column="2">
-                                      <widget class="QPushButton" name="pushButton_8">
-                                       <property name="minimumSize">
-                                        <size>
-                                         <width>20</width>
-                                         <height>20</height>
-                                        </size>
-                                       </property>
-                                       <property name="text">
-                                        <string>ADD</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="2" column="1">
-                                      <widget class="QLabel" name="label_31">
-                                       <property name="text">
-                                        <string>TextLabel</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="3" column="1">
-                                      <widget class="QLabel" name="label_32">
-                                       <property name="text">
-                                        <string>TextLabel</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="1" column="1">
-                                      <widget class="QLabel" name="label_33">
-                                       <property name="text">
-                                        <string>TextLabel</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                    </layout>
-                                   </widget>
-                                  </item>
-                                  <item row="4" column="1">
-                                   <widget class="QFrame" name="Cared_14">
-                                    <property name="minimumSize">
-                                     <size>
-                                      <width>50</width>
-                                      <height>90</height>
-                                     </size>
-                                    </property>
-                                    <property name="autoFillBackground">
-                                     <bool>false</bool>
-                                    </property>
-                                    <property name="styleSheet">
-                                     <string notr="true">*{
-Background-color : rgb(17, 180, 180);
-}</string>
-                                    </property>
-                                    <property name="frameShape">
-                                     <enum>QFrame::StyledPanel</enum>
-                                    </property>
-                                    <property name="frameShadow">
-                                     <enum>QFrame::Raised</enum>
-                                    </property>
-                                    <layout class="QGridLayout" name="gridLayout_16">
-                                     <item row="0" column="2">
-                                      <widget class="QCheckBox" name="checkBox_15">
-                                       <property name="text">
-                                        <string>Add to Favoret</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="0" column="0">
-                                      <widget class="QCheckBox" name="checkBox_16">
-                                       <property name="text">
-                                        <string>Select </string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="3" column="2">
-                                      <widget class="QPushButton" name="pushButton_12">
-                                       <property name="minimumSize">
-                                        <size>
-                                         <width>20</width>
-                                         <height>20</height>
-                                        </size>
-                                       </property>
-                                       <property name="text">
-                                        <string>ADD</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="2" column="1">
-                                      <widget class="QLabel" name="label_43">
-                                       <property name="text">
-                                        <string>TextLabel</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="3" column="1">
-                                      <widget class="QLabel" name="label_44">
-                                       <property name="text">
-                                        <string>TextLabel</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item row="1" column="1">
-                                      <widget class="QLabel" name="label_45">
-                                       <property name="text">
-                                        <string>TextLabel</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                    </layout>
-                                   </widget>
-                                  </item>
                                   <item row="0" column="1">
                                    <widget class="QFrame" name="Cared_7">
                                     <property name="minimumSize">
@@ -1850,9 +1575,7 @@ Background-color : rgb(17, 180, 180);
                                      <bool>false</bool>
                                     </property>
                                     <property name="styleSheet">
-                                     <string notr="true">*{
-Background-color : rgb(17, 180, 180);
-}</string>
+                                     <string notr="true"/>
                                     </property>
                                     <property name="frameShape">
                                      <enum>QFrame::StyledPanel</enum>
@@ -1912,8 +1635,8 @@ Background-color : rgb(17, 180, 180);
                                     </layout>
                                    </widget>
                                   </item>
-                                  <item row="0" column="2">
-                                   <widget class="QFrame" name="Cared_8">
+                                  <item row="0" column="3">
+                                   <widget class="QFrame" name="Cared_12">
                                     <property name="minimumSize">
                                      <size>
                                       <width>50</width>
@@ -1924,9 +1647,7 @@ Background-color : rgb(17, 180, 180);
                                      <bool>false</bool>
                                     </property>
                                     <property name="styleSheet">
-                                     <string notr="true">*{
-Background-color : rgb(17, 180, 180);
-}</string>
+                                     <string notr="true"/>
                                     </property>
                                     <property name="frameShape">
                                      <enum>QFrame::StyledPanel</enum>
@@ -1934,23 +1655,16 @@ Background-color : rgb(17, 180, 180);
                                     <property name="frameShadow">
                                      <enum>QFrame::Raised</enum>
                                     </property>
-                                    <layout class="QGridLayout" name="gridLayout_10">
+                                    <layout class="QGridLayout" name="gridLayout_15">
                                      <item row="0" column="2">
-                                      <widget class="QCheckBox" name="checkBox_3">
+                                      <widget class="QCheckBox" name="checkBox_11">
                                        <property name="text">
                                         <string>Add to Favoret</string>
                                        </property>
                                       </widget>
                                      </item>
-                                     <item row="0" column="0">
-                                      <widget class="QCheckBox" name="checkBox_4">
-                                       <property name="text">
-                                        <string>Select </string>
-                                       </property>
-                                      </widget>
-                                     </item>
                                      <item row="3" column="2">
-                                      <widget class="QPushButton" name="pushButton_6">
+                                      <widget class="QPushButton" name="pushButton_10">
                                        <property name="minimumSize">
                                         <size>
                                          <width>20</width>
@@ -1963,23 +1677,249 @@ Background-color : rgb(17, 180, 180);
                                       </widget>
                                      </item>
                                      <item row="2" column="1">
-                                      <widget class="QLabel" name="label_25">
+                                      <widget class="QLabel" name="label_37">
                                        <property name="text">
                                         <string>TextLabel</string>
                                        </property>
                                       </widget>
                                      </item>
                                      <item row="3" column="1">
-                                      <widget class="QLabel" name="label_26">
+                                      <widget class="QLabel" name="label_38">
                                        <property name="text">
                                         <string>TextLabel</string>
                                        </property>
                                       </widget>
                                      </item>
                                      <item row="1" column="1">
-                                      <widget class="QLabel" name="label_27">
+                                      <widget class="QLabel" name="label_39">
                                        <property name="text">
                                         <string>TextLabel</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="0" column="0">
+                                      <widget class="QCheckBox" name="checkBox_12">
+                                       <property name="text">
+                                        <string>Select </string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                    </layout>
+                                   </widget>
+                                  </item>
+                                  <item row="4" column="1">
+                                   <widget class="QFrame" name="Cared_14">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>50</width>
+                                      <height>90</height>
+                                     </size>
+                                    </property>
+                                    <property name="autoFillBackground">
+                                     <bool>false</bool>
+                                    </property>
+                                    <property name="styleSheet">
+                                     <string notr="true"/>
+                                    </property>
+                                    <property name="frameShape">
+                                     <enum>QFrame::StyledPanel</enum>
+                                    </property>
+                                    <property name="frameShadow">
+                                     <enum>QFrame::Raised</enum>
+                                    </property>
+                                    <layout class="QGridLayout" name="gridLayout_16">
+                                     <item row="0" column="2">
+                                      <widget class="QCheckBox" name="checkBox_15">
+                                       <property name="text">
+                                        <string>Add to Favoret</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="0" column="0">
+                                      <widget class="QCheckBox" name="checkBox_16">
+                                       <property name="text">
+                                        <string>Select </string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="3" column="2">
+                                      <widget class="QPushButton" name="pushButton_12">
+                                       <property name="minimumSize">
+                                        <size>
+                                         <width>20</width>
+                                         <height>20</height>
+                                        </size>
+                                       </property>
+                                       <property name="text">
+                                        <string>ADD</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="2" column="1">
+                                      <widget class="QLabel" name="label_43">
+                                       <property name="text">
+                                        <string>TextLabel</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="3" column="1">
+                                      <widget class="QLabel" name="label_44">
+                                       <property name="text">
+                                        <string>TextLabel</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="1" column="1">
+                                      <widget class="QLabel" name="label_45">
+                                       <property name="text">
+                                        <string>TextLabel</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                    </layout>
+                                   </widget>
+                                  </item>
+                                  <item row="2" column="1">
+                                   <widget class="QFrame" name="Cared_11">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>50</width>
+                                      <height>90</height>
+                                     </size>
+                                    </property>
+                                    <property name="autoFillBackground">
+                                     <bool>false</bool>
+                                    </property>
+                                    <property name="styleSheet">
+                                     <string notr="true"/>
+                                    </property>
+                                    <property name="frameShape">
+                                     <enum>QFrame::StyledPanel</enum>
+                                    </property>
+                                    <property name="frameShadow">
+                                     <enum>QFrame::Raised</enum>
+                                    </property>
+                                    <layout class="QGridLayout" name="gridLayout_13">
+                                     <item row="0" column="2">
+                                      <widget class="QCheckBox" name="checkBox_9">
+                                       <property name="text">
+                                        <string>Add to Favoret</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="0" column="0">
+                                      <widget class="QCheckBox" name="checkBox_10">
+                                       <property name="text">
+                                        <string>Select </string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="3" column="2">
+                                      <widget class="QPushButton" name="pushButton_9">
+                                       <property name="minimumSize">
+                                        <size>
+                                         <width>20</width>
+                                         <height>20</height>
+                                        </size>
+                                       </property>
+                                       <property name="text">
+                                        <string>ADD</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="2" column="1">
+                                      <widget class="QLabel" name="label_34">
+                                       <property name="text">
+                                        <string>TextLabel</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="3" column="1">
+                                      <widget class="QLabel" name="label_35">
+                                       <property name="text">
+                                        <string>TextLabel</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="1" column="1">
+                                      <widget class="QLabel" name="label_36">
+                                       <property name="text">
+                                        <string>TextLabel</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                    </layout>
+                                   </widget>
+                                  </item>
+                                  <item row="5" column="1">
+                                   <widget class="QFrame" name="Cared_13">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>50</width>
+                                      <height>90</height>
+                                     </size>
+                                    </property>
+                                    <property name="autoFillBackground">
+                                     <bool>false</bool>
+                                    </property>
+                                    <property name="styleSheet">
+                                     <string notr="true"/>
+                                    </property>
+                                    <property name="frameShape">
+                                     <enum>QFrame::StyledPanel</enum>
+                                    </property>
+                                    <property name="frameShadow">
+                                     <enum>QFrame::Raised</enum>
+                                    </property>
+                                    <layout class="QGridLayout" name="gridLayout_14">
+                                     <item row="0" column="2">
+                                      <widget class="QCheckBox" name="checkBox_13">
+                                       <property name="text">
+                                        <string>Add to Favoret</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="3" column="1">
+                                      <widget class="QLabel" name="label_41">
+                                       <property name="text">
+                                        <string>TextLabel</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="2" column="1">
+                                      <widget class="QLabel" name="label_40">
+                                       <property name="text">
+                                        <string>TextLabel</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="3" column="2">
+                                      <widget class="QPushButton" name="pushButton_11">
+                                       <property name="minimumSize">
+                                        <size>
+                                         <width>20</width>
+                                         <height>20</height>
+                                        </size>
+                                       </property>
+                                       <property name="styleSheet">
+                                        <string notr="true"/>
+                                       </property>
+                                       <property name="text">
+                                        <string>ADD</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="1" column="1">
+                                      <widget class="QLabel" name="label_42">
+                                       <property name="text">
+                                        <string>TextLabel</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="0" column="0">
+                                      <widget class="QCheckBox" name="checkBox_14">
+                                       <property name="text">
+                                        <string>Select </string>
                                        </property>
                                       </widget>
                                      </item>
@@ -1998,9 +1938,7 @@ Background-color : rgb(17, 180, 180);
                                      <bool>false</bool>
                                     </property>
                                     <property name="styleSheet">
-                                     <string notr="true">*{
-Background-color : rgb(17, 180, 180);
-}</string>
+                                     <string notr="true"/>
                                     </property>
                                     <property name="frameShape">
                                      <enum>QFrame::StyledPanel</enum>
@@ -2060,8 +1998,8 @@ Background-color : rgb(17, 180, 180);
                                     </layout>
                                    </widget>
                                   </item>
-                                  <item row="0" column="3">
-                                   <widget class="QFrame" name="Cared_12">
+                                  <item row="0" column="2">
+                                   <widget class="QFrame" name="Cared_8">
                                     <property name="minimumSize">
                                      <size>
                                       <width>50</width>
@@ -2072,9 +2010,7 @@ Background-color : rgb(17, 180, 180);
                                      <bool>false</bool>
                                     </property>
                                     <property name="styleSheet">
-                                     <string notr="true">*{
-Background-color : rgb(17, 180, 180);
-}</string>
+                                     <string notr="true"/>
                                     </property>
                                     <property name="frameShape">
                                      <enum>QFrame::StyledPanel</enum>
@@ -2082,16 +2018,23 @@ Background-color : rgb(17, 180, 180);
                                     <property name="frameShadow">
                                      <enum>QFrame::Raised</enum>
                                     </property>
-                                    <layout class="QGridLayout" name="gridLayout_15">
+                                    <layout class="QGridLayout" name="gridLayout_10">
                                      <item row="0" column="2">
-                                      <widget class="QCheckBox" name="checkBox_11">
+                                      <widget class="QCheckBox" name="checkBox_3">
                                        <property name="text">
                                         <string>Add to Favoret</string>
                                        </property>
                                       </widget>
                                      </item>
+                                     <item row="0" column="0">
+                                      <widget class="QCheckBox" name="checkBox_4">
+                                       <property name="text">
+                                        <string>Select </string>
+                                       </property>
+                                      </widget>
+                                     </item>
                                      <item row="3" column="2">
-                                      <widget class="QPushButton" name="pushButton_10">
+                                      <widget class="QPushButton" name="pushButton_6">
                                        <property name="minimumSize">
                                         <size>
                                          <width>20</width>
@@ -2104,30 +2047,101 @@ Background-color : rgb(17, 180, 180);
                                       </widget>
                                      </item>
                                      <item row="2" column="1">
-                                      <widget class="QLabel" name="label_37">
+                                      <widget class="QLabel" name="label_25">
                                        <property name="text">
                                         <string>TextLabel</string>
                                        </property>
                                       </widget>
                                      </item>
                                      <item row="3" column="1">
-                                      <widget class="QLabel" name="label_38">
+                                      <widget class="QLabel" name="label_26">
                                        <property name="text">
                                         <string>TextLabel</string>
                                        </property>
                                       </widget>
                                      </item>
                                      <item row="1" column="1">
-                                      <widget class="QLabel" name="label_39">
+                                      <widget class="QLabel" name="label_27">
                                        <property name="text">
                                         <string>TextLabel</string>
                                        </property>
                                       </widget>
                                      </item>
+                                    </layout>
+                                   </widget>
+                                  </item>
+                                  <item row="6" column="1">
+                                   <widget class="QFrame" name="Cared_10">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>50</width>
+                                      <height>90</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>16777215</width>
+                                      <height>16777215</height>
+                                     </size>
+                                    </property>
+                                    <property name="autoFillBackground">
+                                     <bool>false</bool>
+                                    </property>
+                                    <property name="styleSheet">
+                                     <string notr="true"/>
+                                    </property>
+                                    <property name="frameShape">
+                                     <enum>QFrame::StyledPanel</enum>
+                                    </property>
+                                    <property name="frameShadow">
+                                     <enum>QFrame::Raised</enum>
+                                    </property>
+                                    <layout class="QGridLayout" name="gridLayout_12">
+                                     <item row="0" column="2">
+                                      <widget class="QCheckBox" name="checkBox_7">
+                                       <property name="text">
+                                        <string>Add to Favoret</string>
+                                       </property>
+                                      </widget>
+                                     </item>
                                      <item row="0" column="0">
-                                      <widget class="QCheckBox" name="checkBox_12">
+                                      <widget class="QCheckBox" name="checkBox_8">
                                        <property name="text">
                                         <string>Select </string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="3" column="2">
+                                      <widget class="QPushButton" name="pushButton_8">
+                                       <property name="minimumSize">
+                                        <size>
+                                         <width>20</width>
+                                         <height>20</height>
+                                        </size>
+                                       </property>
+                                       <property name="text">
+                                        <string>ADD</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="2" column="1">
+                                      <widget class="QLabel" name="label_31">
+                                       <property name="text">
+                                        <string>TextLabel</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="3" column="1">
+                                      <widget class="QLabel" name="label_32">
+                                       <property name="text">
+                                        <string>TextLabel</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item row="1" column="1">
+                                      <widget class="QLabel" name="label_33">
+                                       <property name="text">
+                                        <string>TextLabel</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -2199,6 +2213,12 @@ Background-color : rgb(17, 180, 180);
                         <width>200</width>
                         <height>16777215</height>
                        </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">#rightMenuSubContainer {
+    border-radius: 10px;
+}
+</string>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_21">
                        <property name="spacing">
@@ -2273,6 +2293,23 @@ Background-color : rgb(17, 180, 180);
                          <widget class="QWidget" name="morePage">
                           <layout class="QVBoxLayout" name="verticalLayout_23">
                            <item>
+                            <widget class="QScrollArea" name="scrollArea_2">
+                             <property name="widgetResizable">
+                              <bool>true</bool>
+                             </property>
+                             <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                              <property name="geometry">
+                               <rect>
+                                <x>0</x>
+                                <y>0</y>
+                                <width>172</width>
+                                <height>443</height>
+                               </rect>
+                              </property>
+                             </widget>
+                            </widget>
+                           </item>
+                           <item>
                             <widget class="QLabel" name="label_20">
                              <property name="font">
                               <font>
@@ -2329,6 +2366,7 @@ Background-color : rgb(17, 180, 180);
                          <property name="font">
                           <font>
                            <pointsize>10</pointsize>
+                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -2356,6 +2394,7 @@ Background-color : rgb(17, 180, 180);
                             </property>
                             <property name="font">
                              <font>
+                              <weight>50</weight>
                               <bold>false</bold>
                              </font>
                             </property>
@@ -2418,15 +2457,15 @@ Background-color : rgb(17, 180, 180);
                  <string notr="true">/* Styling for QPushButton */
 QPushButton {
     background-color:transparent; /* Default background color */
-    color: black; /* Text color */
- 	border: 1px solid black ;
+    color: #fff; /* Text color */
+ 	border: 1px solid transparent ;
     padding: 1px 2px; /* Padding */
     border-radius: 5px; /* Border radius */
 }
 
 /* Styling for QPushButton when hovered */
 QPushButton:hover {
-    background-color: rgb(18, 163, 176); /* Background color on hover */
+    background-color:rgb(28, 171, 213);; /* Background color on hover */
 
 }
 
@@ -2436,7 +2475,12 @@ QFrame {
      /* No border */
 	padding : 2px;
 }
-</string>
+QPushButton::icon {
+    color: white; /* or any other color you want for the icon */
+}
+*{
+background-color :rgb(2, 32, 47) ;
+}</string>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_12">
                  <property name="spacing">
@@ -2513,8 +2557,14 @@ QFrame {
                          <property name="toolTip">
                           <string>Menu</string>
                          </property>
+                         <property name="styleSheet">
+                          <string notr="true">*{
+padding-top: 5px;
+margin-top : 6px;
+}</string>
+                         </property>
                          <property name="text">
-                          <string/>
+                          <string> Menu</string>
                          </property>
                          <property name="icon">
                           <iconset resource="Final_Main_ph.qrc">

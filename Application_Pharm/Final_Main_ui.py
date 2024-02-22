@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Final_Main_FFuiFF.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.2
+## Created by: Qt User Interface Compiler version 6.5.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1341, 720)
+        MainWindow.resize(895, 698)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"")
@@ -115,7 +115,7 @@ class Ui_MainWindow(object):
         self.LoginPage.setObjectName(u"LoginPage")
         self.gridLayout_2 = QGridLayout(self.LoginPage)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.gridLayout_2.addItem(self.horizontalSpacer_2, 0, 2, 1, 1)
 
@@ -169,12 +169,12 @@ class Ui_MainWindow(object):
         self.label_10.setAutoFillBackground(False)
         self.label_11 = QLabel(self.widget_4)
         self.label_11.setObjectName(u"label_11")
-        self.label_11.setGeometry(QRect(35, 170, 171, 20))
+        self.label_11.setGeometry(QRect(15, 170, 201, 20))
         self.label_11.setFont(font)
 
         self.gridLayout_2.addWidget(self.widget_4, 0, 1, 1, 1)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.gridLayout_2.addItem(self.horizontalSpacer, 0, 0, 1, 1)
 
@@ -344,9 +344,44 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.Login_SignUp_Page)
         self.Main_page = QWidget()
         self.Main_page.setObjectName(u"Main_page")
-        self.Main_page.setStyleSheet(u"#frame_4 \n"
-"{\n"
-"background-color : rgb(255, 255, 255) ;\n"
+        self.Main_page.setStyleSheet(u"*{\n"
+"border: none;\n"
+"background-color: transparent;\n"
+"background: transparent;\n"
+"padding: 0;\n"
+"margin: 0;\n"
+"color: #fff;\n"
+"}\n"
+"#centralwidget {\n"
+"background-color: #064666;\n"
+"}\n"
+"#leftMenuSubContainer{\n"
+"background-color: #064666;\n"
+"}\n"
+"#leftMenuSubContainer QPushButton{\n"
+"text-align: left;\n"
+"padding : 5px 10px;\n"
+"border-top-left-radius: 10px;\n"
+"border-bottom-left-radius: 10px;\n"
+"}\n"
+"#centerMenuSubContainer,#rightMenuSubContainer{\n"
+"background-color: #064666;\n"
+"}\n"
+"#popupNotificationSubContainer {\n"
+"background-color: #064666;\n"
+"border-radius:10px ;\n"
+"}\n"
+"#headerContainer,#footerContainer{\n"
+"background-color: #064666;\n"
+"}\n"
+"\n"
+"#frame_4 , #frame_8 {\n"
+"background-color: #ffff;\n"
+"border-radius:10px ;\n"
+"}\n"
+"\n"
+"#leftMenuContainer {\n"
+"padding-top: 20px;\n"
 "}")
         self.verticalLayout_6 = QVBoxLayout(self.Main_page)
         self.verticalLayout_6.setSpacing(0)
@@ -357,11 +392,12 @@ class Ui_MainWindow(object):
         self.frame_4.setFrameShape(QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.gridLayout_5 = QGridLayout(self.frame_4)
+        self.gridLayout_5.setSpacing(0)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
         self.gridLayout_5.setContentsMargins(0, 0, 0, 0)
         self.mainbodyContainer = QWidget(self.frame_4)
         self.mainbodyContainer.setObjectName(u"mainbodyContainer")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.mainbodyContainer.sizePolicy().hasHeightForWidth())
@@ -377,7 +413,7 @@ class Ui_MainWindow(object):
 "QPushButton {\n"
 "    background-color:transparent; /* Default background color */\n"
 "    color: black; /* Text color */\n"
-" 	border: 1px solid black ;\n"
+" 	border: 1px solid transparent ;\n"
 "    padding: 1px 2px; /* Padding */\n"
 "    border-radius: 5px; /* Border radius */\n"
 "}\n"
@@ -394,37 +430,22 @@ class Ui_MainWindow(object):
 "     /* No border */\n"
 "	padding : 2px;\n"
 "}\n"
-"")
+"*{\n"
+"background-color : #02202f;\n"
+"}")
         self.gridLayout_6 = QGridLayout(self.headerContainer)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.gridLayout_6.setContentsMargins(5, 5, 5, 5)
-        self.frame_9 = QFrame(self.headerContainer)
-        self.frame_9.setObjectName(u"frame_9")
-        self.frame_9.setFrameShape(QFrame.StyledPanel)
-        self.frame_9.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_7 = QHBoxLayout(self.frame_9)
-        self.horizontalLayout_7.setSpacing(6)
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.label_13 = QLabel(self.frame_9)
-        self.label_13.setObjectName(u"label_13")
-        self.label_13.setMaximumSize(QSize(40, 40))
-        self.label_13.setPixmap(QPixmap(u":/icon/Image/icons/pharmacy.png"))
-        self.label_13.setScaledContents(True)
+        self.frame_11 = QFrame(self.headerContainer)
+        self.frame_11.setObjectName(u"frame_11")
+        self.frame_11.setFrameShape(QFrame.StyledPanel)
+        self.frame_11.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_11)
+        self.horizontalLayout_4.setSpacing(6)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
 
-        self.horizontalLayout_7.addWidget(self.label_13)
-
-        self.label_14 = QLabel(self.frame_9)
-        self.label_14.setObjectName(u"label_14")
-        font5 = QFont()
-        font5.setPointSize(11)
-        font5.setBold(True)
-        self.label_14.setFont(font5)
-
-        self.horizontalLayout_7.addWidget(self.label_14)
-
-
-        self.gridLayout_6.addWidget(self.frame_9, 0, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.frame_11, 0, 4, 1, 1)
 
         self.frame_10 = QFrame(self.headerContainer)
         self.frame_10.setObjectName(u"frame_10")
@@ -462,29 +483,47 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.addWidget(self.profileMenuBtn, 0, Qt.AlignRight)
 
 
-        self.gridLayout_6.addWidget(self.frame_10, 0, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.frame_10, 0, 2, 1, 1)
 
-        self.frame_11 = QFrame(self.headerContainer)
-        self.frame_11.setObjectName(u"frame_11")
-        self.frame_11.setFrameShape(QFrame.StyledPanel)
-        self.frame_11.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_4 = QHBoxLayout(self.frame_11)
-        self.horizontalLayout_4.setSpacing(6)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.frame_9 = QFrame(self.headerContainer)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setStyleSheet(u"")
+        self.frame_9.setFrameShape(QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_7 = QHBoxLayout(self.frame_9)
+        self.horizontalLayout_7.setSpacing(6)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.label_13 = QLabel(self.frame_9)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setMaximumSize(QSize(40, 40))
+        self.label_13.setPixmap(QPixmap(u":/Icon_custom/Image_for_main/icon_custom/pharmacy.png"))
+        self.label_13.setScaledContents(True)
 
-        self.gridLayout_6.addWidget(self.frame_11, 0, 3, 1, 1)
+        self.horizontalLayout_7.addWidget(self.label_13)
 
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.label_14 = QLabel(self.frame_9)
+        self.label_14.setObjectName(u"label_14")
+        font5 = QFont()
+        font5.setPointSize(11)
+        font5.setBold(True)
+        self.label_14.setFont(font5)
 
-        self.gridLayout_6.addItem(self.horizontalSpacer_3, 0, 2, 1, 1)
+        self.horizontalLayout_7.addWidget(self.label_14)
+
+
+        self.gridLayout_6.addWidget(self.frame_9, 0, 0, 1, 1)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_6.addItem(self.horizontalSpacer_3, 0, 1, 1, 1)
 
 
         self.verticalLayout_16.addWidget(self.headerContainer, 0, Qt.AlignTop)
 
         self.mainBodyContent = QWidget(self.mainbodyContainer)
         self.mainBodyContent.setObjectName(u"mainBodyContent")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.mainBodyContent.sizePolicy().hasHeightForWidth())
@@ -500,7 +539,7 @@ class Ui_MainWindow(object):
         self.mainPages.setObjectName(u"mainPages")
         self.mainPages.setStyleSheet(u"QWidget#Search_Par {\n"
 "    background-color: white;\n"
-"    border: 1px solid rgb(18, 163, 176);\n"
+"    border: 1px solid rgb(28, 171, 213);;\n"
 "    border-radius: 10px;\n"
 "}\n"
 "\n"
@@ -517,7 +556,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QPushButton#pushButton_23 {\n"
-"    background-color: rgb(18, 163, 176);\n"
+"    background-color: rgb(28, 171, 213);;\n"
 "    color: white;\n"
 "    border: none;\n"
 "    border-top-right-radius: 5px;\n"
@@ -574,7 +613,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setStyleSheet(u"/* Styling for QScrollArea */\n"
 "QScrollArea {\n"
 "    background-color: #f0f0f0; /* Background color */\n"
-"    border: 1px solid rgb(17, 180, 180); /* Border color */\n"
+"    border: 1px solid rgb(28, 171, 213); /* Border color */\n"
 "    border-radius: 10px; /* Border radius */\n"
 "    padding: 2px;\n"
 "}\n"
@@ -588,7 +627,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QScrollBar::handle:vertical {\n"
-"    background: rgb(17, 180, 180); /* Color of the scrollbar handle */\n"
+"    background: rgb(28, 171, 213); /* Color of the scrollbar handle */\n"
 "    border-radius: 5px; /* Handle border radius */\n"
 "}\n"
 "\n"
@@ -596,22 +635,6 @@ class Ui_MainWindow(object):
 "    background: #bbb; /* Color of the scrollbar handle on hover */\n"
 "}\n"
 "\n"
-"QScrollBar::add-line:vertical {\n"
-"    border: none;\n"
-"    background: transparent;\n"
-"    height: 0px;\n"
-"    subcontrol-position: bottom;\n"
-"    subcontrol-origin: margin;\n"
-"}\n"
-"\n"
-"QScrollBar::sub-line:vertical {\n"
-"    border: 2px;\n"
-"    backgrou"
-                        "nd: transparent;\n"
-"    height: 0px;\n"
-"    subcontrol-position: top;\n"
-"    subcontrol-origin: margin;\n"
-"}\n"
 "\n"
 "/* Styling for QScrollBar arrows */\n"
 "QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
@@ -621,15 +644,16 @@ class Ui_MainWindow(object):
 "    height: 0px;\n"
 "}\n"
 "\n"
-"/* Styling for QScrollBar page up and page down */\n"
+"/* Styling for QScrollBar page up and page "
+                        "down */\n"
 "QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
 "    background: transparent;\n"
 "}\n"
 "\n"
 "/* Styling for QFrame inside QScrollArea (cards) */\n"
 "QScrollArea QFrame {\n"
-"    background-color: #ffffff; /* Card background color */\n"
-"    border: 0px solid rgb(17, 180, 180); /* Card border color */\n"
+"    background-color: rgb(28, 171, 213); /* Updated card background color */\n"
+"    border: 1px solid rgb(28, 171, 213); /* Card border color */\n"
 "    border-radius: 10px; /* Card border radius */\n"
 "}\n"
 "\n"
@@ -639,223 +663,36 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QScrollArea QFrame QPushButton {\n"
-"    background-color:transparent ; /* Button background color "
-                        "*/\n"
-"    color: #000000; /* Button text color */\n"
-"    border: 0.5px solid black ; /* No border */\n"
+"    background-color: transparent; /* Button background color */\n"
+"    color: #fff; /* Button text color */\n"
+"    border: 0.5px solid #064666; /* No border */\n"
 "    border-radius: 5px; /* Button border radius */\n"
 "}\n"
 "\n"
 "/* Hover effect for QPushButton */\n"
 "QScrollArea QFrame QPushButton:hover {\n"
-"    background-color: rgb(255, 255, 255); /* Button background color on hover */\n"
-"    color: black; /* Button text color on hover */\n"
+"    background-color: #064666; /* Button background color on hover */\n"
+"    color: #ffff; /* Button text col"
+                        "or on hover */\n"
 "}\n"
 "\n"
 "/* Styling for QLabel inside the Card */\n"
 "QScrollArea QFrame QLabel {\n"
-"    color: #000000; /* Label text color */\n"
+"    color: #ffff; /* Label text color */\n"
 "    font-size: 12px; /* Font size */\n"
 "}\n"
-"\n"
-"\n"
-"\n"
 "")
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 751, 492))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 437, 588))
         self.gridLayout_8 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_8.setObjectName(u"gridLayout_8")
-        self.Cared_13 = QFrame(self.scrollAreaWidgetContents)
-        self.Cared_13.setObjectName(u"Cared_13")
-        self.Cared_13.setMinimumSize(QSize(50, 90))
-        self.Cared_13.setAutoFillBackground(False)
-        self.Cared_13.setStyleSheet(u"*{\n"
-"Background-color : rgb(17, 180, 180);\n"
-"}")
-        self.Cared_13.setFrameShape(QFrame.StyledPanel)
-        self.Cared_13.setFrameShadow(QFrame.Raised)
-        self.gridLayout_14 = QGridLayout(self.Cared_13)
-        self.gridLayout_14.setObjectName(u"gridLayout_14")
-        self.checkBox_13 = QCheckBox(self.Cared_13)
-        self.checkBox_13.setObjectName(u"checkBox_13")
-
-        self.gridLayout_14.addWidget(self.checkBox_13, 0, 2, 1, 1)
-
-        self.checkBox_14 = QCheckBox(self.Cared_13)
-        self.checkBox_14.setObjectName(u"checkBox_14")
-
-        self.gridLayout_14.addWidget(self.checkBox_14, 0, 0, 1, 1)
-
-        self.pushButton_11 = QPushButton(self.Cared_13)
-        self.pushButton_11.setObjectName(u"pushButton_11")
-        self.pushButton_11.setMinimumSize(QSize(20, 20))
-        self.pushButton_11.setStyleSheet(u"")
-
-        self.gridLayout_14.addWidget(self.pushButton_11, 3, 2, 1, 1)
-
-        self.label_40 = QLabel(self.Cared_13)
-        self.label_40.setObjectName(u"label_40")
-
-        self.gridLayout_14.addWidget(self.label_40, 2, 1, 1, 1)
-
-        self.label_41 = QLabel(self.Cared_13)
-        self.label_41.setObjectName(u"label_41")
-
-        self.gridLayout_14.addWidget(self.label_41, 3, 1, 1, 1)
-
-        self.label_42 = QLabel(self.Cared_13)
-        self.label_42.setObjectName(u"label_42")
-
-        self.gridLayout_14.addWidget(self.label_42, 1, 1, 1, 1)
-
-
-        self.gridLayout_8.addWidget(self.Cared_13, 5, 1, 1, 1)
-
-        self.Cared_11 = QFrame(self.scrollAreaWidgetContents)
-        self.Cared_11.setObjectName(u"Cared_11")
-        self.Cared_11.setMinimumSize(QSize(50, 90))
-        self.Cared_11.setAutoFillBackground(False)
-        self.Cared_11.setStyleSheet(u"*{\n"
-"Background-color : rgb(17, 180, 180);\n"
-"}")
-        self.Cared_11.setFrameShape(QFrame.StyledPanel)
-        self.Cared_11.setFrameShadow(QFrame.Raised)
-        self.gridLayout_13 = QGridLayout(self.Cared_11)
-        self.gridLayout_13.setObjectName(u"gridLayout_13")
-        self.checkBox_9 = QCheckBox(self.Cared_11)
-        self.checkBox_9.setObjectName(u"checkBox_9")
-
-        self.gridLayout_13.addWidget(self.checkBox_9, 0, 2, 1, 1)
-
-        self.checkBox_10 = QCheckBox(self.Cared_11)
-        self.checkBox_10.setObjectName(u"checkBox_10")
-
-        self.gridLayout_13.addWidget(self.checkBox_10, 0, 0, 1, 1)
-
-        self.pushButton_9 = QPushButton(self.Cared_11)
-        self.pushButton_9.setObjectName(u"pushButton_9")
-        self.pushButton_9.setMinimumSize(QSize(20, 20))
-
-        self.gridLayout_13.addWidget(self.pushButton_9, 3, 2, 1, 1)
-
-        self.label_34 = QLabel(self.Cared_11)
-        self.label_34.setObjectName(u"label_34")
-
-        self.gridLayout_13.addWidget(self.label_34, 2, 1, 1, 1)
-
-        self.label_35 = QLabel(self.Cared_11)
-        self.label_35.setObjectName(u"label_35")
-
-        self.gridLayout_13.addWidget(self.label_35, 3, 1, 1, 1)
-
-        self.label_36 = QLabel(self.Cared_11)
-        self.label_36.setObjectName(u"label_36")
-
-        self.gridLayout_13.addWidget(self.label_36, 1, 1, 1, 1)
-
-
-        self.gridLayout_8.addWidget(self.Cared_11, 2, 1, 1, 1)
-
-        self.Cared_10 = QFrame(self.scrollAreaWidgetContents)
-        self.Cared_10.setObjectName(u"Cared_10")
-        self.Cared_10.setMinimumSize(QSize(50, 90))
-        self.Cared_10.setMaximumSize(QSize(16777215, 16777215))
-        self.Cared_10.setAutoFillBackground(False)
-        self.Cared_10.setStyleSheet(u"*{\n"
-"Background-color : rgb(17, 180, 180);\n"
-"}")
-        self.Cared_10.setFrameShape(QFrame.StyledPanel)
-        self.Cared_10.setFrameShadow(QFrame.Raised)
-        self.gridLayout_12 = QGridLayout(self.Cared_10)
-        self.gridLayout_12.setObjectName(u"gridLayout_12")
-        self.checkBox_7 = QCheckBox(self.Cared_10)
-        self.checkBox_7.setObjectName(u"checkBox_7")
-
-        self.gridLayout_12.addWidget(self.checkBox_7, 0, 2, 1, 1)
-
-        self.checkBox_8 = QCheckBox(self.Cared_10)
-        self.checkBox_8.setObjectName(u"checkBox_8")
-
-        self.gridLayout_12.addWidget(self.checkBox_8, 0, 0, 1, 1)
-
-        self.pushButton_8 = QPushButton(self.Cared_10)
-        self.pushButton_8.setObjectName(u"pushButton_8")
-        self.pushButton_8.setMinimumSize(QSize(20, 20))
-
-        self.gridLayout_12.addWidget(self.pushButton_8, 3, 2, 1, 1)
-
-        self.label_31 = QLabel(self.Cared_10)
-        self.label_31.setObjectName(u"label_31")
-
-        self.gridLayout_12.addWidget(self.label_31, 2, 1, 1, 1)
-
-        self.label_32 = QLabel(self.Cared_10)
-        self.label_32.setObjectName(u"label_32")
-
-        self.gridLayout_12.addWidget(self.label_32, 3, 1, 1, 1)
-
-        self.label_33 = QLabel(self.Cared_10)
-        self.label_33.setObjectName(u"label_33")
-
-        self.gridLayout_12.addWidget(self.label_33, 1, 1, 1, 1)
-
-
-        self.gridLayout_8.addWidget(self.Cared_10, 1, 2, 1, 1)
-
-        self.Cared_14 = QFrame(self.scrollAreaWidgetContents)
-        self.Cared_14.setObjectName(u"Cared_14")
-        self.Cared_14.setMinimumSize(QSize(50, 90))
-        self.Cared_14.setAutoFillBackground(False)
-        self.Cared_14.setStyleSheet(u"*{\n"
-"Background-color : rgb(17, 180, 180);\n"
-"}")
-        self.Cared_14.setFrameShape(QFrame.StyledPanel)
-        self.Cared_14.setFrameShadow(QFrame.Raised)
-        self.gridLayout_16 = QGridLayout(self.Cared_14)
-        self.gridLayout_16.setObjectName(u"gridLayout_16")
-        self.checkBox_15 = QCheckBox(self.Cared_14)
-        self.checkBox_15.setObjectName(u"checkBox_15")
-
-        self.gridLayout_16.addWidget(self.checkBox_15, 0, 2, 1, 1)
-
-        self.checkBox_16 = QCheckBox(self.Cared_14)
-        self.checkBox_16.setObjectName(u"checkBox_16")
-
-        self.gridLayout_16.addWidget(self.checkBox_16, 0, 0, 1, 1)
-
-        self.pushButton_12 = QPushButton(self.Cared_14)
-        self.pushButton_12.setObjectName(u"pushButton_12")
-        self.pushButton_12.setMinimumSize(QSize(20, 20))
-
-        self.gridLayout_16.addWidget(self.pushButton_12, 3, 2, 1, 1)
-
-        self.label_43 = QLabel(self.Cared_14)
-        self.label_43.setObjectName(u"label_43")
-
-        self.gridLayout_16.addWidget(self.label_43, 2, 1, 1, 1)
-
-        self.label_44 = QLabel(self.Cared_14)
-        self.label_44.setObjectName(u"label_44")
-
-        self.gridLayout_16.addWidget(self.label_44, 3, 1, 1, 1)
-
-        self.label_45 = QLabel(self.Cared_14)
-        self.label_45.setObjectName(u"label_45")
-
-        self.gridLayout_16.addWidget(self.label_45, 1, 1, 1, 1)
-
-
-        self.gridLayout_8.addWidget(self.Cared_14, 4, 1, 1, 1)
-
         self.Cared_7 = QFrame(self.scrollAreaWidgetContents)
         self.Cared_7.setObjectName(u"Cared_7")
         self.Cared_7.setMinimumSize(QSize(50, 90))
         self.Cared_7.setAutoFillBackground(False)
-        self.Cared_7.setStyleSheet(u"*{\n"
-"Background-color : rgb(17, 180, 180);\n"
-"}")
+        self.Cared_7.setStyleSheet(u"")
         self.Cared_7.setFrameShape(QFrame.StyledPanel)
         self.Cared_7.setFrameShadow(QFrame.Raised)
         self.gridLayout_9 = QGridLayout(self.Cared_7)
@@ -894,58 +731,184 @@ class Ui_MainWindow(object):
 
         self.gridLayout_8.addWidget(self.Cared_7, 0, 1, 1, 1)
 
-        self.Cared_8 = QFrame(self.scrollAreaWidgetContents)
-        self.Cared_8.setObjectName(u"Cared_8")
-        self.Cared_8.setMinimumSize(QSize(50, 90))
-        self.Cared_8.setAutoFillBackground(False)
-        self.Cared_8.setStyleSheet(u"*{\n"
-"Background-color : rgb(17, 180, 180);\n"
-"}")
-        self.Cared_8.setFrameShape(QFrame.StyledPanel)
-        self.Cared_8.setFrameShadow(QFrame.Raised)
-        self.gridLayout_10 = QGridLayout(self.Cared_8)
-        self.gridLayout_10.setObjectName(u"gridLayout_10")
-        self.checkBox_3 = QCheckBox(self.Cared_8)
-        self.checkBox_3.setObjectName(u"checkBox_3")
+        self.Cared_12 = QFrame(self.scrollAreaWidgetContents)
+        self.Cared_12.setObjectName(u"Cared_12")
+        self.Cared_12.setMinimumSize(QSize(50, 90))
+        self.Cared_12.setAutoFillBackground(False)
+        self.Cared_12.setStyleSheet(u"")
+        self.Cared_12.setFrameShape(QFrame.StyledPanel)
+        self.Cared_12.setFrameShadow(QFrame.Raised)
+        self.gridLayout_15 = QGridLayout(self.Cared_12)
+        self.gridLayout_15.setObjectName(u"gridLayout_15")
+        self.checkBox_11 = QCheckBox(self.Cared_12)
+        self.checkBox_11.setObjectName(u"checkBox_11")
 
-        self.gridLayout_10.addWidget(self.checkBox_3, 0, 2, 1, 1)
+        self.gridLayout_15.addWidget(self.checkBox_11, 0, 2, 1, 1)
 
-        self.checkBox_4 = QCheckBox(self.Cared_8)
-        self.checkBox_4.setObjectName(u"checkBox_4")
+        self.pushButton_10 = QPushButton(self.Cared_12)
+        self.pushButton_10.setObjectName(u"pushButton_10")
+        self.pushButton_10.setMinimumSize(QSize(20, 20))
 
-        self.gridLayout_10.addWidget(self.checkBox_4, 0, 0, 1, 1)
+        self.gridLayout_15.addWidget(self.pushButton_10, 3, 2, 1, 1)
 
-        self.pushButton_6 = QPushButton(self.Cared_8)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setMinimumSize(QSize(20, 20))
+        self.label_37 = QLabel(self.Cared_12)
+        self.label_37.setObjectName(u"label_37")
 
-        self.gridLayout_10.addWidget(self.pushButton_6, 3, 2, 1, 1)
+        self.gridLayout_15.addWidget(self.label_37, 2, 1, 1, 1)
 
-        self.label_25 = QLabel(self.Cared_8)
-        self.label_25.setObjectName(u"label_25")
+        self.label_38 = QLabel(self.Cared_12)
+        self.label_38.setObjectName(u"label_38")
 
-        self.gridLayout_10.addWidget(self.label_25, 2, 1, 1, 1)
+        self.gridLayout_15.addWidget(self.label_38, 3, 1, 1, 1)
 
-        self.label_26 = QLabel(self.Cared_8)
-        self.label_26.setObjectName(u"label_26")
+        self.label_39 = QLabel(self.Cared_12)
+        self.label_39.setObjectName(u"label_39")
 
-        self.gridLayout_10.addWidget(self.label_26, 3, 1, 1, 1)
+        self.gridLayout_15.addWidget(self.label_39, 1, 1, 1, 1)
 
-        self.label_27 = QLabel(self.Cared_8)
-        self.label_27.setObjectName(u"label_27")
+        self.checkBox_12 = QCheckBox(self.Cared_12)
+        self.checkBox_12.setObjectName(u"checkBox_12")
 
-        self.gridLayout_10.addWidget(self.label_27, 1, 1, 1, 1)
+        self.gridLayout_15.addWidget(self.checkBox_12, 0, 0, 1, 1)
 
 
-        self.gridLayout_8.addWidget(self.Cared_8, 0, 2, 1, 1)
+        self.gridLayout_8.addWidget(self.Cared_12, 0, 3, 1, 1)
+
+        self.Cared_14 = QFrame(self.scrollAreaWidgetContents)
+        self.Cared_14.setObjectName(u"Cared_14")
+        self.Cared_14.setMinimumSize(QSize(50, 90))
+        self.Cared_14.setAutoFillBackground(False)
+        self.Cared_14.setStyleSheet(u"")
+        self.Cared_14.setFrameShape(QFrame.StyledPanel)
+        self.Cared_14.setFrameShadow(QFrame.Raised)
+        self.gridLayout_16 = QGridLayout(self.Cared_14)
+        self.gridLayout_16.setObjectName(u"gridLayout_16")
+        self.checkBox_15 = QCheckBox(self.Cared_14)
+        self.checkBox_15.setObjectName(u"checkBox_15")
+
+        self.gridLayout_16.addWidget(self.checkBox_15, 0, 2, 1, 1)
+
+        self.checkBox_16 = QCheckBox(self.Cared_14)
+        self.checkBox_16.setObjectName(u"checkBox_16")
+
+        self.gridLayout_16.addWidget(self.checkBox_16, 0, 0, 1, 1)
+
+        self.pushButton_12 = QPushButton(self.Cared_14)
+        self.pushButton_12.setObjectName(u"pushButton_12")
+        self.pushButton_12.setMinimumSize(QSize(20, 20))
+
+        self.gridLayout_16.addWidget(self.pushButton_12, 3, 2, 1, 1)
+
+        self.label_43 = QLabel(self.Cared_14)
+        self.label_43.setObjectName(u"label_43")
+
+        self.gridLayout_16.addWidget(self.label_43, 2, 1, 1, 1)
+
+        self.label_44 = QLabel(self.Cared_14)
+        self.label_44.setObjectName(u"label_44")
+
+        self.gridLayout_16.addWidget(self.label_44, 3, 1, 1, 1)
+
+        self.label_45 = QLabel(self.Cared_14)
+        self.label_45.setObjectName(u"label_45")
+
+        self.gridLayout_16.addWidget(self.label_45, 1, 1, 1, 1)
+
+
+        self.gridLayout_8.addWidget(self.Cared_14, 4, 1, 1, 1)
+
+        self.Cared_11 = QFrame(self.scrollAreaWidgetContents)
+        self.Cared_11.setObjectName(u"Cared_11")
+        self.Cared_11.setMinimumSize(QSize(50, 90))
+        self.Cared_11.setAutoFillBackground(False)
+        self.Cared_11.setStyleSheet(u"")
+        self.Cared_11.setFrameShape(QFrame.StyledPanel)
+        self.Cared_11.setFrameShadow(QFrame.Raised)
+        self.gridLayout_13 = QGridLayout(self.Cared_11)
+        self.gridLayout_13.setObjectName(u"gridLayout_13")
+        self.checkBox_9 = QCheckBox(self.Cared_11)
+        self.checkBox_9.setObjectName(u"checkBox_9")
+
+        self.gridLayout_13.addWidget(self.checkBox_9, 0, 2, 1, 1)
+
+        self.checkBox_10 = QCheckBox(self.Cared_11)
+        self.checkBox_10.setObjectName(u"checkBox_10")
+
+        self.gridLayout_13.addWidget(self.checkBox_10, 0, 0, 1, 1)
+
+        self.pushButton_9 = QPushButton(self.Cared_11)
+        self.pushButton_9.setObjectName(u"pushButton_9")
+        self.pushButton_9.setMinimumSize(QSize(20, 20))
+
+        self.gridLayout_13.addWidget(self.pushButton_9, 3, 2, 1, 1)
+
+        self.label_34 = QLabel(self.Cared_11)
+        self.label_34.setObjectName(u"label_34")
+
+        self.gridLayout_13.addWidget(self.label_34, 2, 1, 1, 1)
+
+        self.label_35 = QLabel(self.Cared_11)
+        self.label_35.setObjectName(u"label_35")
+
+        self.gridLayout_13.addWidget(self.label_35, 3, 1, 1, 1)
+
+        self.label_36 = QLabel(self.Cared_11)
+        self.label_36.setObjectName(u"label_36")
+
+        self.gridLayout_13.addWidget(self.label_36, 1, 1, 1, 1)
+
+
+        self.gridLayout_8.addWidget(self.Cared_11, 2, 1, 1, 1)
+
+        self.Cared_13 = QFrame(self.scrollAreaWidgetContents)
+        self.Cared_13.setObjectName(u"Cared_13")
+        self.Cared_13.setMinimumSize(QSize(50, 90))
+        self.Cared_13.setAutoFillBackground(False)
+        self.Cared_13.setStyleSheet(u"")
+        self.Cared_13.setFrameShape(QFrame.StyledPanel)
+        self.Cared_13.setFrameShadow(QFrame.Raised)
+        self.gridLayout_14 = QGridLayout(self.Cared_13)
+        self.gridLayout_14.setObjectName(u"gridLayout_14")
+        self.checkBox_13 = QCheckBox(self.Cared_13)
+        self.checkBox_13.setObjectName(u"checkBox_13")
+
+        self.gridLayout_14.addWidget(self.checkBox_13, 0, 2, 1, 1)
+
+        self.label_41 = QLabel(self.Cared_13)
+        self.label_41.setObjectName(u"label_41")
+
+        self.gridLayout_14.addWidget(self.label_41, 3, 1, 1, 1)
+
+        self.label_40 = QLabel(self.Cared_13)
+        self.label_40.setObjectName(u"label_40")
+
+        self.gridLayout_14.addWidget(self.label_40, 2, 1, 1, 1)
+
+        self.pushButton_11 = QPushButton(self.Cared_13)
+        self.pushButton_11.setObjectName(u"pushButton_11")
+        self.pushButton_11.setMinimumSize(QSize(20, 20))
+        self.pushButton_11.setStyleSheet(u"")
+
+        self.gridLayout_14.addWidget(self.pushButton_11, 3, 2, 1, 1)
+
+        self.label_42 = QLabel(self.Cared_13)
+        self.label_42.setObjectName(u"label_42")
+
+        self.gridLayout_14.addWidget(self.label_42, 1, 1, 1, 1)
+
+        self.checkBox_14 = QCheckBox(self.Cared_13)
+        self.checkBox_14.setObjectName(u"checkBox_14")
+
+        self.gridLayout_14.addWidget(self.checkBox_14, 0, 0, 1, 1)
+
+
+        self.gridLayout_8.addWidget(self.Cared_13, 5, 1, 1, 1)
 
         self.Cared_9 = QFrame(self.scrollAreaWidgetContents)
         self.Cared_9.setObjectName(u"Cared_9")
         self.Cared_9.setMinimumSize(QSize(50, 90))
         self.Cared_9.setAutoFillBackground(False)
-        self.Cared_9.setStyleSheet(u"*{\n"
-"Background-color : rgb(17, 180, 180);\n"
-"}")
+        self.Cared_9.setStyleSheet(u"")
         self.Cared_9.setFrameShape(QFrame.StyledPanel)
         self.Cared_9.setFrameShadow(QFrame.Raised)
         self.gridLayout_11 = QGridLayout(self.Cared_9)
@@ -984,50 +947,92 @@ class Ui_MainWindow(object):
 
         self.gridLayout_8.addWidget(self.Cared_9, 1, 1, 1, 1)
 
-        self.Cared_12 = QFrame(self.scrollAreaWidgetContents)
-        self.Cared_12.setObjectName(u"Cared_12")
-        self.Cared_12.setMinimumSize(QSize(50, 90))
-        self.Cared_12.setAutoFillBackground(False)
-        self.Cared_12.setStyleSheet(u"*{\n"
-"Background-color : rgb(17, 180, 180);\n"
-"}")
-        self.Cared_12.setFrameShape(QFrame.StyledPanel)
-        self.Cared_12.setFrameShadow(QFrame.Raised)
-        self.gridLayout_15 = QGridLayout(self.Cared_12)
-        self.gridLayout_15.setObjectName(u"gridLayout_15")
-        self.checkBox_11 = QCheckBox(self.Cared_12)
-        self.checkBox_11.setObjectName(u"checkBox_11")
+        self.Cared_8 = QFrame(self.scrollAreaWidgetContents)
+        self.Cared_8.setObjectName(u"Cared_8")
+        self.Cared_8.setMinimumSize(QSize(50, 90))
+        self.Cared_8.setAutoFillBackground(False)
+        self.Cared_8.setStyleSheet(u"")
+        self.Cared_8.setFrameShape(QFrame.StyledPanel)
+        self.Cared_8.setFrameShadow(QFrame.Raised)
+        self.gridLayout_10 = QGridLayout(self.Cared_8)
+        self.gridLayout_10.setObjectName(u"gridLayout_10")
+        self.checkBox_3 = QCheckBox(self.Cared_8)
+        self.checkBox_3.setObjectName(u"checkBox_3")
 
-        self.gridLayout_15.addWidget(self.checkBox_11, 0, 2, 1, 1)
+        self.gridLayout_10.addWidget(self.checkBox_3, 0, 2, 1, 1)
 
-        self.pushButton_10 = QPushButton(self.Cared_12)
-        self.pushButton_10.setObjectName(u"pushButton_10")
-        self.pushButton_10.setMinimumSize(QSize(20, 20))
+        self.checkBox_4 = QCheckBox(self.Cared_8)
+        self.checkBox_4.setObjectName(u"checkBox_4")
 
-        self.gridLayout_15.addWidget(self.pushButton_10, 3, 2, 1, 1)
+        self.gridLayout_10.addWidget(self.checkBox_4, 0, 0, 1, 1)
 
-        self.label_37 = QLabel(self.Cared_12)
-        self.label_37.setObjectName(u"label_37")
+        self.pushButton_6 = QPushButton(self.Cared_8)
+        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.pushButton_6.setMinimumSize(QSize(20, 20))
 
-        self.gridLayout_15.addWidget(self.label_37, 2, 1, 1, 1)
+        self.gridLayout_10.addWidget(self.pushButton_6, 3, 2, 1, 1)
 
-        self.label_38 = QLabel(self.Cared_12)
-        self.label_38.setObjectName(u"label_38")
+        self.label_25 = QLabel(self.Cared_8)
+        self.label_25.setObjectName(u"label_25")
 
-        self.gridLayout_15.addWidget(self.label_38, 3, 1, 1, 1)
+        self.gridLayout_10.addWidget(self.label_25, 2, 1, 1, 1)
 
-        self.label_39 = QLabel(self.Cared_12)
-        self.label_39.setObjectName(u"label_39")
+        self.label_26 = QLabel(self.Cared_8)
+        self.label_26.setObjectName(u"label_26")
 
-        self.gridLayout_15.addWidget(self.label_39, 1, 1, 1, 1)
+        self.gridLayout_10.addWidget(self.label_26, 3, 1, 1, 1)
 
-        self.checkBox_12 = QCheckBox(self.Cared_12)
-        self.checkBox_12.setObjectName(u"checkBox_12")
+        self.label_27 = QLabel(self.Cared_8)
+        self.label_27.setObjectName(u"label_27")
 
-        self.gridLayout_15.addWidget(self.checkBox_12, 0, 0, 1, 1)
+        self.gridLayout_10.addWidget(self.label_27, 1, 1, 1, 1)
 
 
-        self.gridLayout_8.addWidget(self.Cared_12, 0, 3, 1, 1)
+        self.gridLayout_8.addWidget(self.Cared_8, 0, 2, 1, 1)
+
+        self.Cared_10 = QFrame(self.scrollAreaWidgetContents)
+        self.Cared_10.setObjectName(u"Cared_10")
+        self.Cared_10.setMinimumSize(QSize(50, 90))
+        self.Cared_10.setMaximumSize(QSize(16777215, 16777215))
+        self.Cared_10.setAutoFillBackground(False)
+        self.Cared_10.setStyleSheet(u"")
+        self.Cared_10.setFrameShape(QFrame.StyledPanel)
+        self.Cared_10.setFrameShadow(QFrame.Raised)
+        self.gridLayout_12 = QGridLayout(self.Cared_10)
+        self.gridLayout_12.setObjectName(u"gridLayout_12")
+        self.checkBox_7 = QCheckBox(self.Cared_10)
+        self.checkBox_7.setObjectName(u"checkBox_7")
+
+        self.gridLayout_12.addWidget(self.checkBox_7, 0, 2, 1, 1)
+
+        self.checkBox_8 = QCheckBox(self.Cared_10)
+        self.checkBox_8.setObjectName(u"checkBox_8")
+
+        self.gridLayout_12.addWidget(self.checkBox_8, 0, 0, 1, 1)
+
+        self.pushButton_8 = QPushButton(self.Cared_10)
+        self.pushButton_8.setObjectName(u"pushButton_8")
+        self.pushButton_8.setMinimumSize(QSize(20, 20))
+
+        self.gridLayout_12.addWidget(self.pushButton_8, 3, 2, 1, 1)
+
+        self.label_31 = QLabel(self.Cared_10)
+        self.label_31.setObjectName(u"label_31")
+
+        self.gridLayout_12.addWidget(self.label_31, 2, 1, 1, 1)
+
+        self.label_32 = QLabel(self.Cared_10)
+        self.label_32.setObjectName(u"label_32")
+
+        self.gridLayout_12.addWidget(self.label_32, 3, 1, 1, 1)
+
+        self.label_33 = QLabel(self.Cared_10)
+        self.label_33.setObjectName(u"label_33")
+
+        self.gridLayout_12.addWidget(self.label_33, 1, 1, 1, 1)
+
+
+        self.gridLayout_8.addWidget(self.Cared_10, 6, 1, 1, 1)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
@@ -1073,6 +1078,10 @@ class Ui_MainWindow(object):
         self.rightMenuSubContainer.setObjectName(u"rightMenuSubContainer")
         self.rightMenuSubContainer.setMinimumSize(QSize(200, 0))
         self.rightMenuSubContainer.setMaximumSize(QSize(200, 16777215))
+        self.rightMenuSubContainer.setStyleSheet(u"#rightMenuSubContainer {\n"
+"    border-radius: 10px;\n"
+"}\n"
+"")
         self.verticalLayout_21 = QVBoxLayout(self.rightMenuSubContainer)
         self.verticalLayout_21.setSpacing(5)
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
@@ -1112,6 +1121,16 @@ class Ui_MainWindow(object):
         self.morePage.setObjectName(u"morePage")
         self.verticalLayout_23 = QVBoxLayout(self.morePage)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.scrollArea_2 = QScrollArea(self.morePage)
+        self.scrollArea_2.setObjectName(u"scrollArea_2")
+        self.scrollArea_2.setWidgetResizable(True)
+        self.scrollAreaWidgetContents_2 = QWidget()
+        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 172, 443))
+        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
+
+        self.verticalLayout_23.addWidget(self.scrollArea_2)
+
         self.label_20 = QLabel(self.morePage)
         self.label_20.setObjectName(u"label_20")
         self.label_20.setFont(font6)
@@ -1194,15 +1213,15 @@ class Ui_MainWindow(object):
         self.leftMenuContainer.setStyleSheet(u"/* Styling for QPushButton */\n"
 "QPushButton {\n"
 "    background-color:transparent; /* Default background color */\n"
-"    color: black; /* Text color */\n"
-" 	border: 1px solid black ;\n"
+"    color: #fff; /* Text color */\n"
+" 	border: 1px solid transparent ;\n"
 "    padding: 1px 2px; /* Padding */\n"
 "    border-radius: 5px; /* Border radius */\n"
 "}\n"
 "\n"
 "/* Styling for QPushButton when hovered */\n"
 "QPushButton:hover {\n"
-"    background-color: rgb(18, 163, 176); /* Background color on hover */\n"
+"    background-color:rgb(28, 171, 213);; /* Background color on hover */\n"
 "\n"
 "}\n"
 "\n"
@@ -1212,7 +1231,12 @@ class Ui_MainWindow(object):
 "     /* No border */\n"
 "	padding : 2px;\n"
 "}\n"
-"")
+"QPushButton::icon {\n"
+"    color: white; /* or any other color you want for the icon */\n"
+"}\n"
+"*{\n"
+"background-color :rgb(2, 32, 47) ;\n"
+"}")
         self.verticalLayout_12 = QVBoxLayout(self.leftMenuContainer)
         self.verticalLayout_12.setSpacing(0)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
@@ -1235,6 +1259,10 @@ class Ui_MainWindow(object):
         self.menuBtn.setObjectName(u"menuBtn")
         self.menuBtn.setMinimumSize(QSize(19, 0))
         self.menuBtn.setMaximumSize(QSize(101, 16777215))
+        self.menuBtn.setStyleSheet(u"*{\n"
+"padding-top: 5px;\n"
+"margin-top : 6px;\n"
+"}")
         icon3 = QIcon()
         icon3.addFile(u":/Icon_web/Image_for_main/icons_from_Web/align-justify.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.menuBtn.setIcon(icon3)
@@ -1248,7 +1276,7 @@ class Ui_MainWindow(object):
         self.frame_7 = QFrame(self.leftMenuSubContainer)
         self.frame_7.setObjectName(u"frame_7")
         self.frame_7.setEnabled(True)
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.frame_7.sizePolicy().hasHeightForWidth())
@@ -1298,7 +1326,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_13.addWidget(self.frame_7, 0, Qt.AlignTop)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_13.addItem(self.verticalSpacer)
 
@@ -1489,7 +1517,7 @@ class Ui_MainWindow(object):
         self.stackedWidget_2.setCurrentIndex(0)
         self.mainPages.setCurrentIndex(0)
         self.rightMenuPages.setCurrentIndex(1)
-        self.centerMenuPages.setCurrentIndex(2)
+        self.centerMenuPages.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1497,20 +1525,20 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.lineEdit_7.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Email@exampl.com", None))
+        self.lineEdit_7.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Email@example.com", None))
         self.lineEdit_8.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
         self.label_9.setText("")
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Login", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Enter you Informatoin below", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Not Registarard ? Register ", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Welcome To Smart Pharmacy App", None))
+        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Not Registerd ? Register ", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Login", None))
         self.ErrorMessage_2.setText("")
         self.label.setText("")
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Sign Up", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Enter you Informatoin below", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Enter you Information below", None))
         self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
         self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Confirm Password", None))
-        self.lineEdit_5.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Email@exampl.com", None))
+        self.lineEdit_5.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Email@example.com", None))
         self.lineEdit_6.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Phone Number", None))
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Firstname", None))
         self.lineEdit_4.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Last name", None))
@@ -1538,8 +1566,6 @@ class Ui_MainWindow(object):
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Register", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Already Registarard ? Login", None))
         self.ErrorMessage.setText("")
-        self.label_13.setText("")
-        self.label_14.setText(QCoreApplication.translate("MainWindow", u"Smart Pharmacy", None))
         self.notificationBtn.setText("")
 #if QT_CONFIG(tooltip)
         self.moreMenuBtn.setToolTip(QCoreApplication.translate("MainWindow", u"More", None))
@@ -1549,59 +1575,61 @@ class Ui_MainWindow(object):
         self.profileMenuBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Profile", None))
 #endif // QT_CONFIG(tooltip)
         self.profileMenuBtn.setText("")
+        self.label_13.setText("")
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"Smart Pharmacy", None))
         self.label_77.setText("")
         self.lineEdit_9.setInputMask("")
         self.lineEdit_9.setText("")
         self.lineEdit_9.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Write medicin name", None))
         self.pushButton_23.setText(QCoreApplication.translate("MainWindow", u"Search", None))
-        self.checkBox_13.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
-        self.checkBox_14.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
-        self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
-        self.label_40.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_41.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_42.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.checkBox_9.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
-        self.checkBox_10.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
-        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
-        self.label_34.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_35.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_36.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.checkBox_7.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
-        self.checkBox_8.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
-        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
-        self.label_31.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_32.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_33.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.checkBox_15.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
-        self.checkBox_16.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
-        self.pushButton_12.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
-        self.label_43.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_44.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_45.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
         self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
         self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"sdadfasdf", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.checkBox_3.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
-        self.checkBox_4.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
-        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
-        self.label_25.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_26.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_27.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.checkBox_5.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
-        self.checkBox_6.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
-        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
-        self.label_29.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_28.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_30.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.checkBox_11.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
         self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
         self.label_37.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_38.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_39.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.checkBox_12.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
+        self.checkBox_15.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
+        self.checkBox_16.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
+        self.pushButton_12.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
+        self.label_43.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_44.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_45.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.checkBox_9.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
+        self.checkBox_10.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
+        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
+        self.label_34.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_35.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_36.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.checkBox_13.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
+        self.label_41.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_40.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
+        self.label_42.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.checkBox_14.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
+        self.checkBox_5.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
+        self.checkBox_6.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
+        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
+        self.label_29.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_28.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_30.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.checkBox_3.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
+        self.checkBox_4.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
+        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_26.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.checkBox_7.setText(QCoreApplication.translate("MainWindow", u"Add to Favoret", None))
+        self.checkBox_8.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
+        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
+        self.label_31.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_32.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_33.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"Order", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Reports", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Favorite List", None))
@@ -1612,7 +1640,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(tooltip)
         self.menuBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Menu", None))
 #endif // QT_CONFIG(tooltip)
-        self.menuBtn.setText("")
+        self.menuBtn.setText(QCoreApplication.translate("MainWindow", u" Menu", None))
 #if QT_CONFIG(tooltip)
         self.homeBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Home", None))
 #endif // QT_CONFIG(tooltip)
