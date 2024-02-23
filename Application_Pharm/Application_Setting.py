@@ -1,24 +1,10 @@
 import sys
 import re
-import json
 
-from PySide6.QtCore import QPropertyAnimation, QFile, QEasingCurve
-from PySide6.QtWidgets import QApplication, QMainWindow
-from PySide6.QtCore import Qt
-
-# Import QTimer
-from PySide6.QtCore import QTimer
-
-import time
-
-
+from PySide6.QtGui import QColor
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
 from Final_Main_ui import Ui_MainWindow
 from Datbase_Setting import *
-
-
-#toggle
-# background-color:transparent
-# background-color: rgb(18, 163, 176)
 
 class MainWindow(QMainWindow):
 
@@ -42,43 +28,116 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_4.clicked.connect(self.Login)
 
         #dr_MainPage_btns,funs
+             #Menu_btn
         self.ui.centerMenuContatiner.hide()
         self.ui.menuBtn.clicked.connect(self.CenterMenuPages)
         self.menuBtn_Flag = True
 
+             #notification_btn
         self.ui.popupNotificationSubContainer.hide()
         self.ui.notificationBtn.clicked.connect(self.Notification)
         self.notificationBtn_Flag = True
 
 
 
+             #home_Btn
+        self.ui.homeBtn.clicked.connect(self.HomePage)
+        self.FreezeColor("homeBtn")
+
+
+             #orderBtn
+        self.ui.orderBtn.clicked.connect(self.OrderPage)
+
+
+             #reportsBtn
+        self.ui.reportsBtn.clicked.connect(self.ReportsPage)
 
 
 
     def CenterMenuPages(self):
         if self.menuBtn_Flag:
             self.ui.centerMenuContatiner.show()
+            self.FreezeColor("menuBtn")
         else:
             self.ui.centerMenuContatiner.hide()
+            self.ClearBackGround_Color("menuBtn")
         self.menuBtn_Flag = not self.menuBtn_Flag
+
 
     def Notification(self):
         if self.notificationBtn_Flag:
             self.ui.popupNotificationSubContainer.show()
+            self.FreezeColor("notificationBtn")
         else:
             self.ui.popupNotificationSubContainer.hide()
+            self.ClearBackGround_Color("notificationBtn")
         self.notificationBtn_Flag = not self.notificationBtn_Flag
+    def HomePage(self):
+        self.ui.mainPages.setCurrentWidget(self.ui.homePage)
+        self.FreezeColor("homeBtn")
+        self.ClearBackGround_Color("orderBtn")
+        self.ClearBackGround_Color("reportsBtn")
 
+
+    def OrderPage(self):
+        self.ui.mainPages.setCurrentWidget(self.ui.orderPage)
+        self.FreezeColor("orderBtn")
+        self.ClearBackGround_Color("reportsBtn")
+        self.ClearBackGround_Color("homeBtn")
+
+    def ReportsPage(self):
+        self.ui.mainPages.setCurrentWidget(self.ui.reportsPage)
+        self.FreezeColor("reportsBtn")
+        self.ClearBackGround_Color("orderBtn")
+        self.ClearBackGround_Color("homeBtn")
     def GoReg(self):
         clear_errors(self.ui)
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.RegisterPage)
-
     def GoLog(self):
         clear_errors(self.ui)
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.LoginPage)
     def GoMain(self):
         clear_errors(self.ui)
         self.ui.stackedWidget.setCurrentWidget(self.ui.Main_page)
+
+    def FreezeColor(self, button):
+        self.buttons = [
+            self.ui.menuBtn,
+            self.ui.homeBtn,
+            self.ui.orderBtn,
+            self.ui.reportsBtn,
+            self.ui.helpBtn,
+            self.ui.infoBtn,
+            self.ui.settingsBtn,
+            self.ui.notificationBtn,
+        ]
+
+        for btn in self.buttons:
+            if btn.objectName() == button:
+                btn.setStyleSheet("background-color: rgb(18, 163, 176)")
+
+    def ClearBackGround_Color(self,button):
+        self.buttons = [
+            self.ui.menuBtn,
+            self.ui.homeBtn,
+            self.ui.orderBtn,
+            self.ui.reportsBtn,
+            self.ui.helpBtn,
+            self.ui.infoBtn,
+            self.ui.settingsBtn,
+            self.ui.notificationBtn,
+        ]
+        for btn in self.buttons:
+            background_color = btn.palette().color(btn.backgroundRole())
+
+            if background_color == QColor("rgb(18, 163, 176)"):
+                btn.setStyleSheet("background-color: transparent")
+
+
+
+
+
+
     def Register(self):
         email = self.ui.lineEdit_5.text().strip()
         password = self.ui.lineEdit_2.text().strip()
@@ -115,7 +174,7 @@ class MainWindow(QMainWindow):
                QTimer.singleShot(500, self.GoLog)
 
         elif self.ui.radioButton_pharm.isChecked():
-           fl =  pharmacist_register(self.ui, email, password, first_name, last_name, phone_number)
+           fl = pharmacist_register(self.ui, email, password, first_name, last_name, phone_number)
 
            if(fl == True):
 
@@ -137,14 +196,7 @@ class MainWindow(QMainWindow):
         fl = login_user(self.ui, email, password)
 
         if(fl == True):
-
-
             QTimer.singleShot(500, self.GoMain)
-
-
-
-
-
 
     def ShowDepartement(self):
         self.ui.comboBox.show()

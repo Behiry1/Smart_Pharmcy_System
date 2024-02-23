@@ -1,7 +1,6 @@
 from PySide6.QtCore import QTimer
 import mysql.connector
-import time
-from Application_Setting import *
+
 
 def show_registration_error(ui, message):
     ui.ErrorMessage.setText(message)
@@ -19,15 +18,10 @@ def show_login_success(ui, message):
     ui.ErrorMessage_2.setText(message)
     ui.ErrorMessage_2.setStyleSheet("color: green;")
     QTimer.singleShot(5000,lambda: clear_errors(ui))
-
-
-
 def clear_errors(ui):
     ui.ErrorMessage.setText("")
     ui.ErrorMessage_2.setText("")
-
 def doctor_register(ui, email, password, first_name, last_name, phone_number, department):
-
     table_name = "Doctor_Info"
 
     try:
@@ -74,7 +68,6 @@ def doctor_register(ui, email, password, first_name, last_name, phone_number, de
             print("MySQL connection closed")
 
 def pharmacist_register(ui, email, password, first_name, last_name, phone_number):
-
     table_name = "Pharmacist_Info"
 
     try:
@@ -83,11 +76,11 @@ def pharmacist_register(ui, email, password, first_name, last_name, phone_number
             port="3306",
             user="root",
             #zakaria
-            database="pharmacy_system",
-            password="RootPass24@"
+            #database="pharmacy_system",
+            #password="RootPass24@"
             #behiry
-            # database="smart_pharmacy",
-            # password="Ahlynumber1#"
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -133,11 +126,11 @@ def login_user(ui, email, password):
             port="3306",
             user="root",
             #zakaria
-            database="pharmacy_system",
-            password="RootPass24@"
+            #database="pharmacy_system",
+            #password="RootPass24@"
             #behiry
-            # database="smart_pharmacy",
-            # password="Ahlynumber1#"
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
         )
         if connection.is_connected():
             print("Connected to MySQL database")
