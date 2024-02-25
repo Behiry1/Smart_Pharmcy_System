@@ -5,6 +5,7 @@
   <qresource prefix="Icon_custom">
     <file>Image_for_main/icon_custom/login.png</file>
     <file>Image_for_main/icon_custom/add-friend50px.png</file>
+    <file>Image_for_main/icon_custom/pngegg (1).png</file>
     <file>Image_for_main/icon_custom/icons8-add-user-male-80.png</file>
     <file>Image_for_main/icon_custom/pharmacy.png</file>
   </qresource>

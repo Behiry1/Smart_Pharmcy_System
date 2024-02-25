@@ -161,3 +161,39 @@ def login_user(ui, email, password):
         if 'connection' in locals() and connection.is_connected():
             connection.close()
             print("MySQL connection closed")
+
+
+import mysql.connector
+
+def search_medicine_data(keyword):
+    try:
+        connection = mysql.connector.connect(
+            host="127.0.1.1",
+            port="3306",
+            user="root",
+            # zakaria
+            # database="pharmacy_system",
+            # password="RootPass24@"
+            # behiry
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
+        )
+
+        if connection.is_connected():
+            cursor = connection.cursor(dictionary=True)
+
+            # Execute the query to search for medicine based on the keyword
+            query = "SELECT English_Name, Medicine_Price, Active_Substance FROM medicine_data WHERE English_Name LIKE %s"
+            cursor.execute(query, (f"%{keyword}%",))
+
+            # Fetch all results
+            results = cursor.fetchall()
+            return results
+
+    except mysql.connector.Error as e:
+        print("Error connecting to MySQL database:", e)
+        return None
+
+    finally:
+        if 'connection' in locals() and connection.is_connected():
+            connection.close()
