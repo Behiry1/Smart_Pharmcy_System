@@ -1,6 +1,6 @@
 from PySide6.QtCore import QTimer
 import mysql.connector
-
+from SignUp_Login import *
 
 def show_registration_error(ui, message):
     ui.ErrorMessage.setText(message)
@@ -162,9 +162,6 @@ def login_user(ui, email, password):
             connection.close()
             print("MySQL connection closed")
 
-
-import mysql.connector
-
 def search_medicine_data(keyword):
     try:
         connection = mysql.connector.connect(
@@ -182,11 +179,11 @@ def search_medicine_data(keyword):
         if connection.is_connected():
             cursor = connection.cursor(dictionary=True)
 
-            # Execute the query to search for medicine based on the keyword
+
             query = "SELECT English_Name, Medicine_Price, Active_Substance FROM medicine_data WHERE English_Name LIKE %s"
             cursor.execute(query, (f"%{keyword}%",))
 
-            # Fetch all results
+
             results = cursor.fetchall()
             return results
 
@@ -197,3 +194,162 @@ def search_medicine_data(keyword):
     finally:
         if 'connection' in locals() and connection.is_connected():
             connection.close()
+
+def SearchStartUpMedicine():
+    import string
+
+    all_results = []
+
+    try:
+        connection = mysql.connector.connect(
+            host="127.0.1.1",
+            port="3306",
+            user="root",
+            #zakaria
+            #database="pharmacy_system",
+            #password="RootPass24@"
+            #behiry
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
+        )
+
+        if connection.is_connected():
+            print("Connected to MySQL database")
+
+            cursor = connection.cursor(dictionary=True)
+
+            for char in string.ascii_lowercase:
+
+                query = "SELECT English_Name, Medicine_Price, Active_Substance FROM medicine_data WHERE English_Name LIKE %s LIMIT 10"
+                cursor.execute(query, (char + '%',))
+
+
+                results = cursor.fetchall()
+                all_results.extend(results)
+
+    except mysql.connector.Error as e:
+        print("Error connecting to MySQL database:", e)
+        return None
+
+    finally:
+        if connection and connection.is_connected():
+            connection.close()
+            print("MySQL connection closed")
+
+    return all_results
+
+def get_medicine_id(english_name, active_substance):
+    try:
+        connection = mysql.connector.connect(
+            host="127.0.1.1",
+            port="3306",
+            user="root",
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
+        )
+
+        if connection.is_connected():
+            print("Connected to MySQL database")
+
+            cursor = connection.cursor()
+
+            # Query to retrieve medicine ID based on name and active substance
+            query = "SELECT Medicine_ID FROM medicine_data WHERE English_Name = %s AND Active_Substance = %s"
+            cursor.execute(query, (english_name, active_substance))
+            result = cursor.fetchone()
+
+            if result:
+                medicine_id = result[0]
+                return medicine_id
+            else:
+                print("Medicine not found with the provided name and active substance")
+                return None
+
+    except mysql.connector.Error as e:
+        print("Error connecting to MySQL database:", e)
+
+    finally:
+        if connection and connection.is_connected():
+            connection.close()
+            print("MySQL connection closed")
+
+def get_dr_id_from_email(email):
+
+    try:
+        connection = mysql.connector.connect(
+            host="127.0.1.1",
+            port="3306",
+            user="root",
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
+        )
+
+        if connection.is_connected():
+            print("Connected to MySQL database")
+
+            cursor = connection.cursor()
+
+            # Query to retrieve dr_id based on email
+            query = "SELECT dr_id FROM doctor_info WHERE dr_email = %s"
+            cursor.execute(query, (email,))
+            result = cursor.fetchone()
+
+            if result:
+                dr_id = result[0]
+                return dr_id
+            else:
+                print("Doctor not found with the provided email")
+                return None
+
+    except mysql.connector.Error as e:
+        print("Error connecting to MySQL database:", e)
+
+    finally:
+        if connection and connection.is_connected():
+            connection.close()
+            print("MySQL connection closed")
+
+def add_to_favorite(dr_id, medicine_ids):
+    if dr_id is None:
+        print("Failed to add to favorites: Doctor ID not found.")
+        return
+
+    try:
+        connection = mysql.connector.connect(
+            host="127.0.1.1",
+            port="3306",
+            user="root",
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
+        )
+
+        if connection.is_connected():
+            print("Connected to MySQL database")
+
+            cursor = connection.cursor()
+
+            # Delete existing favorite entries for the doctor ID
+            delete_query = "DELETE FROM favorate_data WHERE dr_id = %s"
+            cursor.execute(delete_query, (dr_id,))
+
+            # Insert new favorite entries for the doctor ID
+            insert_query = "INSERT INTO favorate_data (dr_id, medicine_id) VALUES (%s, %s)"
+            for med_id in medicine_ids:
+                # Convert dr_id and med_id to integers if they are not already
+                dr_id_int = int(dr_id)
+                med_id_int = int(med_id)
+                cursor.execute(insert_query, (dr_id_int, med_id_int))
+
+            # Commit the transaction
+            connection.commit()
+
+            print("Inserted into favorate_data table successfully")
+
+    except mysql.connector.Error as e:
+        print("Error connecting to MySQL database:", e)
+
+    finally:
+        if connection and connection.is_connected():
+            cursor.close()  # Close cursor before closing connection
+            connection.close()
+            print("MySQL connection closed")

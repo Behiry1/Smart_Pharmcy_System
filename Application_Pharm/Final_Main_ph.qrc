@@ -3,6 +3,8 @@
     <file>Image_for_main/BGp.jpeg</file>
   </qresource>
   <qresource prefix="Icon_custom">
+    <file>Image_for_main/icon_custom/white_heart.png</file>
+    <file>Image_for_main/icon_custom/red_heart.png</file>
     <file>Image_for_main/icon_custom/login.png</file>
     <file>Image_for_main/icon_custom/add-friend50px.png</file>
     <file>Image_for_main/icon_custom/pngegg (1).png</file>
