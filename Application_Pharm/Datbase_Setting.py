@@ -76,11 +76,11 @@ def pharmacist_register(ui, email, password, first_name, last_name, phone_number
             port="3306",
             user="root",
             #zakaria
-            #database="pharmacy_system",
-            #password="RootPass24@"
+            database="pharmacy_system",
+            password="RootPass24@"
             #behiry
-            database="smart_pharmacy",
-            password="Ahlynumber1#"
+            # database="smart_pharmacy",
+            # password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -126,11 +126,11 @@ def login_user(ui, email, password):
             port="3306",
             user="root",
             #zakaria
-            #database="pharmacy_system",
-            #password="RootPass24@"
+            database="pharmacy_system",
+            password="RootPass24@"
             #behiry
-            database="smart_pharmacy",
-            password="Ahlynumber1#"
+            # database="smart_pharmacy",
+            # password="Ahlynumber1#"
         )
         if connection.is_connected():
             print("Connected to MySQL database")
@@ -169,11 +169,11 @@ def search_medicine_data(keyword):
             port="3306",
             user="root",
             # zakaria
-            # database="pharmacy_system",
-            # password="RootPass24@"
+            database="pharmacy_system",
+            password="RootPass24@"
             # behiry
-            database="smart_pharmacy",
-            password="Ahlynumber1#"
+            # database="smart_pharmacy",
+            # password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -206,11 +206,11 @@ def SearchStartUpMedicine():
             port="3306",
             user="root",
             #zakaria
-            #database="pharmacy_system",
-            #password="RootPass24@"
+            database="pharmacy_system",
+            password="RootPass24@"
             #behiry
-            database="smart_pharmacy",
-            password="Ahlynumber1#"
+            # database="smart_pharmacy",
+            # password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -244,8 +244,12 @@ def get_medicine_id(english_name, active_substance):
             host="127.0.1.1",
             port="3306",
             user="root",
-            database="smart_pharmacy",
-            password="Ahlynumber1#"
+            #zakaria
+            database="pharmacy_system",
+            password="RootPass24@"
+            #behiry
+            # database="smart_pharmacy",
+            # password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -280,8 +284,12 @@ def get_dr_id_from_email(email):
             host="127.0.1.1",
             port="3306",
             user="root",
-            database="smart_pharmacy",
-            password="Ahlynumber1#"
+            #zakaria
+            database="pharmacy_system",
+            password="RootPass24@"
+            #behiry
+            # database="smart_pharmacy",
+            # password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -319,8 +327,12 @@ def add_to_favorite(dr_id, medicine_ids):
             host="127.0.1.1",
             port="3306",
             user="root",
-            database="smart_pharmacy",
-            password="Ahlynumber1#"
+            #zakaria
+            database="pharmacy_system",
+            password="RootPass24@"
+            #behiry
+            # database="smart_pharmacy",
+            # password="Ahlynumber1#"
         )
 
         if connection.is_connected():

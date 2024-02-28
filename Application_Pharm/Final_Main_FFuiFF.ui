@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1347</width>
+    <width>1085</width>
     <height>703</height>
    </rect>
   </property>
@@ -57,7 +57,7 @@
           <number>0</number>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="Login_SignUp_Page">
           <property name="styleSheet">
@@ -302,6 +302,7 @@ background-color:rgb(18, 163, 200);
                            <property name="font">
                             <font>
                              <pointsize>18</pointsize>
+                             <weight>75</weight>
                              <bold>true</bold>
                             </font>
                            </property>
@@ -417,6 +418,7 @@ background-color:rgb(18, 163, 200);
                            <property name="font">
                             <font>
                              <pointsize>13</pointsize>
+                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                              <strikeout>false</strikeout>
@@ -498,6 +500,7 @@ background-color:rgb(18, 163, 200);
                          <property name="font">
                           <font>
                            <pointsize>18</pointsize>
+                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -901,6 +904,7 @@ background-color:rgb(18, 163, 200);
                         <property name="font">
                          <font>
                           <pointsize>13</pointsize>
+                          <weight>50</weight>
                           <italic>false</italic>
                           <bold>false</bold>
                           <strikeout>false</strikeout>
@@ -1285,6 +1289,7 @@ background-color : #02202f;
                          <property name="font">
                           <font>
                            <pointsize>11</pointsize>
+                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -1405,7 +1410,7 @@ QPushButton#pushButton_23:hover {
 </string>
                          </property>
                          <property name="currentIndex">
-                          <number>0</number>
+                          <number>1</number>
                          </property>
                          <widget class="QWidget" name="homePage">
                           <layout class="QGridLayout" name="gridLayout_19">
@@ -1592,8 +1597,8 @@ QScrollArea QFrame QLabel {
                                   <rect>
                                    <x>0</x>
                                    <y>0</y>
-                                   <width>773</width>
-                                   <height>438</height>
+                                   <width>581</width>
+                                   <height>443</height>
                                   </rect>
                                  </property>
                                  <layout class="QGridLayout" name="gridLayout_8">
@@ -1787,6 +1792,7 @@ QPushButton:hover {
                                 <property name="font">
                                  <font>
                                   <pointsize>9</pointsize>
+                                  <weight>75</weight>
                                   <bold>true</bold>
                                  </font>
                                 </property>
@@ -1807,19 +1813,21 @@ color : black ;
 }
 #frame_15 {
  	margin-left:6px;
-    border: 1px solid black;
+    border: 1px solid   #064666;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+	
+
 }
 #scrollArea_3 {
-    border: 1px solid black;
+    border: 1px solid   #064666;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
 }
 
 #widget_9{
-	border: 1px solid black;
-    border-bottom: 0px solid black;
+	border: 1px solid  #064666;
+    border-bottom: 0px solid   rgb(7, 86, 126);
 }</string>
                           </property>
                           <layout class="QGridLayout" name="gridLayout_17">
@@ -2102,7 +2110,7 @@ color : black ;
                                 </property>
                                 <property name="styleSheet">
                                  <string notr="true">QLabel {
-    border-right: 1px solid black;
+    border-right: 1px solid   #064666;
     qproperty-alignment: 'AlignCenter';
 }
 </string>
@@ -2125,6 +2133,12 @@ color : black ;
                                  </property>
                                  <item>
                                   <widget class="QLabel" name="Medicine_name">
+                                   <property name="minimumSize">
+                                    <size>
+                                     <width>220</width>
+                                     <height>0</height>
+                                    </size>
+                                   </property>
                                    <property name="font">
                                     <font>
                                      <pointsize>9</pointsize>
@@ -2140,9 +2154,15 @@ color : black ;
                                  </item>
                                  <item>
                                   <widget class="QLabel" name="Count">
-                                   <property name="maximumSize">
+                                   <property name="minimumSize">
                                     <size>
                                      <width>50</width>
+                                     <height>0</height>
+                                    </size>
+                                   </property>
+                                   <property name="maximumSize">
+                                    <size>
+                                     <width>200</width>
                                      <height>16777215</height>
                                     </size>
                                    </property>
@@ -2161,9 +2181,15 @@ color : black ;
                                  </item>
                                  <item>
                                   <widget class="QLabel" name="Medicine_usage">
+                                   <property name="minimumSize">
+                                    <size>
+                                     <width>210</width>
+                                     <height>0</height>
+                                    </size>
+                                   </property>
                                    <property name="maximumSize">
                                     <size>
-                                     <width>286</width>
+                                     <width>16777215</width>
                                      <height>16777215</height>
                                     </size>
                                    </property>
@@ -2179,9 +2205,15 @@ color : black ;
                                  </item>
                                  <item>
                                   <widget class="QLabel" name="Price">
+                                   <property name="minimumSize">
+                                    <size>
+                                     <width>50</width>
+                                     <height>0</height>
+                                    </size>
+                                   </property>
                                    <property name="maximumSize">
                                     <size>
-                                     <width>83</width>
+                                     <width>16777215</width>
                                      <height>16777215</height>
                                     </size>
                                    </property>
@@ -2199,7 +2231,7 @@ color : black ;
                                   <widget class="QLabel" name="Edite">
                                    <property name="maximumSize">
                                     <size>
-                                     <width>47</width>
+                                     <width>50</width>
                                      <height>16777215</height>
                                     </size>
                                    </property>
@@ -2246,512 +2278,17 @@ color : black ;
                                   <rect>
                                    <x>0</x>
                                    <y>0</y>
-                                   <width>771</width>
-                                   <height>323</height>
+                                   <width>579</width>
+                                   <height>327</height>
                                   </rect>
                                  </property>
                                  <layout class="QVBoxLayout" name="verticalLayout_17">
-                                  <item>
-                                   <widget class="QWidget" name="widget_23" native="true">
-                                    <property name="minimumSize">
-                                     <size>
-                                      <width>0</width>
-                                      <height>25</height>
-                                     </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                     <size>
-                                      <width>16777215</width>
-                                      <height>30</height>
-                                     </size>
-                                    </property>
-                                    <property name="font">
-                                     <font>
-                                      <stylestrategy>PreferAntialias</stylestrategy>
-                                     </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                     <string notr="true">QLabel {
-    border: 1px solid black;
-    qproperty-alignment: 'AlignCenter';
-	border-left:0px solid black;
-
-}
-
-QPushButton {
- 
-    background-color: red;
-    border-radius: 10px;
-}
-QLineEdit{
-border:1px solid black;
-border-left:0px;
-}
-
-</string>
-                                    </property>
-                                    <layout class="QHBoxLayout" name="_17">
-                                     <property name="spacing">
-                                      <number>0</number>
-                                     </property>
-                                     <property name="leftMargin">
-                                      <number>0</number>
-                                     </property>
-                                     <property name="topMargin">
-                                      <number>0</number>
-                                     </property>
-                                     <property name="rightMargin">
-                                      <number>0</number>
-                                     </property>
-                                     <property name="bottomMargin">
-                                      <number>0</number>
-                                     </property>
-                                     <item>
-                                      <widget class="QLabel" name="Medicine_name_19">
-                                       <property name="font">
-                                        <font>
-                                         <pointsize>9</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="layoutDirection">
-                                        <enum>Qt::LeftToRight</enum>
-                                       </property>
-                                       <property name="text">
-                                        <string>Medicine Name </string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QLineEdit" name="lineEdit_26">
-                                       <property name="maximumSize">
-                                        <size>
-                                         <width>50</width>
-                                         <height>30</height>
-                                        </size>
-                                       </property>
-                                       <property name="font">
-                                        <font>
-                                         <pointsize>10</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="text">
-                                        <string>count</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QLabel" name="Medicine_usage_19">
-                                       <property name="font">
-                                        <font>
-                                         <pointsize>9</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="text">
-                                        <string> Medicine Usage</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QLabel" name="Price_19">
-                                       <property name="maximumSize">
-                                        <size>
-                                         <width>80</width>
-                                         <height>16777215</height>
-                                        </size>
-                                       </property>
-                                       <property name="font">
-                                        <font>
-                                         <pointsize>9</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="text">
-                                        <string>Price </string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QWidget" name="D_widget_delet_17" native="true">
-                                       <property name="maximumSize">
-                                        <size>
-                                         <width>40</width>
-                                         <height>16777215</height>
-                                        </size>
-                                       </property>
-                                       <layout class="QVBoxLayout" name="verticalLayout_44">
-                                        <property name="spacing">
-                                         <number>0</number>
-                                        </property>
-                                        <property name="leftMargin">
-                                         <number>5</number>
-                                        </property>
-                                        <property name="topMargin">
-                                         <number>5</number>
-                                        </property>
-                                        <property name="rightMargin">
-                                         <number>5</number>
-                                        </property>
-                                        <property name="bottomMargin">
-                                         <number>5</number>
-                                        </property>
-                                        <item>
-                                         <widget class="QPushButton" name="pushButton_Trash_17">
-                                          <property name="maximumSize">
-                                           <size>
-                                            <width>30</width>
-                                            <height>25</height>
-                                           </size>
-                                          </property>
-                                          <property name="text">
-                                           <string/>
-                                          </property>
-                                          <property name="icon">
-                                           <iconset resource="Final_Main_ph.qrc">
-                                            <normaloff>:/Icon_web/Image_for_main/icons_from_Web/trash-2.svg</normaloff>:/Icon_web/Image_for_main/icons_from_Web/trash-2.svg</iconset>
-                                          </property>
-                                         </widget>
-                                        </item>
-                                       </layout>
-                                      </widget>
-                                     </item>
-                                    </layout>
-                                   </widget>
-                                  </item>
-                                  <item>
-                                   <widget class="QWidget" name="widget_24" native="true">
-                                    <property name="minimumSize">
-                                     <size>
-                                      <width>0</width>
-                                      <height>25</height>
-                                     </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                     <size>
-                                      <width>16777215</width>
-                                      <height>30</height>
-                                     </size>
-                                    </property>
-                                    <property name="font">
-                                     <font>
-                                      <stylestrategy>PreferAntialias</stylestrategy>
-                                     </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                     <string notr="true">QLabel {
-    border: 1px solid black;
-    qproperty-alignment: 'AlignCenter';
-	border-left:0px solid black;
-
-}
-
-QPushButton {
- 
-    background-color: red;
-    border-radius: 10px;
-}
-QLineEdit{
-border:1px solid black;
-border-left:0px;
-}
-
-</string>
-                                    </property>
-                                    <layout class="QHBoxLayout" name="_18">
-                                     <property name="spacing">
-                                      <number>0</number>
-                                     </property>
-                                     <property name="leftMargin">
-                                      <number>0</number>
-                                     </property>
-                                     <property name="topMargin">
-                                      <number>0</number>
-                                     </property>
-                                     <property name="rightMargin">
-                                      <number>0</number>
-                                     </property>
-                                     <property name="bottomMargin">
-                                      <number>0</number>
-                                     </property>
-                                     <item>
-                                      <widget class="QLabel" name="Medicine_name_20">
-                                       <property name="font">
-                                        <font>
-                                         <pointsize>9</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="layoutDirection">
-                                        <enum>Qt::LeftToRight</enum>
-                                       </property>
-                                       <property name="text">
-                                        <string>Medicine Name </string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QLineEdit" name="lineEdit_27">
-                                       <property name="maximumSize">
-                                        <size>
-                                         <width>50</width>
-                                         <height>30</height>
-                                        </size>
-                                       </property>
-                                       <property name="font">
-                                        <font>
-                                         <pointsize>10</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="text">
-                                        <string>count</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QLabel" name="Medicine_usage_20">
-                                       <property name="font">
-                                        <font>
-                                         <pointsize>9</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="text">
-                                        <string> Medicine Usage</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QLabel" name="Price_20">
-                                       <property name="maximumSize">
-                                        <size>
-                                         <width>80</width>
-                                         <height>16777215</height>
-                                        </size>
-                                       </property>
-                                       <property name="font">
-                                        <font>
-                                         <pointsize>9</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="text">
-                                        <string>Price </string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QWidget" name="D_widget_delet_18" native="true">
-                                       <property name="maximumSize">
-                                        <size>
-                                         <width>40</width>
-                                         <height>16777215</height>
-                                        </size>
-                                       </property>
-                                       <layout class="QVBoxLayout" name="verticalLayout_45">
-                                        <property name="spacing">
-                                         <number>0</number>
-                                        </property>
-                                        <property name="leftMargin">
-                                         <number>5</number>
-                                        </property>
-                                        <property name="topMargin">
-                                         <number>5</number>
-                                        </property>
-                                        <property name="rightMargin">
-                                         <number>5</number>
-                                        </property>
-                                        <property name="bottomMargin">
-                                         <number>5</number>
-                                        </property>
-                                        <item>
-                                         <widget class="QPushButton" name="pushButton_Trash_18">
-                                          <property name="maximumSize">
-                                           <size>
-                                            <width>30</width>
-                                            <height>25</height>
-                                           </size>
-                                          </property>
-                                          <property name="text">
-                                           <string/>
-                                          </property>
-                                          <property name="icon">
-                                           <iconset resource="Final_Main_ph.qrc">
-                                            <normaloff>:/Icon_web/Image_for_main/icons_from_Web/trash-2.svg</normaloff>:/Icon_web/Image_for_main/icons_from_Web/trash-2.svg</iconset>
-                                          </property>
-                                         </widget>
-                                        </item>
-                                       </layout>
-                                      </widget>
-                                     </item>
-                                    </layout>
-                                   </widget>
-                                  </item>
-                                  <item>
-                                   <widget class="QWidget" name="widget_13" native="true">
-                                    <property name="minimumSize">
-                                     <size>
-                                      <width>0</width>
-                                      <height>25</height>
-                                     </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                     <size>
-                                      <width>16777215</width>
-                                      <height>30</height>
-                                     </size>
-                                    </property>
-                                    <property name="font">
-                                     <font>
-                                      <stylestrategy>PreferAntialias</stylestrategy>
-                                     </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                     <string notr="true">QLabel {
-    border: 1px solid black;
-    qproperty-alignment: 'AlignCenter';
-	border-left:0px solid black;
-
-}
-
-QPushButton {
- 
-    background-color: red;
-    border-radius: 10px;
-}
-QLineEdit{
-border:1px solid black;
-border-left:0px;
-}
-
-</string>
-                                    </property>
-                                    <layout class="QHBoxLayout" name="_6">
-                                     <property name="spacing">
-                                      <number>0</number>
-                                     </property>
-                                     <property name="leftMargin">
-                                      <number>0</number>
-                                     </property>
-                                     <property name="topMargin">
-                                      <number>0</number>
-                                     </property>
-                                     <property name="rightMargin">
-                                      <number>0</number>
-                                     </property>
-                                     <property name="bottomMargin">
-                                      <number>0</number>
-                                     </property>
-                                     <item>
-                                      <widget class="QLabel" name="Medicine_name_8">
-                                       <property name="font">
-                                        <font>
-                                         <pointsize>9</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="layoutDirection">
-                                        <enum>Qt::LeftToRight</enum>
-                                       </property>
-                                       <property name="text">
-                                        <string>Medicine Name </string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QLineEdit" name="lineEdit_15">
-                                       <property name="maximumSize">
-                                        <size>
-                                         <width>50</width>
-                                         <height>30</height>
-                                        </size>
-                                       </property>
-                                       <property name="font">
-                                        <font>
-                                         <pointsize>10</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="text">
-                                        <string>count</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QLabel" name="Medicine_usage_7">
-                                       <property name="font">
-                                        <font>
-                                         <pointsize>9</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="text">
-                                        <string> Medicine Usage</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QLabel" name="Price_8">
-                                       <property name="maximumSize">
-                                        <size>
-                                         <width>80</width>
-                                         <height>16777215</height>
-                                        </size>
-                                       </property>
-                                       <property name="font">
-                                        <font>
-                                         <pointsize>9</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="text">
-                                        <string>Price </string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QWidget" name="D_widget_delet_6" native="true">
-                                       <property name="maximumSize">
-                                        <size>
-                                         <width>40</width>
-                                         <height>16777215</height>
-                                        </size>
-                                       </property>
-                                       <layout class="QVBoxLayout" name="verticalLayout_33">
-                                        <property name="spacing">
-                                         <number>0</number>
-                                        </property>
-                                        <property name="leftMargin">
-                                         <number>5</number>
-                                        </property>
-                                        <property name="topMargin">
-                                         <number>5</number>
-                                        </property>
-                                        <property name="rightMargin">
-                                         <number>5</number>
-                                        </property>
-                                        <property name="bottomMargin">
-                                         <number>5</number>
-                                        </property>
-                                        <item>
-                                         <widget class="QPushButton" name="pushButton_Trash_6">
-                                          <property name="maximumSize">
-                                           <size>
-                                            <width>35</width>
-                                            <height>30</height>
-                                           </size>
-                                          </property>
-                                          <property name="text">
-                                           <string/>
-                                          </property>
-                                          <property name="icon">
-                                           <iconset resource="Final_Main_ph.qrc">
-                                            <normaloff>:/Icon_web/Image_for_main/icons_from_Web/trash-2.svg</normaloff>:/Icon_web/Image_for_main/icons_from_Web/trash-2.svg</iconset>
-                                          </property>
-                                         </widget>
-                                        </item>
-                                       </layout>
-                                      </widget>
-                                     </item>
-                                    </layout>
-                                   </widget>
-                                  </item>
                                   <item>
                                    <widget class="QWidget" name="widget_11" native="true">
                                     <property name="minimumSize">
                                      <size>
                                       <width>0</width>
-                                      <height>25</height>
+                                      <height>30</height>
                                      </size>
                                     </property>
                                     <property name="maximumSize">
@@ -2766,21 +2303,23 @@ border-left:0px;
                                      </font>
                                     </property>
                                     <property name="styleSheet">
-                                     <string notr="true">QLabel {
-    border: 1px solid black;
+                                     <string notr="true">QLabel , QLineEdit {
+    border-left: 1px solid #064666;
     qproperty-alignment: 'AlignCenter';
-	border-left:0px solid black;
+	border-righte:0px solid #064666;
 
 }
 
 QPushButton {
  
-    background-color: red;
+    background-color: rgb(255, 34, 34);
     border-radius: 10px;
 }
-QLineEdit{
-border:1px solid black;
-border-left:0px;
+
+*{
+border-bottom:1px solid #064666;
+border-top:1px solid #064666;
+
 }
 
 </string>
@@ -2803,6 +2342,12 @@ border-left:0px;
                                      </property>
                                      <item>
                                       <widget class="QLabel" name="Medicine_name_3">
+                                       <property name="minimumSize">
+                                        <size>
+                                         <width>210</width>
+                                         <height>0</height>
+                                        </size>
+                                       </property>
                                        <property name="font">
                                         <font>
                                          <pointsize>9</pointsize>
@@ -2818,9 +2363,15 @@ border-left:0px;
                                      </item>
                                      <item>
                                       <widget class="QLineEdit" name="lineEdit_10">
-                                       <property name="maximumSize">
+                                       <property name="minimumSize">
                                         <size>
                                          <width>50</width>
+                                         <height>0</height>
+                                        </size>
+                                       </property>
+                                       <property name="maximumSize">
+                                        <size>
+                                         <width>120</width>
                                          <height>30</height>
                                         </size>
                                        </property>
@@ -2836,6 +2387,12 @@ border-left:0px;
                                      </item>
                                      <item>
                                       <widget class="QLabel" name="Medicine_usage_3">
+                                       <property name="minimumSize">
+                                        <size>
+                                         <width>200</width>
+                                         <height>0</height>
+                                        </size>
+                                       </property>
                                        <property name="font">
                                         <font>
                                          <pointsize>9</pointsize>
@@ -2848,9 +2405,15 @@ border-left:0px;
                                      </item>
                                      <item>
                                       <widget class="QLabel" name="Price_3">
+                                       <property name="minimumSize">
+                                        <size>
+                                         <width>50</width>
+                                         <height>0</height>
+                                        </size>
+                                       </property>
                                        <property name="maximumSize">
                                         <size>
-                                         <width>80</width>
+                                         <width>150</width>
                                          <height>16777215</height>
                                         </size>
                                        </property>
@@ -2865,12 +2428,23 @@ border-left:0px;
                                       </widget>
                                      </item>
                                      <item>
-                                      <widget class="QWidget" name="D_widget_delet" native="true">
+                                      <widget class="QWidget" name="widget_delet" native="true">
+                                       <property name="minimumSize">
+                                        <size>
+                                         <width>35</width>
+                                         <height>0</height>
+                                        </size>
+                                       </property>
                                        <property name="maximumSize">
                                         <size>
                                          <width>40</width>
                                          <height>16777215</height>
                                         </size>
+                                       </property>
+                                       <property name="styleSheet">
+                                        <string notr="true">*{
+border:  1px solid #064666;
+margine : 2px;}</string>
                                        </property>
                                        <layout class="QVBoxLayout" name="verticalLayout_20">
                                         <property name="spacing">
@@ -2902,6 +2476,12 @@ border-left:0px;
                                           <property name="icon">
                                            <iconset resource="Final_Main_ph.qrc">
                                             <normaloff>:/Icon_web/Image_for_main/icons_from_Web/trash-2.svg</normaloff>:/Icon_web/Image_for_main/icons_from_Web/trash-2.svg</iconset>
+                                          </property>
+                                          <property name="iconSize">
+                                           <size>
+                                            <width>14</width>
+                                            <height>14</height>
+                                           </size>
                                           </property>
                                          </widget>
                                         </item>
@@ -2987,6 +2567,7 @@ QPushButton:hover {
                                 <property name="font">
                                  <font>
                                   <pointsize>9</pointsize>
+                                  <weight>75</weight>
                                   <bold>true</bold>
                                  </font>
                                 </property>
@@ -3223,7 +2804,7 @@ QScrollArea QFrame QLabel {
                                 <x>0</x>
                                 <y>0</y>
                                 <width>205</width>
-                                <height>502</height>
+                                <height>507</height>
                                </rect>
                               </property>
                               <layout class="QVBoxLayout" name="verticalLayout_26"/>
@@ -3272,6 +2853,7 @@ QScrollArea QFrame QLabel {
                          <property name="font">
                           <font>
                            <pointsize>10</pointsize>
+                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3299,6 +2881,7 @@ QScrollArea QFrame QLabel {
                             </property>
                             <property name="font">
                              <font>
+                              <weight>50</weight>
                               <bold>false</bold>
                              </font>
                             </property>
@@ -4019,7 +3602,7 @@ QFrame {
  </widget>
  <resources>
   <include location="Final_Main_ph.qrc"/>
-  <include location="C:/Users/hp/.designer/backup/Final_Main_ph.qrc"/>
+  <include location="Final_Main_ph.qrc"/>
  </resources>
  <connections/>
 </ui>

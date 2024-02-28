@@ -48,7 +48,8 @@ class Dr_MainWindow(MainWindow):
         all_results = SearchStartUpMedicine()
 
         if all_results:
-            self.AddFrames(all_results)
+            ff = False
+            self.AddFrames(all_results, ff)
         else:
             print("No medicines found.")
 
@@ -58,13 +59,14 @@ class Dr_MainWindow(MainWindow):
             search_results = search_medicine_data(text)
             if search_results:
                 self.ClearFrames()
-                self.AddFrames(search_results)
+                fl = True
+                self.AddFrames(search_results, fl)
             else:
                 print("Medicine not found")
         else:
             print("Please enter at least 6 characters for search")
 
-    def AddFrames(self, search_results):
+    def AddFrames(self, search_results , flage):
         self.ui.scrollArea.setWidgetResizable(True)
         self.scroll_content = QWidget()
         self.scroll_layout = QVBoxLayout()
@@ -78,22 +80,30 @@ class Dr_MainWindow(MainWindow):
         self.scroll_layout.addLayout(grid_layout)
 
         scroll_width = self.ui.scrollArea.viewport().size().width()
-        card_width = scroll_width // 3
+        num_columns = 3
+        spacing = 10  # Adjust as needed
+        if flage:
+            card_width = (scroll_width - (num_columns + 1) * spacing) // num_columns
+        else:
+            #for behiry
+            #card_width = 500ddvvdvddg
+            #for zakaria
+            card_width = 320
 
         for i, result in enumerate(search_results):
             english_name = result['English_Name']
             medicine_price = result['Medicine_Price']
             active_substance = result['Active_Substance']
-            frame = self.create_frame(english_name, medicine_price, active_substance)
-            row = i // 3
-            col = i % 3
-            grid_layout.addWidget(frame, row, col)
+            frame = self.create_frame(english_name, medicine_price, active_substance, card_width)
+            row = i // num_columns
+            col = i % num_columns
+            grid_layout.addWidget(frame, row, col, Qt.AlignTop)
 
         self.ui.scrollArea.setWidget(self.scroll_content)
 
-    def create_frame(self, english_name, medicine_price, active_substance):
+    def create_frame(self, english_name, medicine_price, active_substance, card_width):
         frame = QFrame()
-        frame.setFixedSize(500, 150)  # Set fixed size for the frame
+        frame.setFixedWidth(card_width)
         frame.setFrameShape(QFrame.StyledPanel)
         frame.setFrameShadow(QFrame.Raised)
 
@@ -306,19 +316,6 @@ class Dr_MainWindow(MainWindow):
                 btn.setStyleSheet("background-color: transparent")
                 btn.setStyleSheet("QPushButton:hover {background-color:rgb(28, 171, 213)}")
 
-    def update_frame_width(self):
-        if self.scroll_layout is None:
-            return  # If scroll_layout is not initialized, return
-
-        scroll_width = self.ui.scrollArea.viewport().size().width()
-        columns = 3
-        card_width = scroll_width // columns
-
-        # Update the width of frames inside the scroll area
-        for i in range(self.scroll_layout.count()):
-            frame = self.scroll_layout.itemAt(i).widget()
-            if frame is not None:
-                frame.setFixedWidth(card_width - 10)
 
 
 
