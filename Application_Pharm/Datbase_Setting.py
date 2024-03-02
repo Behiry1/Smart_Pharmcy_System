@@ -2,6 +2,9 @@ from PySide6.QtCore import QTimer
 import mysql.connector
 from SignUp_Login import *
 
+
+
+
 def show_registration_error(ui, message):
     ui.ErrorMessage.setText(message)
     ui.ErrorMessage.setStyleSheet("color: red;")
@@ -30,11 +33,11 @@ def doctor_register(ui, email, password, first_name, last_name, phone_number, de
             port="3306",
             user="root",
             #zakaria
-            database="pharmacy_system",
-            password="RootPass24@"
+            #database="pharmacy_system",
+            #password="RootPass24@"
             #behiry
-            # database="smart_pharmacy",
-            # password="Ahlynumber1#"
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -76,11 +79,11 @@ def pharmacist_register(ui, email, password, first_name, last_name, phone_number
             port="3306",
             user="root",
             #zakaria
-            database="pharmacy_system",
-            password="RootPass24@"
+            #database="pharmacy_system",
+            #password="RootPass24@"
             #behiry
-            # database="smart_pharmacy",
-            # password="Ahlynumber1#"
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -125,12 +128,12 @@ def login_user(ui, email, password):
             host="127.0.1.1",
             port="3306",
             user="root",
-            #zakaria
-            database="pharmacy_system",
-            password="RootPass24@"
-            #behiry
-            # database="smart_pharmacy",
-            # password="Ahlynumber1#"
+            # zakaria
+            # database="pharmacy_system",
+            # password="RootPass24@"
+            # behiry
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
         )
         if connection.is_connected():
             print("Connected to MySQL database")
@@ -168,12 +171,12 @@ def search_medicine_data(keyword):
             host="127.0.1.1",
             port="3306",
             user="root",
-            # zakaria
-            database="pharmacy_system",
-            password="RootPass24@"
-            # behiry
-            # database="smart_pharmacy",
-            # password="Ahlynumber1#"
+            #zakaria
+            #database="pharmacy_system",
+            #password="RootPass24@"
+            #behiry
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -206,11 +209,11 @@ def SearchStartUpMedicine():
             port="3306",
             user="root",
             #zakaria
-            database="pharmacy_system",
-            password="RootPass24@"
+            #database="pharmacy_system",
+            #password="RootPass24@"
             #behiry
-            # database="smart_pharmacy",
-            # password="Ahlynumber1#"
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -245,11 +248,11 @@ def get_medicine_id(english_name, active_substance):
             port="3306",
             user="root",
             #zakaria
-            database="pharmacy_system",
-            password="RootPass24@"
+            #database="pharmacy_system",
+            #password="RootPass24@"
             #behiry
-            # database="smart_pharmacy",
-            # password="Ahlynumber1#"
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -285,11 +288,11 @@ def get_dr_id_from_email(email):
             port="3306",
             user="root",
             #zakaria
-            database="pharmacy_system",
-            password="RootPass24@"
+            #database="pharmacy_system",
+            #password="RootPass24@"
             #behiry
-            # database="smart_pharmacy",
-            # password="Ahlynumber1#"
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
         )
 
         if connection.is_connected():
@@ -327,30 +330,23 @@ def add_to_favorite(dr_id, medicine_ids):
             host="127.0.1.1",
             port="3306",
             user="root",
-            #zakaria
-            database="pharmacy_system",
-            password="RootPass24@"
-            #behiry
-            # database="smart_pharmacy",
-            # password="Ahlynumber1#"
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
         )
 
         if connection.is_connected():
             print("Connected to MySQL database")
-
             cursor = connection.cursor()
 
-            # Delete existing favorite entries for the doctor ID
-            delete_query = "DELETE FROM favorate_data WHERE dr_id = %s"
-            cursor.execute(delete_query, (dr_id,))
+            # Retrieve existing favorite medicine IDs for the doctor
+            select_query = "SELECT medicine_id FROM favorate_data WHERE dr_id = %s"
+            cursor.execute(select_query, (dr_id,))
+            existing_ids = {row[0] for row in cursor.fetchall()}
 
-            # Insert new favorite entries for the doctor ID
+            # Use executemany for batch insertion
             insert_query = "INSERT INTO favorate_data (dr_id, medicine_id) VALUES (%s, %s)"
-            for med_id in medicine_ids:
-                # Convert dr_id and med_id to integers if they are not already
-                dr_id_int = int(dr_id)
-                med_id_int = int(med_id)
-                cursor.execute(insert_query, (dr_id_int, med_id_int))
+            values = [(int(dr_id), int(med_id)) for med_id in medicine_ids if med_id is not None and int(med_id) not in existing_ids]
+            cursor.executemany(insert_query, values)
 
             # Commit the transaction
             connection.commit()
@@ -362,6 +358,111 @@ def add_to_favorite(dr_id, medicine_ids):
 
     finally:
         if connection and connection.is_connected():
-            cursor.close()  # Close cursor before closing connection
+            cursor.close()
             connection.close()
             print("MySQL connection closed")
+
+import mysql.connector
+
+def load_favorite_medicines(dr_id):
+    favorite_medicines = []
+
+    try:
+        connection = mysql.connector.connect(
+            host="127.0.1.1",
+            port="3306",
+            user="root",
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
+        )
+
+        if connection.is_connected():
+            cursor = connection.cursor(dictionary=True)
+
+            # Query to retrieve favorite medicines for the given doctor ID
+            select_query = "SELECT m.English_Name, m.Active_Substance " \
+                           "FROM favorate_data AS f " \
+                           "INNER JOIN medicine_data AS m ON f.medicine_id = m.Medicine_ID " \
+                           "WHERE f.dr_id = %s"
+            cursor.execute(select_query, (dr_id,))
+            favorite_medicines_data = cursor.fetchall()
+
+            for medicine_data in favorite_medicines_data:
+                favorite_medicines.append((medicine_data['English_Name'], medicine_data['Active_Substance']))
+
+    except mysql.connector.Error as e:
+        print("Error connecting to MySQL database:", e)
+
+    finally:
+        if connection and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+    return favorite_medicines
+def delete_from_favorite(dr_id, medicine_id):
+    try:
+        connection = mysql.connector.connect(
+            host="127.0.1.1",
+            port="3306",
+            user="root",
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
+        )
+
+        if connection.is_connected():
+            cursor = connection.cursor()
+
+            # Delete the favorite entry for the given doctor and medicine ID
+            delete_query = "DELETE FROM favorate_data WHERE dr_id = %s AND medicine_id = %s"
+            cursor.execute(delete_query, (dr_id, medicine_id))
+
+            # Commit the transaction
+            connection.commit()
+
+            print("Deleted from favorite_data table successfully")
+
+    except mysql.connector.Error as e:
+        print("Error connecting to MySQL database:", e)
+
+    finally:
+        if connection and connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("MySQL connection closed")
+
+import mysql.connector
+
+def get_medicine_info(medicine_name):
+    try:
+        connection = mysql.connector.connect(
+            host="127.0.1.1",
+            port="3306",
+            user="root",
+            database="smart_pharmacy",
+            password="Ahlynumber1#"
+        )
+
+        if connection.is_connected():
+            cursor = connection.cursor(dictionary=True)
+
+            # Select the medicine usage and price based on the medicine name
+            select_query = "SELECT English_Name, Medicine_Price, Medicine_Usage FROM medicine_data WHERE english_name = %s"
+            cursor.execute(select_query, (medicine_name,))
+            medicine_info = cursor.fetchone()
+
+            # Consume all remaining rows to prevent "Unread result found" error
+            cursor.fetchall()
+
+            print("Medicine info retrieved successfully")
+
+            return medicine_info
+
+    except mysql.connector.Error as e:
+        print("Error connecting to MySQL database:", e)
+
+    finally:
+        if connection and connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("MySQL connection closed")
+
