@@ -302,7 +302,6 @@ background-color:rgb(18, 163, 200);
                            <property name="font">
                             <font>
                              <pointsize>18</pointsize>
-                             <weight>75</weight>
                              <bold>true</bold>
                             </font>
                            </property>
@@ -418,7 +417,6 @@ background-color:rgb(18, 163, 200);
                            <property name="font">
                             <font>
                              <pointsize>13</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                              <strikeout>false</strikeout>
@@ -500,7 +498,6 @@ background-color:rgb(18, 163, 200);
                          <property name="font">
                           <font>
                            <pointsize>18</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -904,7 +901,6 @@ background-color:rgb(18, 163, 200);
                         <property name="font">
                          <font>
                           <pointsize>13</pointsize>
-                          <weight>50</weight>
                           <italic>false</italic>
                           <bold>false</bold>
                           <strikeout>false</strikeout>
@@ -1289,7 +1285,6 @@ background-color : #02202f;
                          <property name="font">
                           <font>
                            <pointsize>11</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -1410,7 +1405,7 @@ QPushButton#pushButton_23:hover {
 </string>
                          </property>
                          <property name="currentIndex">
-                          <number>1</number>
+                          <number>0</number>
                          </property>
                          <widget class="QWidget" name="homePage">
                           <layout class="QGridLayout" name="gridLayout_19">
@@ -1598,7 +1593,7 @@ QScrollArea QFrame QLabel {
                                    <x>0</x>
                                    <y>0</y>
                                    <width>581</width>
-                                   <height>443</height>
+                                   <height>438</height>
                                   </rect>
                                  </property>
                                  <layout class="QGridLayout" name="gridLayout_8">
@@ -1651,7 +1646,7 @@ QScrollArea QFrame QLabel {
                                        <property name="minimumSize">
                                         <size>
                                          <width>20</width>
-                                         <height>20</height>
+                                         <height>25</height>
                                         </size>
                                        </property>
                                        <property name="maximumSize">
@@ -1792,7 +1787,6 @@ QPushButton:hover {
                                 <property name="font">
                                  <font>
                                   <pointsize>9</pointsize>
-                                  <weight>75</weight>
                                   <bold>true</bold>
                                  </font>
                                 </property>
@@ -2279,7 +2273,7 @@ color : black ;
                                    <x>0</x>
                                    <y>0</y>
                                    <width>579</width>
-                                   <height>327</height>
+                                   <height>323</height>
                                   </rect>
                                  </property>
                                  <layout class="QVBoxLayout" name="verticalLayout_17">
@@ -2567,7 +2561,6 @@ QPushButton:hover {
                                 <property name="font">
                                  <font>
                                   <pointsize>9</pointsize>
-                                  <weight>75</weight>
                                   <bold>true</bold>
                                  </font>
                                 </property>
@@ -2804,7 +2797,7 @@ QScrollArea QFrame QLabel {
                                 <x>0</x>
                                 <y>0</y>
                                 <width>205</width>
-                                <height>507</height>
+                                <height>502</height>
                                </rect>
                               </property>
                               <layout class="QVBoxLayout" name="verticalLayout_26"/>
@@ -2853,7 +2846,6 @@ QScrollArea QFrame QLabel {
                          <property name="font">
                           <font>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -2881,7 +2873,6 @@ QScrollArea QFrame QLabel {
                             </property>
                             <property name="font">
                              <font>
-                              <weight>50</weight>
                               <bold>false</bold>
                              </font>
                             </property>
