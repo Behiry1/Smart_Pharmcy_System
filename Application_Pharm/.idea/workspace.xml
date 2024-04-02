@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97f29864-ad20-482d-88b8-21bcd3605e8f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Authentication.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Request_Medicines.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Utilities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Datbase_Setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/Datbase_Setting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dr_MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dr_MainWindow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Final_Main_FFuiFF.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Main_FFuiFF.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Main_ph_rc.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Main_ph_rc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Final_Main_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Main_ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SignUp_Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/SignUp_Login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/output.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,10 +56,12 @@
     &quot;Python.Datbase_Setting.executor&quot;: &quot;Run&quot;,
     &quot;Python.Dr_MainWindow.executor&quot;: &quot;Run&quot;,
     &quot;Python.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.SignUp_Login.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging Desktop__Application&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Project/Graduation_Project/Smart_Pharmcy_System/Application_Pharm/Final_Main_ui.py&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Desktop__Application&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Project/Graduation_Project/Smart_Pharmcy_System/Application_Pharm/SignUpLogin_ui.py&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>

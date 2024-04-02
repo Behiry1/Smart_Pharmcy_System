@@ -1,102 +1,67 @@
 import re
-from PySide6.QtWidgets import QMainWindow, QWidget, QGridLayout
+import sys
+from PySide6.QtWidgets import QMainWindow, QApplication, QVBoxLayout, QWidget
+from SignUpLogin_ui import Ui_Form as signup
+from Authentication import login_user,doctor_register,pharmacist_register
+from Dr_MainWindow import Dr_MainWindow
+from Utilities import *
 
-import Dr_MainWindow
-from Datbase_Setting import clear_errors
-from Final_Main_ui import Ui_MainWindow
-from Datbase_Setting import *
-from Dr_MainWindow import *
 
-class MainWindow(QMainWindow):
-
+class MainWindow(QMainWindow,signup):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
         # show Ui pages
-        self.ui = Ui_MainWindow()
+        self.ui = signup()
         self.ui.setupUi(self)
         self.show()
 
-
-
-        # Sihnup_btns,funs
+        # Signup_btns,funcs
         self.HideDepartement()
         self.ui.pushButton_2.clicked.connect(self.GoLog)
         self.ui.radioButton_Dr.clicked.connect(self.ShowDepartement)
         self.ui.radioButton_pharm.clicked.connect(self.HideDepartement)
         self.ui.pushButton.clicked.connect(self.Register)
 
-        # Login_btns,funs
-        self.ui.stackedWidget.setCurrentWidget(self.ui.LoginPage)
+        # Login_btns,funcs
         self.ui.pushButton_3.clicked.connect(self.GoReg)
         self.ui.pushButton_4.clicked.connect(self.Login)
         self.login_Fl = False
+        self.center_widget_2()
 
-        #dr_MainPage_btns,funs
-             #Menu_btn
-        self.ui.centerMenuContatiner.hide()
-        self.ui.menuBtn.clicked.connect(self.CenterMenuPages)
-        self.menuBtn_Flag = True
+    def center_widget_2(self):
+        # Create a QVBoxLayout to center widget_2
+        layout = QVBoxLayout()
+        layout.addWidget(self.ui.widget_2)
 
-             #notification_btn
-        self.ui.popupNotificationSubContainer.hide()
-        self.ui.notificationBtn.clicked.connect(self.Notification)
-        self.notificationBtn_Flag = True
+        # Create a wrapper widget to hold the layout
+        wrapper = QWidget()
+        wrapper.setLayout(layout)
 
-
-
-             #home_Btn
-        self.ui.rightMenuSubContainer.show()
-        self.ui.homeBtn.clicked.connect(self.HomePage)
-        self.FreezeColor("homeBtn")
-
-
-             #orderBtn
-        self.ui.orderBtn.clicked.connect(self.OrderPage)
-
-
-             #reportsBtn
-        self.ui.reportsBtn.clicked.connect(self.ReportsPage)
-
-             #search_btn
-        self.ui.lineEdit_9.textEdited.connect(self.Search)
-
-
-
-
-
-
-
-        self.ClearFrames()
-        self.clear_scroll_area_2()
-        self.favorite_state = {}
-        self.favorite_medicines = []
-        self.Selected_Medicine = []
-        #self.add_widgets_to_scrollarea3()
-        self.ui.pushButton_13.clicked.connect(self.Create_Prescription)
-        self.ui.Print_button.clicked.connect(self.Print)
-
-
-
+        # Set the central widget of the main window to the wrapper
+        self.setCentralWidget(wrapper)
 
     def GoReg(self):
-            clear_errors(self.ui)
-            self.ui.stackedWidget_2.setCurrentWidget(self.ui.RegisterPage)
+        clear_errors(self.ui)
+        self.ui.stackedWidget_2.setCurrentWidget(self.ui.RegisterPage)
 
     def GoLog(self):
-            clear_errors(self.ui)
-            self.ui.stackedWidget_2.setCurrentWidget(self.ui.LoginPage)
+        clear_errors(self.ui)
+        self.ui.stackedWidget_2.setCurrentWidget(self.ui.LoginPage)
 
     def GoMain(self):
-            clear_errors(self.ui)
-            self.ui.stackedWidget.setCurrentWidget(self.ui.Main_page)
-
-
+        # Clear any error messages before switching pages
+        clear_errors(self.ui)
+        # Close the signup UI
+        self.close()
+        # Open the Dr_MainWindow UI
+        main_Dr = Dr_MainWindow()
+        main_Dr.show_ui()
 
     def ShowDepartement(self):
-            self.ui.comboBox.show()
+        self.ui.comboBox.show()
 
     def HideDepartement(self):
-            self.ui.comboBox.hide()
+        self.ui.comboBox.hide()
 
     def validate_email(self, email):
             email_regex = r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
@@ -122,3 +87,69 @@ class MainWindow(QMainWindow):
 
     def SetFlagTrue(self):
         return self.login_Fl
+
+    def Register(self):
+        email = self.ui.lineEdit_5.text().strip()
+        password = self.ui.lineEdit_2.text().strip()
+        confirm_password = self.ui.lineEdit_3.text().strip()
+        first_name = self.ui.lineEdit.text().strip()
+        last_name = self.ui.lineEdit_4.text().strip()
+        phone_number = self.ui.lineEdit_6.text().strip()
+        department = self.ui.comboBox.currentText()
+
+        if not email or not password or not first_name or not last_name or not phone_number:
+            show_registration_error(self.ui, "Please fill in all fields.")
+            return
+
+        if not self.validate_password(password):
+            show_registration_error(self.ui, "Password must be at least 8 characters.")
+            return
+
+        if not self.validate_phoneNumber(phone_number):
+            show_registration_error(self.ui, "Please enter a valid number.")
+            return
+
+        if not self.validate_email(email):
+            show_registration_error(self.ui, "Invalid email address.")
+            return
+
+        if not self.validate_passwords(password, confirm_password):
+            show_registration_error(self.ui, "Passwords do not match")
+            return
+
+        if self.ui.radioButton_Dr.isChecked():
+            fl = doctor_register(self.ui, email, password, first_name, last_name, phone_number, department)
+            if (fl == True):
+                QTimer.singleShot(500, self.GoLog)
+
+        elif self.ui.radioButton_pharm.isChecked():
+            fl = pharmacist_register(self.ui, email, password, first_name, last_name, phone_number)
+
+            if (fl == True):
+                QTimer.singleShot(500, self.GoLog)
+
+        elif not self.ui.radioButton_Dr.isChecked() and not self.ui.radioButton_pharm.isChecked():
+
+            show_registration_error(self.ui, "Please select your identity.")
+
+    def Login(self):
+        email = self.ui.lineEdit_7.text().strip()
+        password = self.ui.lineEdit_8.text().strip()
+
+        if not email or not password:
+            show_login_error(self.ui, "Please enter email and password.")
+            return
+
+        fl = login_user(self.ui, email, password)
+
+        if (fl == True):
+
+
+            QTimer.singleShot(500, self.GoMain)
+
+
+
+def StartApplication():
+    app = QApplication(sys.argv)
+    mainWindow = MainWindow()
+    sys.exit(app.exec())

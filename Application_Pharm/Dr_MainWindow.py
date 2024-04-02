@@ -1,23 +1,63 @@
 import sys
-import mysql.connector
 from PySide6.QtCore import Qt, QSize, QRect, QUrl
 from PySide6.QtGui import QIcon, QFont, QPainter, QPixmap, QPageSize, QDesktopServices, QPdfWriter, QFontMetrics
 from PySide6.QtPrintSupport import QPrinter, QPrintPreviewDialog, QPrintDialog
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QFrame, QGridLayout, QCheckBox, \
     QLabel, QWidget, QLineEdit, QHBoxLayout, QFileDialog
-from SignUp_Login import *
-from Datbase_Setting import *
 
 
-class Dr_MainWindow(MainWindow):
+from Datbase_Setting import search_medicine_data, SearchStartUpMedicine, get_medicine_id, get_dr_id_from_email, \
+    add_to_favorite, load_favorite_medicines, delete_from_favorite, get_medicine_info
+from Utilities import *
+from datetime import datetime
+import Authentication
 
+from PySide6.QtWidgets import QMainWindow
+from Final_Main_ui import Ui_Dr_MainWindow  # Update the import statement
+
+class Dr_MainWindow(QMainWindow, Ui_Dr_MainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.setupUi(self)  # Setup the user interface
+        self.clear_scroll_area_2()  # Clear scroll area if needed
+        self.favorite_state = {}
+        self.favorite_medicines = []
+        self.Selected_Medicine = []
 
+        # Connect signals to slots
+        self.pushButton_13.clicked.connect(self.Create_Prescription)
+        self.Print_button.clicked.connect(self.Print)
+        self.menuBtn.clicked.connect(self.CenterMenuPages)
+        self.notificationBtn.clicked.connect(self.Notification)
+        self.homeBtn.clicked.connect(self.HomePage)
+        self.orderBtn.clicked.connect(self.OrderPage)
+        self.reportsBtn.clicked.connect(self.ReportsPage)
+        self.lineEdit_9.textEdited.connect(self.Search)
+
+        # Initialize UI elements and flags
+        self.centerMenuContatiner.hide()
+        self.popupNotificationSubContainer.hide()
+        self.menuBtn_Flag = True
+        self.notificationBtn_Flag = True
+        self.mainPages.setCurrentWidget(self.homePage)
+        self.rightMenuSubContainer.show()
+        self.FreezeColor("homeBtn")
+
+        # Load data or perform any other necessary setup steps
+        self.StartUpMedicine()
+        self.load_favorite_data()
+
+        # Show the main window
+        self.show()
+
+
+    def show_ui(self):
+        self.show()
 
     def load_favorite_data(self):
         print("Welcome")
-        email = self.ui.lineEdit_7.text().strip()
+        email = Authentication.mail
+        print(Authentication.mail)
         self.drid = get_dr_id_from_email(email)
         favorite_medicines = load_favorite_medicines(self.drid)
 
@@ -37,13 +77,14 @@ class Dr_MainWindow(MainWindow):
     def StartUpMedicine(self):
         all_results = SearchStartUpMedicine()
 
-        email = self.ui.lineEdit_7.text().strip()
+
+        email = Authentication.mail
         self.drid = get_dr_id_from_email(email)
 
         if all_results:
             # Fetch favorite medicines
             favorite_medicines = load_favorite_medicines(self.drid)
-              # Dictionary to store favorite states for each medicine
+            # Dictionary to store favorite states for each medicine
             for result in all_results:
                 english_name = result['English_Name']
                 active_substance = result['Active_Substance']
@@ -62,7 +103,7 @@ class Dr_MainWindow(MainWindow):
             print("No medicines found.")
 
     def Search(self):
-        text = self.ui.lineEdit_9.text()
+        text = self.lineEdit_9.text()
         if len(text) >= 6:
             search_results = search_medicine_data(text)
             if search_results:
@@ -136,11 +177,11 @@ class Dr_MainWindow(MainWindow):
 
     def add_widgets_to_scrollarea3(self):
 
-        scroll_layout1 = self.ui.scrollArea_3.layout()
+        scroll_layout1 = self.scrollArea_3.layout()
 
         if scroll_layout1 is None:
             scroll_layout1 = QVBoxLayout()
-            self.ui.scrollArea_3.setLayout(scroll_layout1)
+            self.scrollArea_3.setLayout(scroll_layout1)
 
         added_widgets = {}
 
@@ -164,12 +205,12 @@ class Dr_MainWindow(MainWindow):
 
     def clear_scroll_area3(self):
         # Get the scroll area's content widget
-        scroll_content1 = self.ui.scrollArea_3.widget()
+        scroll_content1 = self.scrollArea_3.widget()
 
         # Clear existing layout and widgets
         if scroll_content1 is not None:
             # Remove the content widget from the scroll area
-            self.ui.scrollArea_3.takeWidget()
+            self.scrollArea_3.takeWidget()
 
             # Delete the content widget
             scroll_content1.deleteLater()
@@ -184,6 +225,7 @@ class Dr_MainWindow(MainWindow):
         self.add_widgets_to_scrollarea3()
 
     def Print(self):
+        original_stylesheet = self.orderPage.styleSheet()
         # Create a PDF writer object
         pdf_filename = "output.pdf"
         pdf_writer = QPdfWriter(pdf_filename)
@@ -210,7 +252,12 @@ class Dr_MainWindow(MainWindow):
         frame_height_pixels = dpi_y * frame_height_mm / 25.4
 
         # Resize the widget to match the dimensions of the custom frame
-        self.ui.orderPage.resize(frame_width_pixels, frame_height_pixels)
+        self.orderPage.resize(frame_width_pixels, frame_height_pixels)
+
+        self.Edite.hide()
+        # self.pushButton_Trash.resize(0)
+        self.Print_Frame.hide()
+        self.label_29.setText(datetime.now().strftime('%d/%m/%y'))
 
         # Set font size using stylesheet for the OrderPage widget
         font_stylesheet = """
@@ -220,17 +267,17 @@ class Dr_MainWindow(MainWindow):
             background-color: #f0f0f0; /* Background color */
             border-radius: 10px; /* Rounded corners */
             max-height: 1080px; /* Set a reliable maximum height */
+
         }
-          
+
         """
 
-        self.ui.orderPage.setStyleSheet(font_stylesheet)
-
+        self.orderPage.setStyleSheet(font_stylesheet)
 
         # Create a pixmap to render the OrderPage widget onto it
-        pixmap = QPixmap(self.ui.orderPage.size())
+        pixmap = QPixmap(self.orderPage.size())
         pixmap.fill(Qt.white)  # Fill pixmap with white background
-        self.ui.orderPage.render(pixmap)
+        self.orderPage.render(pixmap)
 
         # Draw the pixmap onto the PDF
         painter.drawPixmap(0, 0, pixmap)
@@ -240,8 +287,14 @@ class Dr_MainWindow(MainWindow):
 
         # Open the PDF file using a PDF viewer
         QDesktopServices.openUrl(QUrl.fromLocalFile(pdf_filename))
+
+        self.Edite.show()
+        # self.pushButton_Trash.resize(0)
+        self.Print_Frame.show()
+        self.orderPage.setStyleSheet(original_stylesheet)
+
     def AddFrames(self, search_results):
-        self.ui.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setWidgetResizable(True)
         self.scroll_content = QWidget()
         self.scroll_layout = QVBoxLayout()
         self.scroll_content.setLayout(self.scroll_layout)
@@ -253,7 +306,7 @@ class Dr_MainWindow(MainWindow):
         grid_layout.setAlignment(Qt.AlignTop | Qt.AlignLeft)
         self.scroll_layout.addLayout(grid_layout)
 
-        scroll_width = self.ui.scrollArea.viewport().size().width()
+        scroll_width = self.scrollArea.viewport().size().width()
         card_width = scroll_width // 3
 
         for i, result in enumerate(search_results):
@@ -265,7 +318,7 @@ class Dr_MainWindow(MainWindow):
             col = i % 3
             grid_layout.addWidget(frame, row, col)
 
-        self.ui.scrollArea.setWidget(self.scroll_content)
+        self.scrollArea.setWidget(self.scroll_content)
 
     def create_frame(self, english_name, medicine_price, active_substance):
         frame = QFrame()
@@ -300,13 +353,12 @@ class Dr_MainWindow(MainWindow):
 
         button.clicked.connect(lambda: self.toggle_favorite(english_name, active_substance, button))
 
-        if(english_name) in self.Selected_Medicine:
+        if (english_name) in self.Selected_Medicine:
             select_checkbox.setChecked(True)
 
         # Connect the clicked signal of the checkbox to the checkbox_clicked slot function
         select_checkbox.clicked.connect(
             lambda checked: self.checkbox_clicked(checked, english_name, active_substance))
-
 
         return frame
 
@@ -357,9 +409,8 @@ class Dr_MainWindow(MainWindow):
         self.display_favorite_medicines()
 
         # Update favorite medicines in the database
-        self.drid = get_dr_id_from_email(self.ui.lineEdit_7.text().strip())
+        self.drid = get_dr_id_from_email(Authentication.mail)
         add_to_favorite(self.drid, medicine_ids)
-
 
     def favorite_action(self, english_name, active_substance):
         # Action to perform when favoriting
@@ -403,7 +454,7 @@ class Dr_MainWindow(MainWindow):
         # Connect lambda function to remove the medicine from favorites
         pushButton.clicked.connect(lambda: self.remove_from_favorites(english_name, active_substance, frame))
 
-        if(english_name) in self.Selected_Medicine:
+        if (english_name) in self.Selected_Medicine:
             checkBox.setChecked(True)
 
         checkBox.clicked.connect(
@@ -411,7 +462,7 @@ class Dr_MainWindow(MainWindow):
 
         return frame
 
-    def checkbox_clicked_favorite(self,checked,english_name,active_substance):
+    def checkbox_clicked_favorite(self, checked, english_name, active_substance):
         if checked:
             # Checkbox is checked
             print(f"{english_name} with active substance {active_substance} is selected.")
@@ -433,17 +484,16 @@ class Dr_MainWindow(MainWindow):
         self.favorite_medicines.remove((english_name, active_substance))
         self.favorite_state[(english_name, active_substance)] = False
 
-        #self.update_main_frames_favorite_state()
-        #self.toggle_favorite(english_name,active_substance,None)
+        # self.update_main_frames_favorite_state()
+        # self.toggle_favorite(english_name,active_substance,None)
         # Update UI to remove the frame of the removed medicine
         frame.deleteLater()
 
         # Update favorite medicines in the database
-        self.drid = get_dr_id_from_email(self.ui.lineEdit_7.text().strip())
+        self.drid = get_dr_id_from_email(Authentication.mail)
         self.mid = get_medicine_id(english_name, active_substance)
-        delete_from_favorite(self.drid,self.mid)
+        delete_from_favorite(self.drid, self.mid)
         self.Search()
-
 
     def display_favorite_medicines(self):
         self.clear_scroll_area_2()
@@ -458,12 +508,12 @@ class Dr_MainWindow(MainWindow):
 
         widget = QWidget()
         widget.setLayout(layout)
-        self.ui.scrollArea_2.setWidget(widget)
+        self.scrollArea_2.setWidget(widget)
 
     def clear_scroll_area_2(self):
-        if self.ui.scrollArea_2.layout() is not None:
-            for i in reversed(range(self.ui.scrollArea_2.layout().count())):
-                widget = self.ui.scrollArea_2.layout().itemAt(i).widget()
+        if self.scrollArea_2.layout() is not None:
+            for i in reversed(range(self.scrollArea_2.layout().count())):
+                widget = self.scrollArea_2.layout().itemAt(i).widget()
                 if widget is not None:
                     widget.deleteLater()
 
@@ -477,142 +527,79 @@ class Dr_MainWindow(MainWindow):
             if widget is not None:
                 widget.deleteLater()
 
-
     def CenterMenuPages(self):
         if self.menuBtn_Flag:
-            self.ui.centerMenuContatiner.show()
+            self.centerMenuContatiner.show()
             self.FreezeColor("menuBtn")
         else:
-            self.ui.centerMenuContatiner.hide()
+            self.centerMenuContatiner.hide()
             self.ClearBackGround_Color("menuBtn")
         self.menuBtn_Flag = not self.menuBtn_Flag
 
-
     def Notification(self):
         if self.notificationBtn_Flag:
-            self.ui.popupNotificationSubContainer.show()
+            self.popupNotificationSubContainer.show()
             self.FreezeColor("notificationBtn")
         else:
-            self.ui.popupNotificationSubContainer.hide()
+            self.popupNotificationSubContainer.hide()
             self.ClearBackGround_Color("notificationBtn")
         self.notificationBtn_Flag = not self.notificationBtn_Flag
+
     def HomePage(self):
-        self.ui.mainPages.setCurrentWidget(self.ui.homePage)
-        self.ui.rightMenuSubContainer.show()
+        self.mainPages.setCurrentWidget(self.homePage)
+        self.rightMenuSubContainer.show()
         self.FreezeColor("homeBtn")
         self.ClearBackGround_Color("orderBtn")
         self.ClearBackGround_Color("reportsBtn")
 
-
     def OrderPage(self):
-        self.ui.mainPages.setCurrentWidget(self.ui.orderPage)
-        self.ui.rightMenuSubContainer.hide()
+        self.mainPages.setCurrentWidget(self.orderPage)
+        self.rightMenuSubContainer.hide()
         self.FreezeColor("orderBtn")
         self.ClearBackGround_Color("reportsBtn")
         self.ClearBackGround_Color("homeBtn")
 
     def ReportsPage(self):
-        self.ui.mainPages.setCurrentWidget(self.ui.reportsPage)
-        self.ui.rightMenuSubContainer.hide()
+        self.mainPages.setCurrentWidget(self.reportsPage)
+        self.rightMenuSubContainer.hide()
         self.FreezeColor("reportsBtn")
         self.ClearBackGround_Color("orderBtn")
         self.ClearBackGround_Color("homeBtn")
 
     def FreezeColor(self, button):
         self.buttons = [
-            self.ui.menuBtn,
-            self.ui.homeBtn,
-            self.ui.orderBtn,
-            self.ui.reportsBtn,
-            self.ui.helpBtn,
-            self.ui.infoBtn,
-            self.ui.settingsBtn,
-            self.ui.notificationBtn,
+            self.menuBtn,
+            self.homeBtn,
+            self.orderBtn,
+            self.reportsBtn,
+            self.helpBtn,
+            self.infoBtn,
+            self.settingsBtn,
+            self.notificationBtn,
         ]
 
         for btn in self.buttons:
             if btn.objectName() == button:
                 btn.setStyleSheet("background-color: rgb(18, 163, 176)")
 
-    def ClearBackGround_Color(self,button):
+    def ClearBackGround_Color(self, button):
         self.buttons = [
-            self.ui.menuBtn,
-            self.ui.homeBtn,
-            self.ui.orderBtn,
-            self.ui.reportsBtn,
-            self.ui.helpBtn,
-            self.ui.infoBtn,
-            self.ui.settingsBtn,
-            self.ui.notificationBtn,
+            self.menuBtn,
+            self.homeBtn,
+            self.orderBtn,
+            self.reportsBtn,
+            self.helpBtn,
+            self.infoBtn,
+            self.settingsBtn,
+            self.notificationBtn,
         ]
         for btn in self.buttons:
             if btn.objectName() == button:
                 btn.setStyleSheet("background-color: transparent")
                 btn.setStyleSheet("QPushButton:hover {background-color:rgb(28, 171, 213)}")
 
-    def Register(self):
-        email = self.ui.lineEdit_5.text().strip()
-        password = self.ui.lineEdit_2.text().strip()
-        confirm_password = self.ui.lineEdit_3.text().strip()
-        first_name = self.ui.lineEdit.text().strip()
-        last_name = self.ui.lineEdit_4.text().strip()
-        phone_number = self.ui.lineEdit_6.text().strip()
-        department = self.ui.comboBox.currentText()
-
-        if not email or not password or not first_name or not last_name or not phone_number:
-            show_registration_error(self.ui, "Please fill in all fields.")
-            return
-
-        if not self.validate_password(password):
-            show_registration_error(self.ui, "Password must be at least 8 characters.")
-            return
-
-        if not self.validate_phoneNumber(phone_number):
-            show_registration_error(self.ui, "Please enter a valid number.")
-            return
-
-        if not self.validate_email(email):
-            show_registration_error(self.ui, "Invalid email address.")
-            return
-
-        if not self.validate_passwords(password, confirm_password):
-            show_registration_error(self.ui, "Passwords do not match")
-            return
-
-        if self.ui.radioButton_Dr.isChecked():
-            fl = doctor_register(self.ui, email, password, first_name, last_name, phone_number, department)
-            if (fl == True):
-                QTimer.singleShot(500, self.GoLog)
-
-        elif self.ui.radioButton_pharm.isChecked():
-            fl = pharmacist_register(self.ui, email, password, first_name, last_name, phone_number)
-
-            if (fl == True):
-                QTimer.singleShot(500, self.GoLog)
-
-        elif not self.ui.radioButton_Dr.isChecked() and not self.ui.radioButton_pharm.isChecked():
-
-            show_registration_error(self.ui, "Please select your identity.")
-
-    def Login(self):
-        email = self.ui.lineEdit_7.text().strip()
-        password = self.ui.lineEdit_8.text().strip()
-
-        if not email or not password:
-            show_login_error(self.ui, "Please enter email and password.")
-            return
-
-        fl = login_user(self.ui, email, password)
-
-        if (fl == True):
-            QTimer.singleShot(500, self.GoMain)
-            self.load_favorite_data()
-            self.StartUpMedicine()
 
 
 
 
-def StartApplication():
-    app = QApplication(sys.argv)
-    mainWindow = Dr_MainWindow()
-    sys.exit(app.exec())
+

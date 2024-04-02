@@ -15,20 +15,19 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDateEdit,
-    QFrame, QGridLayout, QHBoxLayout, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QRadioButton,
-    QScrollArea, QSizePolicy, QSpacerItem, QStackedWidget,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QFrame, QGridLayout,
+    QHBoxLayout, QLabel, QLineEdit, QMainWindow,
+    QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
+    QStackedWidget, QVBoxLayout, QWidget)
 import Final_Main_ph_rc
 import Final_Main_ph_rc
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1163, 703)
-        self.centralwidget = QWidget(MainWindow)
+class Ui_Dr_MainWindow(object):
+    def setupUi(self, Dr_MainWindow):
+        if not Dr_MainWindow.objectName():
+            Dr_MainWindow.setObjectName(u"Dr_MainWindow")
+        Dr_MainWindow.resize(1163, 703)
+        self.centralwidget = QWidget(Dr_MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -44,305 +43,6 @@ class Ui_MainWindow(object):
         self.stackedWidget = QStackedWidget(self.widget)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setLineWidth(0)
-        self.Login_SignUp_Page = QWidget()
-        self.Login_SignUp_Page.setObjectName(u"Login_SignUp_Page")
-        self.Login_SignUp_Page.setStyleSheet(u"*{\n"
-"	background-color:;\n"
-"	background-image:url(:/Image_photo/Image_for_main/BGp.jpeg);\n"
-"	background-size: cover;\n"
-"    background-size: cover;\n"
-"    background-position: center;\n"
-"    background-repeat: no-repeat;\n"
-"    height: 100vh;\n"
-"    background-repeat: no-repeat;\n"
-"    background-size: 100% 100%;;\n"
-"\n"
-"}")
-        self.gridLayout = QGridLayout(self.Login_SignUp_Page)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.widget_2 = QWidget(self.Login_SignUp_Page)
-        self.widget_2.setObjectName(u"widget_2")
-        self.widget_2.setMinimumSize(QSize(500, 680))
-        self.widget_2.setStyleSheet(u"*{\n"
-"border:none;\n"
-"Background-color: transparent;\n"
-"Background : transparent;\n"
-"padding:0;\n"
-"margin:0;\n"
-"color:#ffff;\n"
-"}\n"
-"\n"
-"#Login {\n"
-"    background-color: rgba(255, 255, 255, 0.9); /* Adjust the alpha value as needed */\n"
-"    border-radius: 20px;\n"
-"}\n"
-"\n"
-"#lineEdit , #lineEdit_2 , #lineEdit_3 , #lineEdit_4 , #lineEdit_5 , #lineEdit_6 , #dateEdit , #comboBox , #lineEdit_7 , #lineEdit_8\n"
-"{\n"
-"   background-color :rgb(200, 200, 200); \n"
-"	padding : 4px 2px;\n"
-"    border-radius :5px;\n"
-"\n"
-"}\n"
-"#pushButton , #pushButton_4 {\n"
-"background-color:rgb(18, 163, 200);\n"
-"    border-radius: 7px;\n"
-"}\n"
-"#ErrorMessage , #ErrorMessage_2 {\n"
-"	color: red;\n"
-"    display: inline-block;\n"
-"    text-align: center;\n"
-"}\n"
-"")
-        self.verticalLayout_5 = QVBoxLayout(self.widget_2)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.widget_3 = QWidget(self.widget_2)
-        self.widget_3.setObjectName(u"widget_3")
-        self.widget_3.setMinimumSize(QSize(490, 680))
-        self.widget_3.setMaximumSize(QSize(450, 680))
-        self.verticalLayout_3 = QVBoxLayout(self.widget_3)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.Login = QWidget(self.widget_3)
-        self.Login.setObjectName(u"Login")
-        self.Login.setMinimumSize(QSize(420, 620))
-        self.Login.setMaximumSize(QSize(420, 620))
-        self.verticalLayout_4 = QVBoxLayout(self.Login)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.stackedWidget_2 = QStackedWidget(self.Login)
-        self.stackedWidget_2.setObjectName(u"stackedWidget_2")
-        self.stackedWidget_2.setMinimumSize(QSize(390, 0))
-        self.stackedWidget_2.setMaximumSize(QSize(420, 16777215))
-        self.LoginPage = QWidget()
-        self.LoginPage.setObjectName(u"LoginPage")
-        self.gridLayout_2 = QGridLayout(self.LoginPage)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout_2.addItem(self.horizontalSpacer_2, 0, 2, 1, 1)
-
-        self.frame_2 = QFrame(self.LoginPage)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setMinimumSize(QSize(0, 135))
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.gridLayout_3 = QGridLayout(self.frame_2)
-        self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.lineEdit_7 = QLineEdit(self.frame_2)
-        self.lineEdit_7.setObjectName(u"lineEdit_7")
-        self.lineEdit_7.setMinimumSize(QSize(215, 30))
-        self.lineEdit_7.setMaximumSize(QSize(192, 27))
-        font = QFont()
-        font.setPointSize(10)
-        self.lineEdit_7.setFont(font)
-
-        self.gridLayout_3.addWidget(self.lineEdit_7, 1, 0, 1, 1)
-
-        self.lineEdit_8 = QLineEdit(self.frame_2)
-        self.lineEdit_8.setObjectName(u"lineEdit_8")
-        self.lineEdit_8.setMinimumSize(QSize(215, 30))
-        self.lineEdit_8.setMaximumSize(QSize(150, 27))
-        self.lineEdit_8.setFont(font)
-        self.lineEdit_8.setEchoMode(QLineEdit.Password)
-
-        self.gridLayout_3.addWidget(self.lineEdit_8, 3, 0, 1, 1)
-
-
-        self.gridLayout_2.addWidget(self.frame_2, 1, 1, 1, 1)
-
-        self.widget_4 = QWidget(self.LoginPage)
-        self.widget_4.setObjectName(u"widget_4")
-        self.widget_4.setMinimumSize(QSize(124, 150))
-        self.widget_4.setMaximumSize(QSize(225, 16777215))
-        self.label_9 = QLabel(self.widget_4)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(80, 50, 66, 65))
-        self.label_9.setMinimumSize(QSize(64, 64))
-        self.label_9.setMaximumSize(QSize(66, 66))
-        self.label_9.setPixmap(QPixmap(u":/Icon_custom/Image_for_main/icon_custom/login.png"))
-        self.label_10 = QLabel(self.widget_4)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setGeometry(QRect(80, 130, 91, 31))
-        font1 = QFont()
-        font1.setPointSize(18)
-        font1.setBold(True)
-        self.label_10.setFont(font1)
-        self.label_10.setLayoutDirection(Qt.LeftToRight)
-        self.label_10.setAutoFillBackground(False)
-        self.label_11 = QLabel(self.widget_4)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setGeometry(QRect(15, 170, 201, 20))
-        self.label_11.setFont(font)
-
-        self.gridLayout_2.addWidget(self.widget_4, 0, 1, 1, 1)
-
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout_2.addItem(self.horizontalSpacer, 0, 0, 1, 1)
-
-        self.frame_3 = QFrame(self.LoginPage)
-        self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setMinimumSize(QSize(209, 100))
-        self.frame_3.setFrameShape(QFrame.StyledPanel)
-        self.frame_3.setFrameShadow(QFrame.Raised)
-        self.pushButton_3 = QPushButton(self.frame_3)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setGeometry(QRect(103, 131, 170, 25))
-        self.pushButton_3.setMinimumSize(QSize(170, 25))
-        self.pushButton_3.setMaximumSize(QSize(160, 25))
-        font2 = QFont()
-        font2.setPointSize(10)
-        font2.setUnderline(True)
-        self.pushButton_3.setFont(font2)
-        self.pushButton_4 = QPushButton(self.frame_3)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setGeometry(QRect(117, 70, 140, 30))
-        self.pushButton_4.setMinimumSize(QSize(140, 30))
-        self.pushButton_4.setMaximumSize(QSize(140, 28))
-        font3 = QFont()
-        font3.setPointSize(13)
-        font3.setBold(False)
-        font3.setItalic(False)
-        font3.setStrikeOut(False)
-        font3.setKerning(True)
-        font3.setStyleStrategy(QFont.PreferAntialias)
-        self.pushButton_4.setFont(font3)
-        self.ErrorMessage_2 = QLabel(self.frame_3)
-        self.ErrorMessage_2.setObjectName(u"ErrorMessage_2")
-        self.ErrorMessage_2.setGeometry(QRect(50, 0, 271, 20))
-        self.ErrorMessage_2.setWordWrap(True)
-
-        self.gridLayout_2.addWidget(self.frame_3, 2, 0, 1, 3)
-
-        self.stackedWidget_2.addWidget(self.LoginPage)
-        self.RegisterPage = QWidget()
-        self.RegisterPage.setObjectName(u"RegisterPage")
-        self.widget_5 = QWidget(self.RegisterPage)
-        self.widget_5.setObjectName(u"widget_5")
-        self.widget_5.setGeometry(QRect(100, 11, 201, 131))
-        self.label = QLabel(self.widget_5)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(70, 0, 61, 61))
-        self.label.setMinimumSize(QSize(50, 50))
-        self.label.setMaximumSize(QSize(64, 64))
-        self.label.setPixmap(QPixmap(u":/Icon_custom/Image_for_main/icon_custom/add-friend50px.png"))
-        self.label_2 = QLabel(self.widget_5)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(50, 70, 91, 31))
-        self.label_2.setFont(font1)
-        self.label_3 = QLabel(self.widget_5)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(20, 107, 171, 20))
-        self.label_3.setFont(font)
-        self.frame = QFrame(self.RegisterPage)
-        self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(10, 150, 391, 351))
-        self.frame.setStyleSheet(u"*{\n"
-"\n"
-"}")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.lineEdit_2 = QLineEdit(self.frame)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setGeometry(QRect(9, 140, 170, 27))
-        self.lineEdit_2.setMinimumSize(QSize(170, 27))
-        self.lineEdit_2.setMaximumSize(QSize(150, 27))
-        self.lineEdit_2.setFont(font)
-        self.lineEdit_2.setEchoMode(QLineEdit.Password)
-        self.lineEdit_3 = QLineEdit(self.frame)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-        self.lineEdit_3.setGeometry(QRect(9, 181, 170, 27))
-        self.lineEdit_3.setMinimumSize(QSize(170, 27))
-        self.lineEdit_3.setMaximumSize(QSize(170, 27))
-        self.lineEdit_3.setFont(font)
-        self.lineEdit_3.setEchoMode(QLineEdit.Password)
-        self.lineEdit_5 = QLineEdit(self.frame)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
-        self.lineEdit_5.setGeometry(QRect(9, 58, 170, 27))
-        self.lineEdit_5.setMinimumSize(QSize(170, 27))
-        self.lineEdit_5.setMaximumSize(QSize(150, 27))
-        self.lineEdit_5.setFont(font)
-        self.lineEdit_6 = QLineEdit(self.frame)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
-        self.lineEdit_6.setGeometry(QRect(9, 99, 170, 27))
-        self.lineEdit_6.setMinimumSize(QSize(170, 27))
-        self.lineEdit_6.setMaximumSize(QSize(150, 27))
-        self.lineEdit_6.setFont(font)
-        self.lineEdit_6.setEchoMode(QLineEdit.Normal)
-        self.lineEdit = QLineEdit(self.frame)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(9, 17, 170, 27))
-        self.lineEdit.setMinimumSize(QSize(170, 27))
-        self.lineEdit.setMaximumSize(QSize(130, 27))
-        self.lineEdit.setFont(font)
-        self.lineEdit_4 = QLineEdit(self.frame)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-        self.lineEdit_4.setGeometry(QRect(210, 17, 170, 27))
-        self.lineEdit_4.setMinimumSize(QSize(170, 27))
-        self.lineEdit_4.setMaximumSize(QSize(130, 27))
-        self.lineEdit_4.setFont(font)
-        self.label_4 = QLabel(self.frame)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(12, 229, 201, 16))
-        self.label_4.setFont(font)
-        self.dateEdit = QDateEdit(self.frame)
-        self.dateEdit.setObjectName(u"dateEdit")
-        self.dateEdit.setGeometry(QRect(248, 222, 121, 26))
-        self.label_5 = QLabel(self.frame)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(10, 270, 195, 16))
-        self.label_5.setFont(font)
-        self.radioButton_Dr = QRadioButton(self.frame)
-        self.radioButton_Dr.setObjectName(u"radioButton_Dr")
-        self.radioButton_Dr.setGeometry(QRect(20, 292, 82, 17))
-        self.radioButton_pharm = QRadioButton(self.frame)
-        self.radioButton_pharm.setObjectName(u"radioButton_pharm")
-        self.radioButton_pharm.setGeometry(QRect(110, 292, 82, 17))
-        self.comboBox = QComboBox(self.frame)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setGeometry(QRect(240, 290, 121, 21))
-        font4 = QFont()
-        font4.setPointSize(8)
-        self.comboBox.setFont(font4)
-        self.pushButton = QPushButton(self.RegisterPage)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(130, 523, 125, 28))
-        self.pushButton.setMinimumSize(QSize(125, 28))
-        self.pushButton.setMaximumSize(QSize(125, 28))
-        self.pushButton.setFont(font3)
-        self.pushButton_2 = QPushButton(self.RegisterPage)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(110, 566, 160, 25))
-        self.pushButton_2.setMinimumSize(QSize(160, 25))
-        self.pushButton_2.setMaximumSize(QSize(160, 25))
-        self.pushButton_2.setFont(font2)
-        self.ErrorMessage = QLabel(self.RegisterPage)
-        self.ErrorMessage.setObjectName(u"ErrorMessage")
-        self.ErrorMessage.setGeometry(QRect(60, 490, 271, 20))
-        self.ErrorMessage.setWordWrap(True)
-        self.stackedWidget_2.addWidget(self.RegisterPage)
-
-        self.verticalLayout_4.addWidget(self.stackedWidget_2, 0, Qt.AlignHCenter)
-
-
-        self.verticalLayout_3.addWidget(self.Login)
-
-
-        self.verticalLayout_5.addWidget(self.widget_3, 0, Qt.AlignHCenter)
-
-
-        self.gridLayout.addWidget(self.widget_2, 0, 0, 1, 1, Qt.AlignHCenter)
-
-        self.stackedWidget.addWidget(self.Login_SignUp_Page)
         self.Main_page = QWidget()
         self.Main_page.setObjectName(u"Main_page")
         self.Main_page.setStyleSheet(u"*{\n"
@@ -505,10 +205,10 @@ class Ui_MainWindow(object):
 
         self.label_14 = QLabel(self.frame_9)
         self.label_14.setObjectName(u"label_14")
-        font5 = QFont()
-        font5.setPointSize(11)
-        font5.setBold(True)
-        self.label_14.setFont(font5)
+        font = QFont()
+        font.setPointSize(11)
+        font.setBold(True)
+        self.label_14.setFont(font)
 
         self.horizontalLayout_7.addWidget(self.label_14)
 
@@ -600,7 +300,9 @@ class Ui_MainWindow(object):
 
         self.lineEdit_9 = QLineEdit(self.Search_Par)
         self.lineEdit_9.setObjectName(u"lineEdit_9")
-        self.lineEdit_9.setFont(font)
+        font1 = QFont()
+        font1.setPointSize(10)
+        self.lineEdit_9.setFont(font1)
 
         self.horizontalLayout_5.addWidget(self.lineEdit_9)
 
@@ -696,7 +398,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 594, 443))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 589, 438))
         self.gridLayout_8 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_8.setObjectName(u"gridLayout_8")
         self.widget_12 = QWidget(self.scrollAreaWidgetContents)
@@ -797,10 +499,10 @@ class Ui_MainWindow(object):
         self.pushButton_13.setObjectName(u"pushButton_13")
         self.pushButton_13.setMinimumSize(QSize(160, 25))
         self.pushButton_13.setMaximumSize(QSize(200, 16777215))
-        font6 = QFont()
-        font6.setPointSize(9)
-        font6.setBold(True)
-        self.pushButton_13.setFont(font6)
+        font2 = QFont()
+        font2.setPointSize(9)
+        font2.setBold(True)
+        self.pushButton_13.setFont(font2)
 
         self.horizontalLayout_8.addWidget(self.pushButton_13)
 
@@ -860,80 +562,80 @@ class Ui_MainWindow(object):
         self.gridLayout_9.setVerticalSpacing(15)
         self.label_27 = QLabel(self.frame_12)
         self.label_27.setObjectName(u"label_27")
-        font7 = QFont()
-        font7.setFamilies([u"MS Reference Sans Serif"])
-        font7.setPointSize(10)
-        self.label_27.setFont(font7)
+        font3 = QFont()
+        font3.setFamilies([u"MS Reference Sans Serif"])
+        font3.setPointSize(10)
+        self.label_27.setFont(font3)
 
         self.gridLayout_9.addWidget(self.label_27, 0, 1, 1, 1)
 
         self.label_23 = QLabel(self.frame_12)
         self.label_23.setObjectName(u"label_23")
-        self.label_23.setFont(font7)
+        self.label_23.setFont(font3)
 
         self.gridLayout_9.addWidget(self.label_23, 1, 4, 1, 1)
 
         self.Patient_name_lineEdit_2 = QLineEdit(self.frame_12)
         self.Patient_name_lineEdit_2.setObjectName(u"Patient_name_lineEdit_2")
-        font8 = QFont()
-        font8.setPointSize(9)
-        self.Patient_name_lineEdit_2.setFont(font8)
+        font4 = QFont()
+        font4.setPointSize(9)
+        self.Patient_name_lineEdit_2.setFont(font4)
 
         self.gridLayout_9.addWidget(self.Patient_name_lineEdit_2, 3, 6, 1, 1)
 
         self.label_25 = QLabel(self.frame_12)
         self.label_25.setObjectName(u"label_25")
-        self.label_25.setFont(font7)
+        self.label_25.setFont(font3)
 
         self.gridLayout_9.addWidget(self.label_25, 3, 1, 1, 1)
 
         self.label_15 = QLabel(self.frame_12)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setFont(font7)
+        self.label_15.setFont(font3)
 
         self.gridLayout_9.addWidget(self.label_15, 1, 1, 1, 1)
 
         self.label_31 = QLabel(self.frame_12)
         self.label_31.setObjectName(u"label_31")
         self.label_31.setMinimumSize(QSize(100, 0))
-        self.label_31.setFont(font8)
+        self.label_31.setFont(font4)
 
         self.gridLayout_9.addWidget(self.label_31, 0, 2, 1, 1)
 
         self.label_28 = QLabel(self.frame_12)
         self.label_28.setObjectName(u"label_28")
-        self.label_28.setFont(font8)
+        self.label_28.setFont(font4)
 
         self.gridLayout_9.addWidget(self.label_28, 1, 2, 1, 1)
 
         self.Patient_name_lineEdit = QLineEdit(self.frame_12)
         self.Patient_name_lineEdit.setObjectName(u"Patient_name_lineEdit")
-        self.Patient_name_lineEdit.setFont(font8)
+        self.Patient_name_lineEdit.setFont(font4)
 
         self.gridLayout_9.addWidget(self.Patient_name_lineEdit, 1, 6, 1, 1)
 
         self.label_29 = QLabel(self.frame_12)
         self.label_29.setObjectName(u"label_29")
-        self.label_29.setFont(font8)
+        self.label_29.setFont(font4)
 
         self.gridLayout_9.addWidget(self.label_29, 3, 2, 1, 1)
 
         self.label_32 = QLabel(self.frame_12)
         self.label_32.setObjectName(u"label_32")
         self.label_32.setMinimumSize(QSize(100, 0))
-        self.label_32.setFont(font8)
+        self.label_32.setFont(font4)
 
         self.gridLayout_9.addWidget(self.label_32, 0, 6, 1, 1)
 
         self.label_24 = QLabel(self.frame_12)
         self.label_24.setObjectName(u"label_24")
-        self.label_24.setFont(font7)
+        self.label_24.setFont(font3)
 
         self.gridLayout_9.addWidget(self.label_24, 0, 4, 1, 1)
 
         self.label_30 = QLabel(self.frame_12)
         self.label_30.setObjectName(u"label_30")
-        self.label_30.setFont(font7)
+        self.label_30.setFont(font3)
 
         self.gridLayout_9.addWidget(self.label_30, 3, 4, 1, 1)
 
@@ -968,7 +670,7 @@ class Ui_MainWindow(object):
         self.Medicine_name = QLabel(self.widget_9)
         self.Medicine_name.setObjectName(u"Medicine_name")
         self.Medicine_name.setMinimumSize(QSize(220, 0))
-        self.Medicine_name.setFont(font8)
+        self.Medicine_name.setFont(font4)
         self.Medicine_name.setLayoutDirection(Qt.LeftToRight)
 
         self.horizontalLayout_15.addWidget(self.Medicine_name)
@@ -977,7 +679,7 @@ class Ui_MainWindow(object):
         self.Count.setObjectName(u"Count")
         self.Count.setMinimumSize(QSize(50, 0))
         self.Count.setMaximumSize(QSize(200, 16777215))
-        self.Count.setFont(font8)
+        self.Count.setFont(font4)
         self.Count.setLayoutDirection(Qt.LeftToRight)
 
         self.horizontalLayout_15.addWidget(self.Count)
@@ -986,7 +688,7 @@ class Ui_MainWindow(object):
         self.Medicine_usage.setObjectName(u"Medicine_usage")
         self.Medicine_usage.setMinimumSize(QSize(210, 0))
         self.Medicine_usage.setMaximumSize(QSize(16777215, 16777215))
-        self.Medicine_usage.setFont(font8)
+        self.Medicine_usage.setFont(font4)
 
         self.horizontalLayout_15.addWidget(self.Medicine_usage)
 
@@ -994,7 +696,7 @@ class Ui_MainWindow(object):
         self.Price.setObjectName(u"Price")
         self.Price.setMinimumSize(QSize(50, 0))
         self.Price.setMaximumSize(QSize(16777215, 16777215))
-        self.Price.setFont(font8)
+        self.Price.setFont(font4)
 
         self.horizontalLayout_15.addWidget(self.Price)
 
@@ -1026,16 +728,16 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 592, 327))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 563, 48))
         self.verticalLayout_17 = QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.widget_11 = QWidget(self.scrollAreaWidgetContents_3)
         self.widget_11.setObjectName(u"widget_11")
         self.widget_11.setMinimumSize(QSize(0, 30))
         self.widget_11.setMaximumSize(QSize(16777215, 30))
-        font9 = QFont()
-        font9.setStyleStrategy(QFont.PreferAntialias)
-        self.widget_11.setFont(font9)
+        font5 = QFont()
+        font5.setStyleStrategy(QFont.PreferAntialias)
+        self.widget_11.setFont(font5)
         self.widget_11.setStyleSheet(u"QLabel , QLineEdit {\n"
 "    border-left: 1px solid #064666;\n"
 "    qproperty-alignment: 'AlignCenter';\n"
@@ -1063,7 +765,7 @@ class Ui_MainWindow(object):
         self.Medicine_name_3 = QLabel(self.widget_11)
         self.Medicine_name_3.setObjectName(u"Medicine_name_3")
         self.Medicine_name_3.setMinimumSize(QSize(210, 0))
-        self.Medicine_name_3.setFont(font8)
+        self.Medicine_name_3.setFont(font4)
         self.Medicine_name_3.setLayoutDirection(Qt.LeftToRight)
 
         self.hboxLayout.addWidget(self.Medicine_name_3)
@@ -1072,14 +774,14 @@ class Ui_MainWindow(object):
         self.lineEdit_10.setObjectName(u"lineEdit_10")
         self.lineEdit_10.setMinimumSize(QSize(50, 0))
         self.lineEdit_10.setMaximumSize(QSize(120, 30))
-        self.lineEdit_10.setFont(font)
+        self.lineEdit_10.setFont(font1)
 
         self.hboxLayout.addWidget(self.lineEdit_10)
 
         self.Medicine_usage_3 = QLabel(self.widget_11)
         self.Medicine_usage_3.setObjectName(u"Medicine_usage_3")
         self.Medicine_usage_3.setMinimumSize(QSize(200, 0))
-        self.Medicine_usage_3.setFont(font8)
+        self.Medicine_usage_3.setFont(font4)
 
         self.hboxLayout.addWidget(self.Medicine_usage_3)
 
@@ -1087,7 +789,7 @@ class Ui_MainWindow(object):
         self.Price_3.setObjectName(u"Price_3")
         self.Price_3.setMinimumSize(QSize(50, 0))
         self.Price_3.setMaximumSize(QSize(150, 16777215))
-        self.Price_3.setFont(font8)
+        self.Price_3.setFont(font4)
 
         self.hboxLayout.addWidget(self.Price_3)
 
@@ -1154,7 +856,7 @@ class Ui_MainWindow(object):
         self.Print_button = QPushButton(self.Print_Frame)
         self.Print_button.setObjectName(u"Print_button")
         self.Print_button.setMinimumSize(QSize(150, 25))
-        self.Print_button.setFont(font6)
+        self.Print_button.setFont(font2)
         icon4 = QIcon()
         icon4.addFile(u":/Icon_web/Image_for_main/icons_from_Web/printer.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.Print_button.setIcon(icon4)
@@ -1244,7 +946,7 @@ class Ui_MainWindow(object):
 
         self.lineEdit_11 = QLineEdit(self.Search_Par_2)
         self.lineEdit_11.setObjectName(u"lineEdit_11")
-        self.lineEdit_11.setFont(font)
+        self.lineEdit_11.setFont(font1)
 
         self.horizontalLayout_13.addWidget(self.lineEdit_11)
 
@@ -1346,7 +1048,7 @@ class Ui_MainWindow(object):
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollAreaWidgetContents_4 = QWidget()
         self.scrollAreaWidgetContents_4.setObjectName(u"scrollAreaWidgetContents_4")
-        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 590, 480))
+        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 518, 68))
         self.verticalLayout_28 = QVBoxLayout(self.scrollAreaWidgetContents_4)
         self.verticalLayout_28.setObjectName(u"verticalLayout_28")
         self.Cared_10 = QFrame(self.scrollAreaWidgetContents_4)
@@ -1364,7 +1066,7 @@ class Ui_MainWindow(object):
         self.pushButton_8.setMinimumSize(QSize(110, 24))
         self.pushButton_8.setMaximumSize(QSize(157, 24))
         self.pushButton_8.setBaseSize(QSize(0, 0))
-        self.pushButton_8.setFont(font8)
+        self.pushButton_8.setFont(font4)
         icon5 = QIcon()
         icon5.addFile(u":/Icon_web/Image_for_main/icons_from_Web/external-link.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_8.setIcon(icon5)
@@ -1527,7 +1229,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setContentsMargins(0, -1, -1, -1)
         self.label_18 = QLabel(self.frame_13)
         self.label_18.setObjectName(u"label_18")
-        self.label_18.setFont(font)
+        self.label_18.setFont(font1)
         self.label_18.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_9.addWidget(self.label_18)
@@ -1543,9 +1245,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.label_19 = QLabel(self.profilePage)
         self.label_19.setObjectName(u"label_19")
-        font10 = QFont()
-        font10.setPointSize(13)
-        self.label_19.setFont(font10)
+        font6 = QFont()
+        font6.setPointSize(13)
+        self.label_19.setFont(font6)
         self.label_19.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_22.addWidget(self.label_19)
@@ -1562,7 +1264,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 205, 507))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 205, 502))
         self.verticalLayout_26 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_26.setObjectName(u"verticalLayout_26")
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
@@ -1594,10 +1296,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
         self.label_21 = QLabel(self.popupNotificationSubContainer)
         self.label_21.setObjectName(u"label_21")
-        font11 = QFont()
-        font11.setPointSize(10)
-        font11.setBold(True)
-        self.label_21.setFont(font11)
+        font7 = QFont()
+        font7.setPointSize(10)
+        font7.setBold(True)
+        self.label_21.setFont(font7)
 
         self.verticalLayout_25.addWidget(self.label_21)
 
@@ -1611,9 +1313,9 @@ class Ui_MainWindow(object):
         self.label_22.setObjectName(u"label_22")
         sizePolicy.setHeightForWidth(self.label_22.sizePolicy().hasHeightForWidth())
         self.label_22.setSizePolicy(sizePolicy)
-        font12 = QFont()
-        font12.setBold(False)
-        self.label_22.setFont(font12)
+        font8 = QFont()
+        font8.setBold(False)
+        self.label_22.setFont(font8)
         self.label_22.setStyleSheet(u"")
         self.label_22.setAlignment(Qt.AlignCenter)
 
@@ -1876,7 +1578,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.label_7 = QLabel(self.settingPage)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setFont(font10)
+        self.label_7.setFont(font6)
         self.label_7.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_9.addWidget(self.label_7)
@@ -1888,7 +1590,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.label_8 = QLabel(self.helpPage)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setFont(font10)
+        self.label_8.setFont(font6)
         self.label_8.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_10.addWidget(self.label_8)
@@ -1916,7 +1618,7 @@ class Ui_MainWindow(object):
 
         self.label_12 = QLabel(self.infoPage)
         self.label_12.setObjectName(u"label_12")
-        self.label_12.setFont(font10)
+        self.label_12.setFont(font6)
         self.label_12.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_11.addWidget(self.label_12)
@@ -1941,164 +1643,122 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.widget)
 
-        MainWindow.setCentralWidget(self.centralwidget)
+        Dr_MainWindow.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(Dr_MainWindow)
 
         self.stackedWidget.setCurrentIndex(0)
-        self.stackedWidget_2.setCurrentIndex(0)
-        self.mainPages.setCurrentIndex(2)
+        self.mainPages.setCurrentIndex(0)
         self.rightMenuPages.setCurrentIndex(1)
-        self.centerMenuPages.setCurrentIndex(1)
+        self.centerMenuPages.setCurrentIndex(2)
 
 
-        QMetaObject.connectSlotsByName(MainWindow)
+        QMetaObject.connectSlotsByName(Dr_MainWindow)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.lineEdit_7.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Email@example.com", None))
-        self.lineEdit_8.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
-        self.label_9.setText("")
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Login", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Welcome To Smart Pharmacy App", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Not Registerd ? Register ", None))
-        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Login", None))
-        self.ErrorMessage_2.setText("")
-        self.label.setText("")
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Sign Up", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Enter you Information below", None))
-        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
-        self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Confirm Password", None))
-        self.lineEdit_5.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Email@example.com", None))
-        self.lineEdit_6.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Phone Number", None))
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Firstname", None))
-        self.lineEdit_4.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Last name", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Date of birth : mm/dd/yyyy", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Are you a doctor or a pharmacist?", None))
-        self.radioButton_Dr.setText(QCoreApplication.translate("MainWindow", u"Doctor", None))
-        self.radioButton_pharm.setText(QCoreApplication.translate("MainWindow", u"Pharmacist", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Hepatology\n"
-"", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Neurology\n"
-"", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Obstetrics and Gynecology", None))
-        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"Internal Medicine\n"
-"", None))
-        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"Orthopedics\n"
-"", None))
-        self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"Pediatrics\n"
-"", None))
-        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"Urology", None))
-        self.comboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"Gastroenterology\n"
-"", None))
-        self.comboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"Ophthalmology", None))
-        self.comboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"ENT (Ear, Nose, and Throat)", None))
-
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Register", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Already Registarard ? Login", None))
-        self.ErrorMessage.setText("")
+    def retranslateUi(self, Dr_MainWindow):
+        Dr_MainWindow.setWindowTitle(QCoreApplication.translate("Dr_MainWindow", u"MainWindow", None))
         self.notificationBtn.setText("")
 #if QT_CONFIG(tooltip)
-        self.moreMenuBtn.setToolTip(QCoreApplication.translate("MainWindow", u"More", None))
+        self.moreMenuBtn.setToolTip(QCoreApplication.translate("Dr_MainWindow", u"More", None))
 #endif // QT_CONFIG(tooltip)
         self.moreMenuBtn.setText("")
 #if QT_CONFIG(tooltip)
-        self.profileMenuBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Profile", None))
+        self.profileMenuBtn.setToolTip(QCoreApplication.translate("Dr_MainWindow", u"Profile", None))
 #endif // QT_CONFIG(tooltip)
         self.profileMenuBtn.setText("")
         self.label_13.setText("")
-        self.label_14.setText(QCoreApplication.translate("MainWindow", u"Smart Pharmacy", None))
+        self.label_14.setText(QCoreApplication.translate("Dr_MainWindow", u"Smart Pharmacy", None))
         self.label_77.setText("")
         self.lineEdit_9.setInputMask("")
         self.lineEdit_9.setText("")
-        self.lineEdit_9.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Write medicin name", None))
-        self.pushButton_23.setText(QCoreApplication.translate("MainWindow", u"Search", None))
-        self.checkBox_5.setText(QCoreApplication.translate("MainWindow", u"Select ", None))
+        self.lineEdit_9.setPlaceholderText(QCoreApplication.translate("Dr_MainWindow", u"Write medicin name", None))
+        self.pushButton_23.setText(QCoreApplication.translate("Dr_MainWindow", u"Search", None))
+        self.checkBox_5.setText(QCoreApplication.translate("Dr_MainWindow", u"Select ", None))
         self.pushButton_7.setText("")
-        self.label_36.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_40.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_41.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_42.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_43.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_44.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.pushButton_13.setText(QCoreApplication.translate("MainWindow", u"ADD to Prescription", None))
+        self.label_36.setText(QCoreApplication.translate("Dr_MainWindow", u"TextLabel", None))
+        self.label_40.setText(QCoreApplication.translate("Dr_MainWindow", u"TextLabel", None))
+        self.label_41.setText(QCoreApplication.translate("Dr_MainWindow", u"TextLabel", None))
+        self.label_42.setText(QCoreApplication.translate("Dr_MainWindow", u"TextLabel", None))
+        self.label_43.setText(QCoreApplication.translate("Dr_MainWindow", u"TextLabel", None))
+        self.label_44.setText(QCoreApplication.translate("Dr_MainWindow", u"TextLabel", None))
+        self.pushButton_13.setText(QCoreApplication.translate("Dr_MainWindow", u"ADD to Prescription", None))
         self.label_26.setText("")
-        self.label_27.setText(QCoreApplication.translate("MainWindow", u"Dr Name :", None))
-        self.label_23.setText(QCoreApplication.translate("MainWindow", u"Patient Name :", None))
+        self.label_27.setText(QCoreApplication.translate("Dr_MainWindow", u"Dr Name :", None))
+        self.label_23.setText(QCoreApplication.translate("Dr_MainWindow", u"Patient Name :", None))
         self.Patient_name_lineEdit_2.setText("")
-        self.Patient_name_lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter patient age", None))
-        self.label_25.setText(QCoreApplication.translate("MainWindow", u"Date      :", None))
-        self.label_15.setText(QCoreApplication.translate("MainWindow", u"Dr Depart :", None))
-        self.label_31.setText(QCoreApplication.translate("MainWindow", u"Name", None))
-        self.label_28.setText(QCoreApplication.translate("MainWindow", u"Department", None))
+        self.Patient_name_lineEdit_2.setPlaceholderText(QCoreApplication.translate("Dr_MainWindow", u"Enter patient age", None))
+        self.label_25.setText(QCoreApplication.translate("Dr_MainWindow", u"Date      :", None))
+        self.label_15.setText(QCoreApplication.translate("Dr_MainWindow", u"Dr Depart :", None))
+        self.label_31.setText(QCoreApplication.translate("Dr_MainWindow", u"Name", None))
+        self.label_28.setText(QCoreApplication.translate("Dr_MainWindow", u"Department", None))
         self.Patient_name_lineEdit.setText("")
-        self.Patient_name_lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter patient name", None))
-        self.label_29.setText(QCoreApplication.translate("MainWindow", u"dd/mm/yyyy ", None))
-        self.label_32.setText(QCoreApplication.translate("MainWindow", u"Per Number", None))
-        self.label_24.setText(QCoreApplication.translate("MainWindow", u"Prescription ID : ", None))
-        self.label_30.setText(QCoreApplication.translate("MainWindow", u"Patient Age :", None))
-        self.Medicine_name.setText(QCoreApplication.translate("MainWindow", u"Medicine Name ", None))
-        self.Count.setText(QCoreApplication.translate("MainWindow", u"count", None))
-        self.Medicine_usage.setText(QCoreApplication.translate("MainWindow", u" Medicine Usage", None))
-        self.Price.setText(QCoreApplication.translate("MainWindow", u"Price ", None))
-        self.Edite.setText(QCoreApplication.translate("MainWindow", u"Edite", None))
-        self.Medicine_name_3.setText(QCoreApplication.translate("MainWindow", u"Medicine Name ", None))
-        self.lineEdit_10.setText(QCoreApplication.translate("MainWindow", u"count", None))
-        self.Medicine_usage_3.setText(QCoreApplication.translate("MainWindow", u" Medicine Usage", None))
-        self.Price_3.setText(QCoreApplication.translate("MainWindow", u"Price ", None))
+        self.Patient_name_lineEdit.setPlaceholderText(QCoreApplication.translate("Dr_MainWindow", u"Enter patient name", None))
+        self.label_29.setText(QCoreApplication.translate("Dr_MainWindow", u"dd/mm/yyyy ", None))
+        self.label_32.setText(QCoreApplication.translate("Dr_MainWindow", u"Per Number", None))
+        self.label_24.setText(QCoreApplication.translate("Dr_MainWindow", u"Prescription ID : ", None))
+        self.label_30.setText(QCoreApplication.translate("Dr_MainWindow", u"Patient Age :", None))
+        self.Medicine_name.setText(QCoreApplication.translate("Dr_MainWindow", u"Medicine Name ", None))
+        self.Count.setText(QCoreApplication.translate("Dr_MainWindow", u"count", None))
+        self.Medicine_usage.setText(QCoreApplication.translate("Dr_MainWindow", u" Medicine Usage", None))
+        self.Price.setText(QCoreApplication.translate("Dr_MainWindow", u"Price ", None))
+        self.Edite.setText(QCoreApplication.translate("Dr_MainWindow", u"Edite", None))
+        self.Medicine_name_3.setText(QCoreApplication.translate("Dr_MainWindow", u"Medicine Name ", None))
+        self.lineEdit_10.setText(QCoreApplication.translate("Dr_MainWindow", u"count", None))
+        self.Medicine_usage_3.setText(QCoreApplication.translate("Dr_MainWindow", u" Medicine Usage", None))
+        self.Price_3.setText(QCoreApplication.translate("Dr_MainWindow", u"Price ", None))
         self.pushButton_Trash.setText("")
-        self.Print_button.setText(QCoreApplication.translate("MainWindow", u" Print", None))
+        self.Print_button.setText(QCoreApplication.translate("Dr_MainWindow", u" Print", None))
         self.label_78.setText("")
         self.lineEdit_11.setInputMask("")
         self.lineEdit_11.setText("")
-        self.lineEdit_11.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Write patient name or date", None))
-        self.pushButton_24.setText(QCoreApplication.translate("MainWindow", u"Search ", None))
-        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"show Details", None))
-        self.label_46.setText(QCoreApplication.translate("MainWindow", u"Prescription id :", None))
-        self.label_49.setText(QCoreApplication.translate("MainWindow", u"Date & Time :", None))
-        self.label_45.setText(QCoreApplication.translate("MainWindow", u"_________", None))
-        self.label_37.setText(QCoreApplication.translate("MainWindow", u"_________", None))
-        self.label_47.setText(QCoreApplication.translate("MainWindow", u"_______", None))
-        self.label_48.setText(QCoreApplication.translate("MainWindow", u"Patient Name :", None))
-        self.label_18.setText(QCoreApplication.translate("MainWindow", u"Favorite List", None))
-        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"Notifications", None))
-        self.label_22.setText(QCoreApplication.translate("MainWindow", u"Notifications Message", None))
+        self.lineEdit_11.setPlaceholderText(QCoreApplication.translate("Dr_MainWindow", u"Write patient name or date", None))
+        self.pushButton_24.setText(QCoreApplication.translate("Dr_MainWindow", u"Search ", None))
+        self.pushButton_8.setText(QCoreApplication.translate("Dr_MainWindow", u"show Details", None))
+        self.label_46.setText(QCoreApplication.translate("Dr_MainWindow", u"Prescription id :", None))
+        self.label_49.setText(QCoreApplication.translate("Dr_MainWindow", u"Date & Time :", None))
+        self.label_45.setText(QCoreApplication.translate("Dr_MainWindow", u"_________", None))
+        self.label_37.setText(QCoreApplication.translate("Dr_MainWindow", u"_________", None))
+        self.label_47.setText(QCoreApplication.translate("Dr_MainWindow", u"_______", None))
+        self.label_48.setText(QCoreApplication.translate("Dr_MainWindow", u"Patient Name :", None))
+        self.label_18.setText(QCoreApplication.translate("Dr_MainWindow", u"Favorite List", None))
+        self.label_19.setText(QCoreApplication.translate("Dr_MainWindow", u"Profile", None))
+        self.label_21.setText(QCoreApplication.translate("Dr_MainWindow", u"Notifications", None))
+        self.label_22.setText(QCoreApplication.translate("Dr_MainWindow", u"Notifications Message", None))
 #if QT_CONFIG(tooltip)
-        self.menuBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Menu", None))
+        self.menuBtn.setToolTip(QCoreApplication.translate("Dr_MainWindow", u"Menu", None))
 #endif // QT_CONFIG(tooltip)
-        self.menuBtn.setText(QCoreApplication.translate("MainWindow", u" Menu", None))
+        self.menuBtn.setText(QCoreApplication.translate("Dr_MainWindow", u" Menu", None))
 #if QT_CONFIG(tooltip)
-        self.homeBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Home", None))
+        self.homeBtn.setToolTip(QCoreApplication.translate("Dr_MainWindow", u"Home", None))
 #endif // QT_CONFIG(tooltip)
-        self.homeBtn.setText(QCoreApplication.translate("MainWindow", u" Home", None))
+        self.homeBtn.setText(QCoreApplication.translate("Dr_MainWindow", u" Home", None))
 #if QT_CONFIG(tooltip)
-        self.orderBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Order", None))
+        self.orderBtn.setToolTip(QCoreApplication.translate("Dr_MainWindow", u"Order", None))
 #endif // QT_CONFIG(tooltip)
-        self.orderBtn.setText(QCoreApplication.translate("MainWindow", u"  Prescription", None))
+        self.orderBtn.setText(QCoreApplication.translate("Dr_MainWindow", u"  Prescription", None))
 #if QT_CONFIG(tooltip)
-        self.reportsBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Reports", None))
+        self.reportsBtn.setToolTip(QCoreApplication.translate("Dr_MainWindow", u"Reports", None))
 #endif // QT_CONFIG(tooltip)
-        self.reportsBtn.setText(QCoreApplication.translate("MainWindow", u"   History", None))
+        self.reportsBtn.setText(QCoreApplication.translate("Dr_MainWindow", u"   History", None))
 #if QT_CONFIG(tooltip)
-        self.settingsBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
+        self.settingsBtn.setToolTip(QCoreApplication.translate("Dr_MainWindow", u"Settings", None))
 #endif // QT_CONFIG(tooltip)
-        self.settingsBtn.setText(QCoreApplication.translate("MainWindow", u"   Settings", None))
+        self.settingsBtn.setText(QCoreApplication.translate("Dr_MainWindow", u"   Settings", None))
 #if QT_CONFIG(tooltip)
-        self.infoBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Informations", None))
+        self.infoBtn.setToolTip(QCoreApplication.translate("Dr_MainWindow", u"Informations", None))
 #endif // QT_CONFIG(tooltip)
-        self.infoBtn.setText(QCoreApplication.translate("MainWindow", u" Informations", None))
+        self.infoBtn.setText(QCoreApplication.translate("Dr_MainWindow", u" Informations", None))
 #if QT_CONFIG(tooltip)
-        self.helpBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Help", None))
+        self.helpBtn.setToolTip(QCoreApplication.translate("Dr_MainWindow", u"Help", None))
 #endif // QT_CONFIG(tooltip)
-        self.helpBtn.setText(QCoreApplication.translate("MainWindow", u"   Help", None))
+        self.helpBtn.setText(QCoreApplication.translate("Dr_MainWindow", u"   Help", None))
 #if QT_CONFIG(statustip)
         self.centerMenuContatiner.setStatusTip("")
 #endif // QT_CONFIG(statustip)
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"More Menu", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Help", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Informations", None))
+        self.label_6.setText(QCoreApplication.translate("Dr_MainWindow", u"More Menu", None))
+        self.label_7.setText(QCoreApplication.translate("Dr_MainWindow", u"Settings", None))
+        self.label_8.setText(QCoreApplication.translate("Dr_MainWindow", u"Help", None))
+        self.label_12.setText(QCoreApplication.translate("Dr_MainWindow", u"Informations", None))
     # retranslateUi
 
