@@ -5,7 +5,7 @@ from SignUpLogin_ui import Ui_Form as signup
 from Authentication import login_user,doctor_register,pharmacist_register
 from Dr_MainWindow import Dr_MainWindow
 from Utilities import *
-
+from SignUp_Login_Orientation import center_widget_2
 
 class MainWindow(QMainWindow,signup):
     def __init__(self, parent=None):
@@ -25,20 +25,12 @@ class MainWindow(QMainWindow,signup):
         # Login_btns,funcs
         self.ui.pushButton_3.clicked.connect(self.GoReg)
         self.ui.pushButton_4.clicked.connect(self.Login)
-        self.login_Fl = False
-        self.center_widget_2()
 
-    def center_widget_2(self):
-        # Create a QVBoxLayout to center widget_2
-        layout = QVBoxLayout()
-        layout.addWidget(self.ui.widget_2)
+        center_widget_2(self, self.ui.widget_2)
 
-        # Create a wrapper widget to hold the layout
-        wrapper = QWidget()
-        wrapper.setLayout(layout)
 
-        # Set the central widget of the main window to the wrapper
-        self.setCentralWidget(wrapper)
+
+
 
     def GoReg(self):
         clear_errors(self.ui)
@@ -55,7 +47,7 @@ class MainWindow(QMainWindow,signup):
         self.close()
         # Open the Dr_MainWindow UI
         main_Dr = Dr_MainWindow()
-        main_Dr.show_ui()
+
 
     def ShowDepartement(self):
         self.ui.comboBox.show()
@@ -82,11 +74,6 @@ class MainWindow(QMainWindow,signup):
             if not phoneNumber.isdigit():
                 return False
             return True
-
-
-
-    def SetFlagTrue(self):
-        return self.login_Fl
 
     def Register(self):
         email = self.ui.lineEdit_5.text().strip()
@@ -143,8 +130,6 @@ class MainWindow(QMainWindow,signup):
         fl = login_user(self.ui, email, password)
 
         if (fl == True):
-
-
             QTimer.singleShot(500, self.GoMain)
 
 

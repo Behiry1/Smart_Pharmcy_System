@@ -675,15 +675,6 @@ class Ui_Dr_MainWindow(object):
 
         self.horizontalLayout_15.addWidget(self.Medicine_name)
 
-        self.Count = QLabel(self.widget_9)
-        self.Count.setObjectName(u"Count")
-        self.Count.setMinimumSize(QSize(50, 0))
-        self.Count.setMaximumSize(QSize(200, 16777215))
-        self.Count.setFont(font4)
-        self.Count.setLayoutDirection(Qt.LeftToRight)
-
-        self.horizontalLayout_15.addWidget(self.Count)
-
         self.Medicine_usage = QLabel(self.widget_9)
         self.Medicine_usage.setObjectName(u"Medicine_usage")
         self.Medicine_usage.setMinimumSize(QSize(210, 0))
@@ -699,6 +690,15 @@ class Ui_Dr_MainWindow(object):
         self.Price.setFont(font4)
 
         self.horizontalLayout_15.addWidget(self.Price)
+
+        self.Count = QLabel(self.widget_9)
+        self.Count.setObjectName(u"Count")
+        self.Count.setMinimumSize(QSize(50, 0))
+        self.Count.setMaximumSize(QSize(200, 16777215))
+        self.Count.setFont(font4)
+        self.Count.setLayoutDirection(Qt.LeftToRight)
+
+        self.horizontalLayout_15.addWidget(self.Count)
 
         self.Edite = QLabel(self.widget_9)
         self.Edite.setObjectName(u"Edite")
@@ -728,7 +728,7 @@ class Ui_Dr_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 563, 48))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 587, 323))
         self.verticalLayout_17 = QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.widget_11 = QWidget(self.scrollAreaWidgetContents_3)
@@ -1699,9 +1699,9 @@ class Ui_Dr_MainWindow(object):
         self.label_24.setText(QCoreApplication.translate("Dr_MainWindow", u"Prescription ID : ", None))
         self.label_30.setText(QCoreApplication.translate("Dr_MainWindow", u"Patient Age :", None))
         self.Medicine_name.setText(QCoreApplication.translate("Dr_MainWindow", u"Medicine Name ", None))
-        self.Count.setText(QCoreApplication.translate("Dr_MainWindow", u"count", None))
         self.Medicine_usage.setText(QCoreApplication.translate("Dr_MainWindow", u" Medicine Usage", None))
         self.Price.setText(QCoreApplication.translate("Dr_MainWindow", u"Price ", None))
+        self.Count.setText(QCoreApplication.translate("Dr_MainWindow", u"count", None))
         self.Edite.setText(QCoreApplication.translate("Dr_MainWindow", u"Edite", None))
         self.Medicine_name_3.setText(QCoreApplication.translate("Dr_MainWindow", u"Medicine Name ", None))
         self.lineEdit_10.setText(QCoreApplication.translate("Dr_MainWindow", u"count", None))

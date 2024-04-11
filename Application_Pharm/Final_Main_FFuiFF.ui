@@ -1233,33 +1233,6 @@ color : black ;
                                   </widget>
                                  </item>
                                  <item>
-                                  <widget class="QLabel" name="Count">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>50</width>
-                                     <height>0</height>
-                                    </size>
-                                   </property>
-                                   <property name="maximumSize">
-                                    <size>
-                                     <width>200</width>
-                                     <height>16777215</height>
-                                    </size>
-                                   </property>
-                                   <property name="font">
-                                    <font>
-                                     <pointsize>9</pointsize>
-                                    </font>
-                                   </property>
-                                   <property name="layoutDirection">
-                                    <enum>Qt::LeftToRight</enum>
-                                   </property>
-                                   <property name="text">
-                                    <string>count</string>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item>
                                   <widget class="QLabel" name="Medicine_usage">
                                    <property name="minimumSize">
                                     <size>
@@ -1304,6 +1277,33 @@ color : black ;
                                    </property>
                                    <property name="text">
                                     <string>Price </string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <widget class="QLabel" name="Count">
+                                   <property name="minimumSize">
+                                    <size>
+                                     <width>50</width>
+                                     <height>0</height>
+                                    </size>
+                                   </property>
+                                   <property name="maximumSize">
+                                    <size>
+                                     <width>200</width>
+                                     <height>16777215</height>
+                                    </size>
+                                   </property>
+                                   <property name="font">
+                                    <font>
+                                     <pointsize>9</pointsize>
+                                    </font>
+                                   </property>
+                                   <property name="layoutDirection">
+                                    <enum>Qt::LeftToRight</enum>
+                                   </property>
+                                   <property name="text">
+                                    <string>count</string>
                                    </property>
                                   </widget>
                                  </item>
@@ -1358,8 +1358,8 @@ color : black ;
                                   <rect>
                                    <x>0</x>
                                    <y>0</y>
-                                   <width>563</width>
-                                   <height>48</height>
+                                   <width>587</width>
+                                   <height>323</height>
                                   </rect>
                                  </property>
                                  <layout class="QVBoxLayout" name="verticalLayout_17">
