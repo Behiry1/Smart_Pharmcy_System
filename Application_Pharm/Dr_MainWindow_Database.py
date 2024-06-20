@@ -9,6 +9,9 @@ import Authentication
 # behiry
 #database = "smart_pharmacy",
 #password = "Ahlynumber1#"
+#sherief
+# database="dumb_pharmacy",
+# password="24920963King$"
 db_connection_details = {
     "host": "127.0.1.1",
     "port": "3306",

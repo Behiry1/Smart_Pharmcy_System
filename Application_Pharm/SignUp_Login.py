@@ -4,12 +4,18 @@ from PySide6.QtWidgets import QMainWindow, QApplication, QVBoxLayout, QWidget
 from SignUpLogin_ui import Ui_Form as signup
 from Authentication import login_user,doctor_register,pharmacist_register
 from Dr_MainWindow import Dr_MainWindow
+from Pharm_MainWindow import Pharm_Mainwindow
 from Utilities import *
 from SignUp_Login_Orientation import center_widget_2
 
 class MainWindow(QMainWindow,signup):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
+        self.Startup_Signup_Login()
+
+
+
+    def Startup_Signup_Login(self):
         # show Ui pages
         self.ui = signup()
         self.ui.setupUi(self)
@@ -28,10 +34,6 @@ class MainWindow(QMainWindow,signup):
 
         center_widget_2(self, self.ui.widget_2)
 
-
-
-
-
     def GoReg(self):
         clear_errors(self.ui)
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.RegisterPage)
@@ -40,7 +42,7 @@ class MainWindow(QMainWindow,signup):
         clear_errors(self.ui)
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.LoginPage)
 
-    def GoMain(self):
+    def GO_DrMain(self):
         # Clear any error messages before switching pages
         clear_errors(self.ui)
         # Close the signup UI
@@ -48,6 +50,11 @@ class MainWindow(QMainWindow,signup):
         # Open the Dr_MainWindow UI
         main_Dr = Dr_MainWindow()
 
+    def Go_PharmMain(self):
+        clear_errors(self.ui)
+        self.close()
+        self.pharm_main_window = Pharm_Mainwindow()
+        self.pharm_main_window.show()
 
     def ShowDepartement(self):
         self.ui.comboBox.show()
@@ -123,14 +130,17 @@ class MainWindow(QMainWindow,signup):
         email = self.ui.lineEdit_7.text().strip()
         password = self.ui.lineEdit_8.text().strip()
 
+
         if not email or not password:
             show_login_error(self.ui, "Please enter email and password.")
             return
 
         fl = login_user(self.ui, email, password)
 
-        if (fl == True):
-            QTimer.singleShot(500, self.GoMain)
+        if (fl == "Dr"):
+            QTimer.singleShot(500, self.GO_DrMain)
+        if (fl == "Ph"):
+            QTimer.singleShot(500, self.Go_PharmMain)
 
 
 

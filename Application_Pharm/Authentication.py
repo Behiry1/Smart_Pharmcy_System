@@ -5,6 +5,7 @@ from security import *
 mail = ""
 name = ""
 Dept = ""
+Pharm_id = ""
 
 # zakaria
 # database="pharmacy_system",
@@ -12,6 +13,9 @@ Dept = ""
 # behiry
 #database = "smart_pharmacy",
 #password = "Ahlynumber1#
+#shereif
+# database="dumb_pharmacy",
+# password="24920963King$"
 
 db_connection_details = {
     "host": "127.0.1.1",
@@ -22,8 +26,9 @@ db_connection_details = {
 }
 
 
-def login_user(ui, email, password, db_connection_details=db_connection_details):
-    global mail, name, Dept
+def login_user(ui, email, password,
+db_connection_details=db_connection_details):
+    global mail, name, Dept ,Pharm_id
 
     try:
         connection = mysql.connector.connect(**db_connection_details)
@@ -39,16 +44,18 @@ def login_user(ui, email, password, db_connection_details=db_connection_details)
 
             if doctor_data:
                 hashed_password, salt, name, Dept = doctor_data
+                user_type = "Dr"
             else:
                 # If not found in doctor table, query for pharmacists
-                cursor.execute("SELECT Pharm_Password, Pharm_Salt FROM Pharmacist_Info WHERE Pharm_Email = %s", (email,))
+                cursor.execute("SELECT Pharm_Password, Pharm_Salt , Pharm_ID , Pharm_FirstName FROM Pharmacist_Info WHERE Pharm_Email = %s", (email,))
                 pharmacist_data = cursor.fetchone()
 
                 if pharmacist_data is None:
                     show_login_error(ui, "Invalid email or password. Please try again.")
                     return False
 
-                hashed_password, salt = pharmacist_data
+                hashed_password, salt ,Pharm_id, name = pharmacist_data
+                user_type = "Ph"
 
             if salt is not None:
                 decoded_salt = base64.b64decode(salt.encode('utf-8'))
@@ -63,7 +70,7 @@ def login_user(ui, email, password, db_connection_details=db_connection_details)
                     mail = email
                 show_login_success(ui, "Login successful.")
 
-                return True
+                return user_type
             else:
                 show_login_error(ui, "Invalid email or password. Please try again.")
                 return False
@@ -77,7 +84,6 @@ def login_user(ui, email, password, db_connection_details=db_connection_details)
         if 'connection' in locals() and connection.is_connected():
             connection.close()
             print("MySQL connection closed")
-
 
 def doctor_register(ui, email, password, first_name, last_name, phone_number, department,
  db_connection_details=db_connection_details):
@@ -120,9 +126,8 @@ def doctor_register(ui, email, password, first_name, last_name, phone_number, de
             connection.close()
             print("MySQL connection closed")
 
-
 def pharmacist_register(ui, email, password, first_name, last_name, phone_number,
-                        db_connection_details=db_connection_details):
+db_connection_details=db_connection_details):
     table_name = "Pharmacist_Info"
 
     try:

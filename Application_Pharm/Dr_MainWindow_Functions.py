@@ -1,18 +1,19 @@
-from datetime import datetime
+
 
 from PySide6.QtCore import QUrl
-from PySide6.QtGui import QDesktopServices, QPdfWriter, QPageSize, QPainter, QPixmap, Qt
-
+from PySide6.QtGui import QDesktopServices, QPdfWriter, QPageSize, QPainter, QPixmap, Qt, QFont
+from PySide6.QtWidgets import QFrame, QPushButton, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QSpinBox, QAbstractSpinBox
 
 from Dr_MainWindow_Orientation import Favorite_Orientation,MainPages_Orientation,Prescription_Orientation,History_Orientation
 from Dr_MainWindow_Database import get_medicine_id, get_dr_id_from_email, add_to_favorite, load_favorite_medicines, \
     SearchStartUpMedicine, search_medicine_data, get_Pr_medicine_id, add_prescription_data
 import Authentication
+import copy
 
 class Favorite_Functions:
     @staticmethod
     def load_favorite_data(ui, favorite_medicines, favorite_state):
-        print("Welcome")
+        #print("Welcome")
         email = Authentication.mail
         drid = get_dr_id_from_email(email)
         favorite_meds = load_favorite_medicines(drid)
@@ -61,7 +62,8 @@ class MainPages_Functions:
 
 class Prescription_Functions:
 
-    @staticmethod
+
+
 
     @staticmethod
     def Print(ui):
@@ -74,13 +76,21 @@ class Prescription_Functions:
         medicines_dict = dict(Prescription_Orientation.get_medicine_counts(ui))
         Pr_Id = add_prescription_data(patient_name, patient_age, drid, Pr_date, medicines_dict)
         ui.label_32.setText(str(Pr_Id))
+
         original_stylesheet = ui.orderPage.styleSheet()
 
         # Define the directory where the PDFs will be saved
-        save_directory = "D:/Project/Graduation_Project/Smart_Pharmcy_System/Application_Pharm/Pdfs/"
+        save_directory = "D:/Project/Graduation_Project/Smart_Pharmcy_System/Application_Pharm/Prescriptions/"
 
         # Create the filename using the patient's name
-        pdf_filename = save_directory + patient_name + "_Prescription.pdf"
+        pdf_filename = save_directory + patient_name + "_" + str(Pr_Id) + "_Prescription.pdf"
+
+        # Hide delete buttons and switch spinbox with label containing spinbox value
+        for widget in ui.scrollArea_3.findChildren(QFrame):
+
+
+            for delete_button in widget.findChildren(QPushButton):
+                delete_button.hide()
 
         # Create a PDF writer object
         pdf_writer = QPdfWriter(pdf_filename)
@@ -91,10 +101,6 @@ class Prescription_Functions:
 
         # Create a painter object to draw on the PDF
         painter = QPainter(pdf_writer)
-
-        # Calculate available space for content
-        available_width = pdf_writer.width()
-        available_height = pdf_writer.height()
 
         # Calculate the size of the custom frame in millimeters
         frame_width_mm = 140
@@ -110,21 +116,19 @@ class Prescription_Functions:
         ui.orderPage.resize(frame_width_pixels, frame_height_pixels)
 
         ui.Edite.hide()
-        # self.pushButton_Trash.resize(0)
         ui.Print_Frame.hide()
 
         # Set font size using stylesheet for the OrderPage widget
         font_stylesheet = """
-                         font-size: 20pt;
-                         color: black;
-                         border: 2px solid black;
-                         background-color: #f0f0f0; /* Background color */
-                         border-radius: 10px; /* Rounded corners */
-                         max-height: 1080px; /* Set a reliable maximum height */
-
-                     }
-
-                     """
+                             font-size: 20pt;
+                             color: black;
+                             border: 2px solid black;
+                             background-color: #f0f0f0; /* Background color */
+                             border-radius: 10px; /* Rounded corners */
+                             max-height: 1080px; /* Set a reliable maximum height */
+                             text-align: center; /* Align text in center */
+                         }
+                         """
 
         ui.orderPage.setStyleSheet(font_stylesheet)
 
@@ -142,8 +146,20 @@ class Prescription_Functions:
         # Open the PDF file using a PDF viewer
         QDesktopServices.openUrl(QUrl.fromLocalFile(pdf_filename))
 
+        # Show the delete buttons again and switch back to spinboxes
+        for widget in ui.scrollArea_3.findChildren(QFrame):
+            spinbox = widget.findChild(QSpinBox)
+            if spinbox:
+                # Show spinbox arrows
+                spinbox.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
+
+                spinbox.show()
+                widget.findChild(QLabel).hide()
+
+            for delete_button in widget.findChildren(QPushButton):
+                delete_button.show()
+
         ui.Edite.show()
-        # self.pushButton_Trash.resize(0)
         ui.Print_Frame.show()
         ui.orderPage.setStyleSheet(original_stylesheet)
         Prescription_Orientation.Clear_Prescription_Page1(ui)

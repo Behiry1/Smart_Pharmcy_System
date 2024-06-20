@@ -5,22 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97f29864-ad20-482d-88b8-21bcd3605e8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dr_MainWindow_Functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dr_MainWindow_Orientation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SignUp_Login_Orientation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharm_MainWindow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharm_MainWindow_Database.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharm_MainWindow_Functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharm_MainWindow_Orientation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Datbase_Setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dr_MainWindow_Database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dr_MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dr_MainWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Main_FFuiFF.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Main_FFuiFF.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final_Main_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Main_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dr_MainWindow_Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dr_MainWindow_Database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dr_MainWindow_Functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dr_MainWindow_Functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dr_MainWindow_Orientation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dr_MainWindow_Orientation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pdfs/1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pdfs/2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pdfs/3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pdfs/4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/abdalluh_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/abdullah shereif_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/behiry moahmed_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/behiry_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/behiur_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/ddss_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/dsds_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/moahmed zakaria_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/mohamed zakria2_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/omar Behiry_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/omar mohamed_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/omar shereif_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/omar zakaria_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/omar_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/sdds_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/ss_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/zeyad_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pdfs/ziko_Prescription.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Request_Medicines.py" beforeDir="false" afterPath="$PROJECT_DIR$/Request_Medicines.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SignUp_Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/SignUp_Login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,19 +79,46 @@
     "Python.Dr_MainWindow_Functions.executor": "Run",
     "Python.Dr_MainWindow_Orientation.executor": "Run",
     "Python.Main.executor": "Run",
+    "Python.Pharm_MainWindow.executor": "Run",
+    "Python.Pharm_MainWindow_Database.executor": "Run",
+    "Python.Pharm_mainwindow_ui.executor": "Run",
+    "Python.Request_Medicines.executor": "Run",
     "Python.SignUpLogin_ui.executor": "Run",
     "Python.SignUp_Login.executor": "Run",
     "Python.Test.executor": "Run",
     "Python.Utilities.executor": "Run",
     "Python.security.executor": "Run",
+    "Python.test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Desktop__Application",
-    "last_opened_file_path": "D:/Project/Graduation_Project/Smart_Pharmcy_System/Application_Pharm/Final_Main_ui.py",
+    "last_opened_file_path": "D:/Project/Graduation_Project/Smart_Pharmcy_System/Application_Pharm/Pharm_mainwindow_ui.py",
     "settings.editor.selected.configurable": "File.Encoding"
   }
 }]]></component>
   <component name="RunManager">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Application_Pharm" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,6 +205,11 @@
       <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

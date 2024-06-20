@@ -48,9 +48,6 @@ class Dr_MainWindow(QMainWindow, Ui_Dr_MainWindow):
 
         # Show the main window
         self.show()
-
-
-
     def Search_Prescription(self):
         text = self.lineEdit_11.text().strip().lower()
         search_results = Dr_MainWindow_Database.search_prescription_by_id_or_name(text)
@@ -60,7 +57,6 @@ class Dr_MainWindow(QMainWindow, Ui_Dr_MainWindow):
         else:
             History_Orientation.Clear_History_Page(self)
             print("Patient Not Found!")
-
     def Add_SearchResults(self, prescription_details):
         # Create widget to hold the content
         History_Orientation.Clear_History_Page(self)
@@ -80,7 +76,6 @@ class Dr_MainWindow(QMainWindow, Ui_Dr_MainWindow):
 
         # Set the content widget for the scroll area
         self.scrollArea_4.setWidget(content_widget)
-
     def Search(self):
         text = self.lineEdit_9.text()
         if len(text) >= 6:

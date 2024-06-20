@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from PySide6.QtCore import QRect, QSize
-from PySide6.QtGui import QFont, QIcon, Qt
+from PySide6.QtGui import QFont, QIcon, Qt, QIntValidator
 from PySide6.QtWidgets import QVBoxLayout, QWidget, QFrame, QGridLayout, QLabel, QCheckBox, QPushButton, QHBoxLayout, \
     QLineEdit, QSpinBox
 
@@ -302,21 +302,18 @@ class Prescription_Orientation:
         price.setFont(QFont())
         inner_layout.addWidget(price)
 
-        # Count QSpinBox
-        count_spinbox = QSpinBox()
-        count_spinbox.setObjectName("count")
-        count_spinbox.setMinimum(1)  # Set minimum value
-        count_spinbox.setMaximum(9999)  # Set maximum value
-        count_spinbox.setValue(1)  # Set default value
-        count_spinbox.setMinimumSize(50, 35)
-        count_spinbox.setMaximumSize(120, 35)
-        count_spinbox.setFont(QFont())
-        inner_layout.addWidget(count_spinbox)
+        # Count QLineEdit
+        count_edit = QLineEdit()
+        count_edit.setValidator(QIntValidator())  # Allow only integer input
+        count_edit.setMinimumSize(50, 35)
+        count_edit.setMaximumSize(120, 35)
+        count_edit.setFont(QFont())
+        inner_layout.addWidget(count_edit)
 
-        # Connect count spinbox's valueChanged signal to update_price_label function
-        count_spinbox.valueChanged.connect(
-            lambda value: Prescription_Orientation.update_price_label(count_spinbox, price,
-                                                                      float(medicine_info.get('Medicine_Price', 0))))
+        # Connect count edit's textChanged signal to update_price_label function
+        count_edit.textChanged.connect(
+            lambda text: Prescription_Orientation.update_price_label(count_edit, price,
+                                                                     float(medicine_info.get('Medicine_Price', 0))))
 
         # Delete Button
         delete_button = QPushButton()
@@ -335,25 +332,6 @@ class Prescription_Orientation:
 
         widget.setLayout(layout)
 
-        # Apply stylesheet to the widget container and its child labels
-        # widget.setStyleSheet("""
-        #     QLabel {
-        #         border-left: 1px solid #064666;
-        #         qproperty-alignment: 'AlignCenter';
-        #         border-right: 0px solid #064666;
-        #     }
-        #
-        #     QPushButton {
-        #         background-color: rgb(255, 34, 34);
-        #         border-radius: 10px;
-        #     }
-        #
-        #     * {
-        #         border-bottom: 1px solid #064666;
-        #         border-top: 1px solid #064666;
-        #     }
-        # """)
-
         # Ensure that the scroll area has a layout set
         if not ui.scrollArea.layout():
             scroll_layout = QVBoxLayout()
@@ -363,6 +341,7 @@ class Prescription_Orientation:
         ui.scrollArea.layout().addWidget(widget)
 
         return widget
+
 
     @staticmethod
     def update_price_label(count_edit, price_label, medicine_price):
@@ -417,6 +396,31 @@ class Prescription_Orientation:
             if medicine_info:
                 # Create a widget using the retrieved information
                 widget = Prescription_Orientation.create_prescription_widget(ui, medicine_info)
+                widget.setProperty("medicine_name", medicine_name)  # Set custom property for medicine name
+
+                # Add the widget to the scroll area
+                widget.setFixedSize(16777215, 35)  # Set fixed size for the widget
+                scroll_layout.addWidget(widget)  # Add widget to the layout
+    @staticmethod
+    def Add_To_Prescription_Page_Print(ui):
+        scroll_layout = ui.scrollArea_3.layout()
+
+        if scroll_layout is None:
+            scroll_layout = QVBoxLayout()
+            ui.scrollArea_3.setLayout(scroll_layout)
+
+        existing_widgets = [scroll_layout.itemAt(i).widget() for i in range(scroll_layout.count())]
+
+        for medicine_name in ui.Selected_Medicine:
+            if any(widget.property("medicine_name") == medicine_name for widget in existing_widgets):
+                continue
+
+            # Retrieve medicine information from the database
+            medicine_info = get_medicine_info(medicine_name)
+
+            if medicine_info:
+                # Create a widget using the retrieved information
+                widget = Prescription_Orientation.create_prescription_widget_no_delete(ui, medicine_info)
                 widget.setProperty("medicine_name", medicine_name)  # Set custom property for medicine name
 
                 # Add the widget to the scroll area
